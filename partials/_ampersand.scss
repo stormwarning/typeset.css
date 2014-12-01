@@ -1,0 +1,47 @@
+/*------------------------------------*\
+    #AMPERSAND
+\*------------------------------------*/
+/**
+ * @font-face Unicode range
+ */
+
+//Unicode Ampersand @font-face
+$amp-fontface-name: Ampersand !default;
+$amp-fontface-source: local('Georgia'), local('Garamond'), local('Palatino'), local('Book Antiqua') !default;
+$amp-fontface-fallback: local('Georgia') !default;
+
+
+/**
+ * Allows for our ampersand element to have differing font-family from the
+ * ampersand unicode font-family.
+ */
+@font-face {
+    font-family: '#{$amp-fontface-name}';
+    src: $amp-fontface-source;
+    unicode-range: U+0026;
+}
+
+// Ampersand fallback font for unicode range
+@font-face {
+    font-family: '#{$amp-fontface-name}';
+    src: $amp-fontface-fallback;
+    unicode-range: U+270C;
+}
+
+
+/**
+ * Call your ampersand on any element you wish from another stylesheet using
+ * this Sass extend. For exmaple:
+ *
+    <h6 class="ampersand">Dewey Cheat 'em & Howe</h6>
+
+    .ampersand { @extend %ampersand-placeholder; }
+ *
+ */
+@mixin ampersand($amp-font-family...) {
+    font-family: $amp-font-family;
+}
+
+%ampersand-placeholder {
+    @include ampersand($amp-fontface-name, $amp-font-family);
+}

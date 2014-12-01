@@ -1,0 +1,46 @@
+/*------------------------------------*\
+    #BLOCKQUOTE
+\*------------------------------------*/
+/**
+ * https://github.com/typeplate/typeplate.github.io/issues/95
+ *
+ * Use our pre-defined markup and add a class to your custom blockquote element.
+ * Usage:
+ *
+    .blockquote { @include blockquote("-"); }
+ *
+ * "-" is your citation flourish. For example:
+ *
+ * I always say important things because I'm so smart
+ *                           - Super Important Person
+ */
+
+// Citation mixin for custom styling
+@mixin cite-style($display, $text-align, $font-size) {
+    display: $display;
+    font-size: $font-size;
+    text-align: $text-align;
+}
+
+%cite {
+    @include cite-style($cite-display, $cite-text-align, $cite-font-size);
+}
+
+// Blockquote mixin
+@mixin blockquote($citation-flourish) {
+    p {
+
+        &:last-of-type {
+            margin-bottom: -#{$line-height/2}em;
+        }
+    }
+
+    + figcaption {
+
+        @extend %cite;
+
+        &:before {
+            content: $citation-flourish;
+        }
+    }
+}

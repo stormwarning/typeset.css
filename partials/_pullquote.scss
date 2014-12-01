@@ -1,0 +1,31 @@
+/*------------------------------------*\
+    #PULLQUOTE
+\*------------------------------------*/
+/**
+ * Pull-quote mixin
+ */
+@mixin pull-quotes($pull-quote-fontsize, $pull-quote-opacity, $pull-quote-color) {
+	position: relative;
+	padding: context-calc($pull-quote-fontsize, $pull-quote-fontsize, em);
+
+	&:before,
+	&:after {
+		height: context-calc($pull-quote-fontsize, $pull-quote-fontsize, em);
+		opacity: $pull-quote-opacity;
+		position: absolute;
+		font-size: $pull-quote-fontsize;
+		color: $pull-quote-color;
+	}
+
+	&:before {
+		content: '“';
+		top:  0;
+		left: 0;
+	}
+
+	&:after {
+		content: '”';
+		bottom: 0;
+		right: 0;
+	}
+}

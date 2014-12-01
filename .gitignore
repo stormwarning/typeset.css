@@ -1,0 +1,27 @@
+#
+# OS files
+#
+
+.DS_Store
+.DS_Store?
+.AppleDouble
+.LSOverride
+Icon?
+
+# Thumbnails
+._*
+ehthumbs.db
+Thumbs.db
+
+# External disks
+.Spotlight-V100
+.Trashes
+
+
+#
+# Build Process files
+#
+
+.sass-cache
+node_modules/
+temp/
