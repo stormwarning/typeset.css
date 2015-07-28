@@ -1,0 +1,73 @@
+//
+// @package Typeset.css
+//
+$typ-opentype: false !default;
+
+//
+// Text-selection.
+//
+::-moz-selection {
+  color: inherit;
+  text-shadow: inherit;
+  background-color: #accef7;
+}
+
+::selection {
+  color: inherit;
+  text-shadow: inherit;
+  background-color: #accef7;
+}
+
+//
+// Input placeholder.
+//
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.6;
+}
+
+:-moz-placeholder {
+  color: inherit;
+  opacity: 0.6;
+}
+
+::-moz-placeholder {
+  color: inherit;
+  opacity: 0.6;
+}
+
+:-ms-input-placeholder {
+  color: inherit;
+  opacity: 0.6;
+}
+
+//
+//
+//
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: 100%;
+}
+
+//
+// Opentype features.
+//
+html,
+body,
+table {
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
+}
+
+//
+// Lists.
+//
+// Remove extra vertical space of nested lists.
+//
+li {
+
+  > ul,
+  > ol {
+    margin-bottom: 0;
+  }
+}

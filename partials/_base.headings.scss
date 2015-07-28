@@ -1,0 +1,67 @@
+//
+// Headings 1–6.
+//
+// @package Typeset.css
+//
+
+//
+// Shared heading properties.
+//
+// Single-direction margin for vertical rhythym, `auto` text rendering instead
+// of `optimizeLegibility` for performance, and inherited colour on link
+// children for class.
+//
+// @link https://bocoup.com/weblog/text-rendering/
+//
+%#{$typ-namespace}heading {
+  margin-top: 0;
+  margin-bottom: $base-line-height;
+  text-rendering: auto;
+
+  a {
+    color: inherit;
+  }
+}
+
+
+h1,
+.alpha {
+  @extend %#{$typ-namespace}heading;
+
+  @include typ-font-size($typ-h1-size);
+}
+
+h2,
+.beta {
+  @extend %#{$typ-namespace}heading;
+
+  @include typ-font-size($typ-h2-size);
+}
+
+h3,
+.gamma {
+  @extend %#{$typ-namespace}heading;
+
+  @include typ-font-size($typ-h3-size);
+}
+
+h4,
+.delta {
+  @extend %#{$typ-namespace}heading;
+
+  @include typ-font-size($typ-h4-size);
+}
+
+h5,
+.epsilon {
+  @extend %#{$typ-namespace}heading;
+
+  @include typ-font-size($typ-h5-size);
+}
+
+h6,
+.zeta {
+  @extend %#{$typ-namespace}heading;
+
+  @include typ-font-size($typ-h6-size);
+}
