@@ -1,0 +1,42 @@
+//
+// Internal mixins & functions.
+//
+// @package Typeset.css
+//
+
+//
+// Font-size & line-height.
+//
+// Generates a rem-based font-size with pixel value fallback, as well as a
+// unitless line-height, based on base font settings.
+//
+// @example
+//   .class {
+//     @include typ-font-size(12px);
+//   }
+// @since 0.0.2
+//
+@mixin typ-font-size($typ-font-size, $typ-line-height: auto) {
+
+  font-size: $typ-font-size;
+  font-size: ($typ-font-size / $base-font-size) * 1rem;
+
+  @if $typ-line-height == auto {
+
+    line-height: ceil($typ-font-size / $base-line-height) * ($base-line-height / $typ-font-size);
+
+  } @else {
+
+    @if (type-of($typ-line-height) == number or $typ-line-height == inherit or $typ-line-height == normal) {
+
+      line-height: $typ-line-height;
+
+    } @elseif ($typ-line-height != none and $typ-line-height != false) {
+
+      @warn "✘ ‘#{$typ-line-height}’ is not a valid value for `line-height`.";
+
+    }
+
+  }
+
+}
