@@ -5,7 +5,7 @@
  * Dropcap Sass @include
  * Use the following Sass @include with any selector you feel necessary.
  *
-	@include dropcap($dropcap-float-position, $dropcap-font-size, $dropcap-font-family, $dropcap-txt-indent, $dropcap-margin, $dropcap-padding, $dropcap-color, $dropcap-line-height, $dropcap-bg);
+        @include dropcap($dropcap-float-position, $dropcap-font-size, $dropcap-font-family, $dropcap-txt-indent, $dropcap-margin, $dropcap-padding, $dropcap-color, $dropcap-line-height, $dropcap-bg);
  *
  * Extend this object into your custom stylesheet. Let the variables do the work.
  *
@@ -17,15 +17,15 @@
 //
 // Make sure you add the class “drop-cap” to your markup in order to operate.
 @mixin dropcap($dropcap-float-position, $dropcap-font-size, $dropcap-font-family, $dropcap-txt-indent, $dropcap-margin, $dropcap-padding, $dropcap-color, $dropcap-line-height, $dropcap-bg) {
-	&:first-letter {
-		float: $dropcap-float-position;
-		margin: $dropcap-margin;
-		padding: $dropcap-padding;
-		font-size: $dropcap-font-size;
-		font-family: $dropcap-font-family;
-		line-height: $dropcap-line-height;
-		text-indent: $dropcap-txt-indent;
-		background: $dropcap-bg;
-		color: $dropcap-color;
-	}
+        &:first-letter {
+                float: $dropcap-float-position;
+                margin: $dropcap-margin;
+                padding: $dropcap-padding;
+                font-size: $dropcap-font-size;
+                font-family: $dropcap-font-family;
+                line-height: $dropcap-line-height;
+                text-indent: $dropcap-txt-indent;
+                background: $dropcap-bg;
+                color: $dropcap-color;
+        }
 }

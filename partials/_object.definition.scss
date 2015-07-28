@@ -1,0 +1,62 @@
+/*------------------------------------*\
+    #DEFINITIONS
+\*------------------------------------*/
+/**
+ * Lining-style
+ * Dictionary-style
+ *
+ * 1. Remove extra space between `dt` and the comma/colon.
+ *
+ * @link http://lea.verou.me/2012/02/flexible-multiline-definition-lists-with-2-lines-of-css
+ * @param string  lining | dictionary
+ */
+@mixin definition-list-style($style) {
+
+        @if $style == lining {
+                dt,
+                dd {
+                        display: inline;
+                        margin: 0;
+                }
+                dt,
+                dd {
+                        & + dt {
+                                &:before {
+                                        content: "\A";
+                                        white-space: pre;
+                                }
+                        }
+                }
+                dd {
+                        & + dd {
+                                &:before {
+                                        content: ", ";
+                                }
+                        }
+                        &:before {
+                                        content: ": ";
+                                        margin-left: -0.2rem; // [1]
+                        }
+                }
+        }
+
+        @if $style == dictionary {
+                dt {
+                        display: inline;
+                        counter-reset: definitions;
+                        & + dt {
+                                &:before {
+                                        content: ", ";
+                                        margin-left: -0.2rem; // [1]
+                                }
+                        }
+                }
+                dd {
+                        display: block;
+                        counter-increment: definitions;
+                        &:before {
+                                content: counter(definitions, decimal) ". ";
+                        }
+                }
+        }
+}
