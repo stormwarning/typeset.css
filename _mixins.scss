@@ -40,3 +40,30 @@
   }
 
 }
+
+//
+// Font-size with calc() & vw units.
+//
+// @param $min-font  (str) Minimum font-size
+// @param $max-font  (str) Maximum font-size
+// @param $min-width (str) Minimum browser width
+// @param $max-width (str) Maximum browser width
+//
+@mixin typ-calc-size($min-font, $max-font, $min-width, $max-width) {
+
+  $unitless-min-font: _strip-units($min-font);
+  $unitless-max-font: _strip-units($max-font);
+  $unitless-min-width: _strip-units($min-width);
+  $unitless-max-width: _strip-units($max-width);
+
+  font-size: $min-font;
+
+  @media (min-width: $min-width) {
+    font-size: calc(#{$min-font} + (#{$unitless-max-font} - #{$unitless-min-font}) * ((100vw - #{$min-width}) / (#{$unitless-max-width} - #{$unitless-min-width})));
+  }
+
+  @media (min-width: $max-width) {
+    font-size: $max-font;
+  }
+
+}
