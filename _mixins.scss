@@ -5,6 +5,20 @@
 //
 
 //
+// Strip units from values.
+//
+// @access private
+// @param (str) $unit A value with a unit
+// @example
+//   _strip-units(10px);
+//
+@function _strip-units($unit) {
+
+  @return $unit / ($unit * 0 + 1);
+
+}
+
+//
 // Font-size & line-height.
 //
 // Generates a rem-based font-size with pixel value fallback, as well as a
