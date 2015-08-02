@@ -5,12 +5,16 @@
 //
 // From Kenneth Ormandy’s normalize-opentype project.
 //
-// @see opentype()
-// @link http://kennethormandy.com/journal/normalize-opentype-css
+// @see     opentype()
+// @link    http://kennethormandy.com/journal/normalize-opentype-css
 // @package Typeset.css
 //
 
+//
+// Baseline Opentype features.
+//
 // @link http://www.microsoft.com/typography/otspec/featurelist.htm
+//
 $typ-ot-base: (
   "kern" 1,
   "liga" 1,

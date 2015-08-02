@@ -9,7 +9,7 @@
 //
 // Prepend classes/placeholders with a namespace.
 //
-// @since 0.0.2
+// @since 0.1.0
 //
 $typ-namespace: null !default;
 
@@ -33,4 +33,6 @@ $vertical-rhythm    : true       !default;
 //
 // Option flags.
 //
-$typ-opentype: false !default;
+$typ-use-opentype:  false !default;
+$typ-use-ampersand: false !default;
+$typ-use-dropcap:   false !default;

@@ -7,10 +7,11 @@
 //
 // Strip units from values.
 //
-// @access private
-// @param (str) $unit A value with a unit
+// @access  private
+// @param   {str}   $unit A value with a unit
 // @example
-//   _strip-units(10px);
+//     _strip-units(10px);
+// @since   0.1.0
 //
 @function _strip-units($unit) {
 
@@ -24,10 +25,14 @@
 // Fakes "inheritance" of `font-feature-settings` using a baseline settings
 // variable.
 //
-// @access public
-// @param (list) $feature   A list of tag–value pairs
-// @return (list) $features Updated list of tag–value pairs as a property value.
-// @since 0.1.0
+// @access  public
+// @param   {list} $feature  A list of tag–value pairs
+// @return  {list} $features Updated list of tag–value pairs.
+// @example
+//     .class {
+//       font-feature-settings: opentype("kern" 1);
+//     }
+// @since   0.1.0
 //
 @function opentype($feature...) {
 
@@ -40,6 +45,7 @@
       $tag: nth($pair, 1);
       $nth: index($typ-ot-base, $tag 0) or index($typ-ot-base, $tag 1);
 
+      // Setting exists so modify the value.
       @if type-of($nth) == number {
 
         $step: ();
@@ -90,10 +96,10 @@
 // unitless line-height, based on base font settings.
 //
 // @example
-//   .class {
-//     @include typ-font-size(12px);
-//   }
-// @since 0.0.2
+//     .class {
+//       @include typ-font-size(12px);
+//     }
+// @since   0.1.0
 //
 @mixin typ-font-size($typ-font-size, $typ-line-height: auto) {
 
@@ -123,15 +129,16 @@
 //
 // Font-size with calc() & vw units.
 //
-// @param $min-font  (str) Minimum font-size
-// @param $max-font  (str) Maximum font-size
-// @param $min-width (str) Minimum browser width
-// @param $max-width (str) Maximum browser width
+// @param {str} $min-font  Minimum font-size
+// @param {str} $max-font  Maximum font-size
+// @param {str} $min-width Minimum browser width
+// @param {str} $max-width Maximum browser width
+// @since 0.1.0
 //
 @mixin typ-calc-size($min-font, $max-font, $min-width, $max-width) {
 
-  $unitless-min-font: _strip-units($min-font);
-  $unitless-max-font: _strip-units($max-font);
+  $unitless-min-font:  _strip-units($min-font);
+  $unitless-max-font:  _strip-units($max-font);
   $unitless-min-width: _strip-units($min-width);
   $unitless-max-width: _strip-units($max-width);
 
