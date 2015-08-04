@@ -63,3 +63,20 @@ li {
     margin-bottom: 0;
   }
 }
+
+//
+// Codeblocks.
+//
+pre {
+  white-space: pre;
+
+  code {
+    word-wrap: normal;
+    white-space: pre-wrap;
+  }
+}
+
+code {
+  font-family: monospace;
+  white-space: pre;
+}
