@@ -1,12 +1,12 @@
 {
   "name": "typeset.css",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "homepage": "https://github.com/stormwarning/typeset.css",
   "authors": [
     "Jeff Nelson <rustyangel@gmail.com>"
   ],
   "description": "Helps inform your typographic choices, without dictating—as much as possible—your visual design.",
-  "main": "typeset.scss",
+  "main": "_typeset.scss",
   "keywords": [
     "css",
     "sass",
