@@ -1,14 +1,32 @@
-/*------------------------------------*\
-    #AMPERSAND
-\*------------------------------------*/
-/**
- * @font-face Unicode range
- */
+@if $typ-use-opentype == true {
 
-//Unicode Ampersand @font-face
-$amp-fontface-name: Ampersand !default;
-$amp-fontface-source: local('Georgia'), local('Garamond'), local('Palatino'), local('Book Antiqua') !default;
-$amp-fontface-fallback: local('Georgia') !default;
+//
+// Custom ampersand font-face.
+//
+// Set ampersands in a different typeface using `unicode-range`.
+//
+$typ-ampersand-face:     Ampersand !default;
+$typ-ampersand-source:   local('Georgia'), local('Garamond'), local('Palatino'), local('Book Antiqua') !default;
+$typ-ampersand-fallback: local('Georgia') !default;
+
+//
+// Ampersand `@font-face` setup.
+//
+@font-face {
+  font-family: "#{$typ-ampersand-face}";
+  src: $typ-ampersand-source;
+  unicode-range: U+0026;
+}
+
+//
+// Apply ampersand font-family by class or `@extend`.
+//
+%#{$typ-namespace}ampersand,
+.#{$typ-namespace}ampersand {
+  font-family: $typ-ampersand-face;
+}
+
+}
 
 
 /**
