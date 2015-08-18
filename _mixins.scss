@@ -137,15 +137,15 @@
 //
 @mixin typ-calc-size($min-font, $max-font, $min-width, $max-width) {
 
-  $unitless-min-font:  _strip-units($min-font);
-  $unitless-max-font:  _strip-units($max-font);
-  $unitless-min-width: _strip-units($min-width);
-  $unitless-max-width: _strip-units($max-width);
+  $_min-font:  _strip-units($min-font);
+  $_max-font:  _strip-units($max-font);
+  $_min-width: _strip-units($min-width);
+  $_max-width: _strip-units($max-width);
 
   font-size: $min-font;
 
   @media (min-width: $min-width) {
-    font-size: calc(#{$min-font} + (#{$unitless-max-font} - #{$unitless-min-font}) * ((100vw - #{$min-width}) / (#{$unitless-max-width} - #{$unitless-min-width})));
+    font-size: calc(#{$min-font} + (#{$_max-font} - #{$_min-font}) * ((100vw - #{$min-width}) / (#{$_max-width} - #{$_min-width})));
   }
 
   @media (min-width: $max-width) {
