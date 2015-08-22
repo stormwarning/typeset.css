@@ -5,17 +5,17 @@
 //
 // Basic typographic styles.
 //
-@include "base.global";
-@include "base.headings";
-@include "base.opentype";
-@include "base.quotations";
+@include "partials/base.global";
+@include "partials/base.headings";
+@include "partials/base.opentype";
+@include "partials/base.quotations";
 
 //
 // Fancy typographic elements.
 //
-@include "object.ampersand";
-@include "object.blockquote";
-@include "object.definition";
-@include "object.dropcap";
-@include "object.pullquote";
-@include "object.smallcaps";
+@include "partials/object.ampersand";
+@include "partials/object.blockquote";
+@include "partials/object.definition";
+@include "partials/object.dropcap";
+@include "partials/object.pullquote";
+@include "partials/object.smallcaps";
