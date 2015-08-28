@@ -5,9 +5,11 @@
 //
 // Set ampersands in a different typeface using `unicode-range`.
 //
+// @package Typeset.css
+//
 $typ-ampersand-face:     Ampersand !default;
-$typ-ampersand-source:   local('Georgia'), local('Garamond'), local('Palatino'), local('Book Antiqua') !default;
-$typ-ampersand-fallback: local('Georgia') !default;
+$typ-ampersand-source:   local("Georgia"), local("Garamond"), local("Palatino"), local("Book Antiqua") !default;
+$typ-ampersand-fallback: local("Georgia") !default;
 
 //
 // Ampersand `@font-face` setup.
