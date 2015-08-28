@@ -1,46 +1,35 @@
-/*------------------------------------*\
-    #BLOCKQUOTE
-\*------------------------------------*/
-/**
- * https://github.com/typeplate/typeplate.github.io/issues/95
- *
- * Use our pre-defined markup and add a class to your custom blockquote element.
- * Usage:
- *
-    .blockquote { @include blockquote("-"); }
- *
- * "-" is your citation flourish. For example:
- *
- * I always say important things because I'm so smart
- *                           - Super Important Person
- */
+//
+// Blockquotes.
+//
+// Assumes a specific semantic markup style.
+//
+// @link    https://gist.github.com/murtaugh/4489740
+// @package Typeset.css
+//
 
-// Citation mixin for custom styling
-@mixin cite-style($display, $text-align, $font-size) {
-    display: $display;
-    font-size: $font-size;
-    text-align: $text-align;
-}
+//
+// Blockquote setup.
+//
+// @param {str} $cite-flourish A character to prepend the quote’s attribution
+// @example
+//     blockquote {
+//       @include typ-blockquote();
+//     }
+//
+@mixin typ-blockquote($cite-flourish: "\2014") {
 
-%cite {
-    @include cite-style($cite-display, $cite-text-align, $cite-font-size);
-}
+  > p {
 
-// Blockquote mixin
-@mixin blockquote($citation-flourish) {
-    p {
-
-        &:last-of-type {
-            margin-bottom: -#{$line-height/2}em;
-        }
+    &:last-of-type {
+      margin-bottom: 0;
     }
+  }
 
-    + figcaption {
+  + figcaption {
 
-        @extend %cite;
-
-        &:before {
-            content: $citation-flourish;
-        }
+    &::before {
+      content: $cite-flourish;
     }
+  }
+
 }
