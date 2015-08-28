@@ -1,20 +1,25 @@
-@if $typ-use-opentype == true {
-
 //
-// Dropcaps
+// Dropcaps.
 //
-// Set direction to `right` for rtl text.
+// Set direction to `right` for rtl text. Apply further styling such as
+// `font-size` & `background-color` within.
 //
 // @param   {str} $direction Float direction, defaults to left
+// @example
+//     p:first-of-type {
+//
+//       @include typ-dropcap() {
+//         font-size: 20rem;
+//         background-color: #bada55;
+//       }
+//     }
 // @package Typeset.css
 //
-@mixin dropcap($direction: left) {
+@mixin typ-dropcap($direction: left) {
 
   &::first-letter {
     float: $direction;
 
     @content;
   }
-}
-
 }
