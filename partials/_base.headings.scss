@@ -1,8 +1,20 @@
+@if $typ-use-headings == true {
+
 //
 // Headings 1–6.
 //
 // @package Typeset.css
 //
+
+//
+// Heading font-size scale.
+//
+$typ-h1-size: 36px !default;
+$typ-h2-size: 30px !default;
+$typ-h3-size: 24px !default;
+$typ-h4-size: 20px !default;
+$typ-h5-size: 16px !default;
+$typ-h6-size: 14px !default;
 
 //
 // Shared heading properties.
@@ -25,43 +37,45 @@
 
 
 h1,
-.alpha {
+.#{$typ-namespace}alpha {
   @extend %#{$typ-namespace}heading;
 
   @include typ-font-size($typ-h1-size);
 }
 
 h2,
-.beta {
+.#{$typ-namespace}beta {
   @extend %#{$typ-namespace}heading;
 
   @include typ-font-size($typ-h2-size);
 }
 
 h3,
-.gamma {
+.#{$typ-namespace}gamma {
   @extend %#{$typ-namespace}heading;
 
   @include typ-font-size($typ-h3-size);
 }
 
 h4,
-.delta {
+.#{$typ-namespace}delta {
   @extend %#{$typ-namespace}heading;
 
   @include typ-font-size($typ-h4-size);
 }
 
 h5,
-.epsilon {
+.#{$typ-namespace}epsilon {
   @extend %#{$typ-namespace}heading;
 
   @include typ-font-size($typ-h5-size);
 }
 
 h6,
-.zeta {
+.#{$typ-namespace}zeta {
   @extend %#{$typ-namespace}heading;
 
   @include typ-font-size($typ-h6-size);
+}
+
 }
