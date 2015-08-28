@@ -16,18 +16,19 @@ $typ-namespace: null !default;
 //
 // Main typographic settings.
 //
-$line-height-ratio:   1.75       !default;
-$heading-ratio:       $golden    !default;
-$body-font:           $helvetica !default;
-$heading-font:        $helvetica !default;
-$min-font:            12px       !default;
-$max-font:            20px       !default;
-$min-width:           600px      !default;
-$max-width:           1140px     !default;
-$vertical-rhythm:     true       !default;
+$typ-font-size:   16px   !default;
+$typ-line-height: 1.75   !default;
+$typ-font-min:    12px   !default;
+$typ-font-max:    20px   !default;
+$typ-width-min:   600px  !default;
+$typ-width-max:   1140px !default;
 
 //
 // Option flags.
+//
+// @see _base.headings.scss
+// @see _base.opentype.scss
+// @see _object.ampersand.scss
 //
 $typ-use-headings:  false !default;
 $typ-use-opentype:  false !default;
