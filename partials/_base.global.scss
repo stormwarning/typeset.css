@@ -44,7 +44,7 @@
 //
 //
 html {
-  @include typ-calc-size($min-font, $max-font, $min-width, $max-width);
+  @include typ-font-size($typ-base-font-size);
 
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
