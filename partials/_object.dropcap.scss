@@ -1,31 +1,20 @@
-/*------------------------------------*\
-    #DROPCAPS
-\*------------------------------------*/
-/**
- * Dropcap Sass @include
- * Use the following Sass @include with any selector you feel necessary.
- *
-        @include dropcap($dropcap-float-position, $dropcap-font-size, $dropcap-font-family, $dropcap-txt-indent, $dropcap-margin, $dropcap-padding, $dropcap-color, $dropcap-line-height, $dropcap-bg);
- *
- * Extend this object into your custom stylesheet. Let the variables do the work.
- *
- */
+@if $typ-use-opentype == true {
 
-// Use @include dropcap($dropcap-float-position, $dropcap-font-size, $dropcap-font-family, $dropcap-txt-indent, $dropcap-margin, $dropcap-padding, $dropcap-color, $dropcap-line-height, $dropcap-bg);
-// to pass the following arguments below. Feel free to pass in custom
-// values for the variables we've provided.
 //
-// Make sure you add the class “drop-cap” to your markup in order to operate.
-@mixin dropcap($dropcap-float-position, $dropcap-font-size, $dropcap-font-family, $dropcap-txt-indent, $dropcap-margin, $dropcap-padding, $dropcap-color, $dropcap-line-height, $dropcap-bg) {
-        &:first-letter {
-                float: $dropcap-float-position;
-                margin: $dropcap-margin;
-                padding: $dropcap-padding;
-                font-size: $dropcap-font-size;
-                font-family: $dropcap-font-family;
-                line-height: $dropcap-line-height;
-                text-indent: $dropcap-txt-indent;
-                background: $dropcap-bg;
-                color: $dropcap-color;
-        }
+// Dropcaps
+//
+// Set direction to `right` for rtl text.
+//
+// @param   {str} $direction Float direction, defaults to left
+// @package Typeset.css
+//
+@mixin dropcap($direction: left) {
+
+  &::first-letter {
+    float: $direction;
+
+    @content;
+  }
+}
+
 }
