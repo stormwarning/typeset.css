@@ -1,21 +1,21 @@
 /*! Typeset.css v0.1.0 -- @stormwarning */
-@include "settings";
-@include "mixins";
+@import "settings";
+@import "mixins";
 
 //
 // Basic typographic styles.
 //
-@include "partials/base.global";
-@include "partials/base.headings";
-@include "partials/base.opentype";
-@include "partials/base.quotations";
+@import "partials/base.global";
+@import "partials/base.headings";
+@import "partials/base.opentype";
+@import "partials/base.quotations";
 
 //
 // Fancy typographic elements.
 //
-@include "partials/object.ampersand";
-@include "partials/object.blockquote";
-@include "partials/object.definition";
-@include "partials/object.dropcap";
-@include "partials/object.pullquote";
-@include "partials/object.smallcaps";
+@import "partials/object.ampersand";
+@import "partials/object.blockquote";
+@import "partials/object.definition";
+@import "partials/object.dropcap";
+@import "partials/object.pullquote";
+@import "partials/object.smallcaps";
