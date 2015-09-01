@@ -1,0 +1,21 @@
+//
+// Paragraphs.
+//
+// @package Typeset.css
+//
+p {
+  margin: auto auto $typ-line-height;
+
+  &.lede,
+  &.lead {
+    @include typ-font-size($typ-h5-size);
+  }
+
+  &.indented {
+
+    + p {
+      margin-top: -#{$typ-line-height};
+      text-indent: $typ-line-height;
+    }
+  }
+}
