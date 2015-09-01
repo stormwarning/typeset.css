@@ -101,24 +101,24 @@
 //     }
 // @since   0.1.0
 //
-@mixin typ-font-size($typ-font-size, $typ-line-height: auto) {
+@mixin typ-font-size($font-size, $line-height: auto) {
 
-  font-size: $typ-font-size;
-  font-size: ($typ-font-size / $base-font-size) * 1rem;
+  font-size: $font-size;
+  font-size: ($font-size / $typ-font-size) * 1rem;
 
-  @if $typ-line-height == auto {
+  @if $line-height == auto {
 
-    line-height: ceil($typ-font-size / $base-line-height) * ($base-line-height / $typ-font-size);
+    line-height: ceil($font-size / $typ-line-height) * ($typ-line-height / $font-size);
 
   } @else {
 
-    @if (type-of($typ-line-height) == number or $typ-line-height == inherit or $typ-line-height == normal) {
+    @if (type-of($line-height) == number or $line-height == inherit or $line-height == normal) {
 
-      line-height: $typ-line-height;
+      line-height: $line-height;
 
-    } @elseif ($typ-line-height != none and $typ-line-height != false) {
+    } @elseif ($line-height != none and $line-height != false) {
 
-      @warn "✘ ‘#{$typ-line-height}’ is not a valid value for `line-height`.";
+      @warn "✘ ‘#{$line-height}’ is not a valid value for `line-height`.";
 
     }
 
@@ -146,14 +146,14 @@
 
   font-size: $min-font;
 
-  @if ($min-leading != auto and typeof($min-leading) == number) {
+  @if ($min-leading != auto and type-of($min-leading) == number) {
     line-height: $min-leading;
   }
 
   @media (min-width: $min-width) {
     font-size: calc(#{$min-font} + (#{$_max-font} - #{$_min-font}) * ((100vw - #{$min-width}) / (#{$_max-width} - #{$_min-width})));
 
-    @if ($min-leading != auto and typeof($min-leading) == number) {
+    @if ($min-leading != auto and type-of($min-leading) == number) {
       line-height: calc(#{$min-leading} + (#{$max-leading} - #{$min-leading}) * ((100vw - #{$min-width}) / (#{$_max-width} - #{$_min-width})));
     }
   }
@@ -161,7 +161,7 @@
   @media (min-width: $max-width) {
     font-size: $max-font;
 
-    @if ($max-leading != auto and typeof($max-leading) == number) {
+    @if ($max-leading != auto and type-of($max-leading) == number) {
       line-height: $max-leading;
     }
   }
