@@ -2,7 +2,8 @@
 // Dropcaps.
 //
 // Set direction to `right` for rtl text. Apply further styling such as
-// `font-size` & `background-color` within.
+// `font-size` & `background-color` within. Includes clearfix style for
+// parent element.
 //
 // @param   {str} $direction Float direction, defaults to left
 // @example
@@ -16,6 +17,12 @@
 // @package Typeset.css
 //
 @mixin typ-dropcap($direction: left) {
+
+  &::after {
+    display: table;
+    clear: both;
+    content: "";
+  }
 
   &::first-letter {
     float: $direction;
