@@ -28,7 +28,7 @@ $typ-h6-size: 14px !default;
 //
 %#{$typ-namespace}heading {
   margin-top: 0;
-  margin-bottom: $base-line-height;
+  margin-bottom: $typ-line-height;
   text-rendering: auto;
 
   a {
