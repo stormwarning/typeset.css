@@ -1,6 +1,5 @@
 # Typeset.css
 
-![Work-in-progress](https://img.shields.io/badge/status-WIP-orange.svg?style=flat-square)
 ![Bower version](https://img.shields.io/bower/v/typeset.css.svg?style=flat-square)
 [![GitHub Issues](https://img.shields.io/github/issues/stormwarning/typeset.css.svg?style=flat-square)](https://github.com/stormwarning/typeset.css/issues)
 
