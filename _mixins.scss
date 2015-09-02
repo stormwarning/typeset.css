@@ -167,3 +167,30 @@
   }
 
 }
+
+//
+// Easy tracking control.
+//
+// Enter tracking values from Photoshop mockups and convert to something CSS
+// understands as a `letter-spacing` value.
+//
+// @param   {int} $val Value (negative or positive) to adjust tracking
+// @example
+//     .class {
+//       @include typ-tracking(-50);
+//     }
+// @since   0.3.0
+//
+@mixin typ-tracking($val) {
+
+  @if type-of($val) == number {
+
+    letter-spacing: ($val / 1000) * 1em;
+
+  } @else {
+
+    @warn "✘ ‘#{$val}’ is not a number value.";
+
+  }
+
+}
