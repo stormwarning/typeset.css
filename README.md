@@ -5,6 +5,20 @@
 
 `Typeset.css` helps inform your typographic choices, without dictating—as much as possible—your visual design.
 
+## Installation
+```shell
+bower install --save-dev typeset.css
+```
+
+Remember to add `@import "[INSTALLATION_PATH]/typeset.css/typeset"` to your primary Sass file.
+
+## Documentation
+
+Detailed documentation is coming. Until then, view the source comments or [open an issue][ghissues].
+
+[ghissues]: https://github.com/stormwarning/typeset.css/issues
+
+## Acknowledgments
 Without the excellent work of others, this wouldn’t have been possible:
 - [Typeplate][typeplate] from [GrayGhostVisuals][ggv] & [Zachary Kain][zakkain]
 - [InuitCSS][inuit] from [Harry Roberts][cssw]
