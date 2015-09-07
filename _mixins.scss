@@ -60,6 +60,8 @@
 
         }
 
+        $step: append($step, $pair, comma);
+
         @if $nth < length($features) {
 
           @for $i from $nth + 1 through length($features) {
