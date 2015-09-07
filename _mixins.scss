@@ -194,3 +194,29 @@
   }
 
 }
+
+//
+// Comfortable measure.
+//
+// @link  http://tympanus.net/codrops/css_reference/hyphens/
+// @since 0.4.0
+//
+@mixin typ-measure($max: 70, $min) {
+
+  max-width: $max * 1ch;
+  hyphenate-limit-chars: 6 3 2;
+  hyphenate-limit-lines: 3;
+  hyphens: auto;
+  word-break: break-word;
+
+  @if type-of($min) == number {
+
+    min-width: $min * 1ch;
+
+  } @elseif $min != null {
+
+    @warn "✘ ‘#{$min}’ is not a valid value.";
+
+  }
+
+}
