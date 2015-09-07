@@ -56,6 +56,13 @@ html {
 //
 // Remove extra vertical space of nested lists.
 //
+dl,
+ol,
+ul {
+  margin-top: 0;
+  margin-bottom: $typ-line-height;
+}
+
 li {
 
   > ul,
@@ -64,11 +71,47 @@ li {
   }
 }
 
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-bottom: ($typ-line-height / 2);
+  margin-left: 0;
+}
+
+//
+// Abbreviations & acronyms.
+//
+abbr {
+
+  &[title] {
+    cursor: help;
+    border-bottom: 1px dotted;
+  }
+}
+
+//
+// Small print.
+//
+small {
+  font-size: 1.5ex;
+  font-weight: normal;
+}
+
+//
+//
+//
+mark {
+  padding: 0.2em;
+}
+
 //
 // Codeblocks.
 //
 pre {
-  white-space: pre;
+  margin-top: 0;
+  margin-bottom: $typ-line-height;
 
   code {
     word-wrap: normal;
