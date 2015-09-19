@@ -4,14 +4,23 @@
 // @package Typeset.css
 //
 p {
-  margin: auto auto $typ-line-height;
+  margin: auto 0 $typ-line-height;
 
   &.lede,
   &.lead {
     @include typ-font-size($typ-h5-size);
   }
+}
 
-  &.indented {
+//
+// First-line indentation style.
+//
+// Wrap paragraps with `indented` class to remove margin and indent first line
+// of adjacent paragraphs.
+//
+.indented {
+
+  p {
 
     + p {
       margin-top: -#{$typ-line-height};
