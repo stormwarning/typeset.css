@@ -17,11 +17,13 @@ $typ-namespace: null !default;
 // Main typographic settings.
 //
 $typ-font-size:   16px   !default;
-$typ-line-height: 1.75   !default;
+$typ-line-height: 28px   !default;
 $typ-font-min:    12px   !default;
 $typ-font-max:    20px   !default;
 $typ-width-min:   600px  !default;
 $typ-width-max:   1140px !default;
+
+$typ-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 
 $typ-open-quote:  \201C  !default;
 $typ-close-quote: \201D  !default;
