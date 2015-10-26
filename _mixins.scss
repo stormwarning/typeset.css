@@ -203,7 +203,7 @@
 // @link  http://tympanus.net/codrops/css_reference/hyphens/
 // @since 0.4.0
 //
-@mixin typ-measure($max: 70, $min) {
+@mixin typ-measure($max: 70, $min: null, $center: false) {
 
   max-width: $max * 1ch;
   hyphenate-limit-chars: 6 3 2;
@@ -218,6 +218,13 @@
   } @elseif $min != null {
 
     @warn "✘ ‘#{$min}’ is not a valid value.";
+
+  }
+
+  @if $center != false {
+
+    margin-right: auto;
+    margin-left: auto;
 
   }
 
