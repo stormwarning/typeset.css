@@ -1,0 +1,29 @@
+{
+  "name": "typeset.css",
+  "version": "0.5.1",
+  "homepage": "https://github.com/stormwarning/typeset.css",
+  "authors": [
+    "Jeff Nelson <rustyangel@gmail.com>"
+  ],
+  "description": "Helps inform your typographic choices, without dictating—as much as possible—your visual design.",
+  "main": "_typeset.scss",
+  "keywords": [
+    "css",
+    "sass",
+    "scss",
+    "responsive",
+    "typography",
+    "typographic",
+    "baseline",
+    "style",
+    "opentype"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stormwarning/typeset.css.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stormwarning/typeset.css/issues"
+  }
+}
