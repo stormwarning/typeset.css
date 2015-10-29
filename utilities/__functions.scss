@@ -1,0 +1,20 @@
+//
+// Internal mixins & functions.
+//
+// @package Typeset.css
+//
+
+//
+// Strip units from values.
+//
+// @access  private
+// @param   {str}   $unit A value with a unit
+// @example
+//     _strip-units(10px);
+// @since   0.1.0
+//
+@function _strip-units($unit) {
+
+  @return $unit / ($unit * 0 + 1);
+
+}

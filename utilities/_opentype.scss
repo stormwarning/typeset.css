@@ -1,0 +1,71 @@
+//
+// Opentype feature settings.
+//
+// Fakes "inheritance" of `font-feature-settings` using a baseline settings
+// variable.
+//
+// @access  public
+// @param   {list} $feature  A list of tag–value pairs
+// @return  {list} $features Updated list of tag–value pairs.
+// @example
+//     .class {
+//       font-feature-settings: opentype("kern" 1);
+//     }
+// @since   0.1.0
+//
+@function opentype($feature...) {
+
+  $features: $typ-ot-base;
+
+  @if length($feature) > 0 {
+
+    @each $pair in $feature {
+
+      $tag: nth($pair, 1);
+      $nth: index($typ-ot-base, $tag 0) or index($typ-ot-base, $tag 1);
+
+      // Setting exists so modify the value.
+      @if type-of($nth) == number {
+
+        $step: ();
+
+        @if $nth > 1 {
+
+          @for $i from 1 through $nth - 1 {
+
+            $step: append($step, nth($features, $i), comma);
+
+          }
+
+        }
+
+        $step: append($step, $pair, comma);
+
+        @if $nth < length($features) {
+
+          @for $i from $nth + 1 through length($features) {
+
+            $step: append($step, nth($features, $i), comma);
+
+          }
+
+        }
+
+        $features: $step;
+
+      }
+
+      // Setting not already in list so add it.
+      @else {
+
+        $features: append($features, $pair);
+
+      }
+
+    }
+
+  }
+
+  @return $features;
+
+}

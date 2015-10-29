@@ -1,0 +1,52 @@
+//
+// @package Typeset.css
+//
+
+//
+// Text-selection.
+//
+::-moz-selection {
+  color: inherit;
+  text-shadow: inherit;
+  background-color: #accef7;
+}
+
+::selection {
+  color: inherit;
+  text-shadow: inherit;
+  background-color: #accef7;
+}
+
+//
+// Input placeholder.
+//
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.6;
+}
+
+:-moz-placeholder {
+  color: inherit;
+  opacity: 0.6;
+}
+
+::-moz-placeholder {
+  color: inherit;
+  opacity: 0.6;
+}
+
+:-ms-input-placeholder {
+  color: inherit;
+  opacity: 0.6;
+}
+
+//
+// 
+//
+html {
+  @include typ-font-size($typ-font-size);
+
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: 100%;
+}

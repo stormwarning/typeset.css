@@ -1,0 +1,127 @@
+@if $typ-use-opentype == true {
+
+  //
+  // Opentype settings.
+  //
+  // From Kenneth Ormandy’s normalize-opentype project.
+  //
+  // @see     opentype()
+  // @link    http://kennethormandy.com/journal/normalize-opentype-css
+  // @package Typeset.css
+  //
+
+  //
+  // Baseline Opentype features.
+  //
+  // @link http://www.microsoft.com/typography/otspec/featurelist.htm
+  //
+  $typ-ot-base: (
+    "kern" 1,
+    "liga" 1,
+    "calt" 1,
+    "pnum" 1,
+    "tnum" 0,
+    "onum" 1,
+    "lnum" 0,
+    "dlig" 0
+  ) !default;
+
+  //
+  // Main Opentype feature settings.
+  //
+  // Turn on kerning, standard ligatures, and proportional, oldstyle numerals.
+  // Turn off all other ligatures, tabular, lining numerals, and alternates.
+  //
+  html,
+  body,
+  table {
+    font-feature-settings: $typ-ot-base;
+  }
+
+  //
+  // Turn on discretionary ligatures for larger headings.
+  //
+  h1,
+  h2,
+  h3 {
+    font-feature-settings: opentype("dlig" 1);
+  }
+
+  //
+  // Acronyms and initializations.
+  //
+  // Turn on small caps for upper and lowercase letters.
+  //
+  abbr {
+    text-transform: uppercase;
+    font-feature-settings: opentype("smcp" 1, "c2sc" 1);
+  }
+
+  //
+  // @todo Turn on diagonal fractions where appropriate.
+  //
+  time {
+    font-feature-settings: opentype();
+  }
+
+  //
+  // Monospaced text.
+  //
+  // Turn off kerning and ligatures.
+  // Turn on lining, tabular numerals, slashed zero.
+  //
+  pre,
+  kbd,
+  samp,
+  code {
+    font-feature-settings: opentype("kern" 0, "liga" 0, "dlig" 0, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1);
+  }
+
+  //
+  // Superscript text.
+  //
+  // Turn on proper superscript numerals.
+  //
+  sup {
+    font-feature-settings: opentype("sups" 1);
+  }
+
+  //
+  // Subscript text.
+  //
+  // Turn on proper subscript numerals.
+  //
+  sub {
+    font-feature-settings: opentype("subs" 1);
+  }
+
+  //
+  // Form text.
+  //
+  // Turn on lining, proportional numerals without clarified zeros.
+  //
+  // @todo Additional input modes
+  // @see  developer.mozilla.org/en/docs/Web/HTML/Element/Input#attr-inputmode
+  //
+  input[type="color"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="number"],
+  input[type="range"],
+  input[type="tel"],
+  input[type="week"] {
+    font-feature-settings: opentype("kern" 0, "onum" 0, "lnum" 1, "zero" 0);
+  }
+
+  //
+  // Table data.
+  //
+  // Turn on tabular, lining numerals and slashed zero.
+  //
+  tbody,
+  caption {
+    font-feature-settings: opentype("pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1);
+  }
+
+}

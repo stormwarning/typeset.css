@@ -1,0 +1,82 @@
+@if $typ-use-headings == true {
+
+  //
+  // Headings 1–6.
+  //
+  // @package Typeset.css
+  //
+
+  //
+  // Heading font-size scale.
+  //
+  // $typ-heading-ratio: $golden !default;
+  $typ-h1-size: 36px !default;
+  $typ-h2-size: 30px !default;
+  $typ-h3-size: 24px !default;
+  $typ-h4-size: 20px !default;
+  $typ-h5-size: 16px !default;
+  $typ-h6-size: 14px !default;
+
+  //
+  // Shared heading properties.
+  //
+  // Single-direction margin for vertical rhythm, `auto` text rendering instead
+  // of `optimizeLegibility` for performance, and inherited colour on link
+  // children for class.
+  //
+  // @link https://bocoup.com/weblog/text-rendering/
+  //
+  %#{$typ-namespace}heading {
+    margin-top: 0;
+    margin-bottom: ($typ-line-height / 2);
+    text-rendering: auto;
+
+    a {
+      color: inherit;
+    }
+  }
+
+
+  h1,
+  .#{$typ-namespace}alpha {
+    @extend %#{$typ-namespace}heading;
+
+    @include typ-font-size($typ-h1-size);
+  }
+
+  h2,
+  .#{$typ-namespace}beta {
+    @extend %#{$typ-namespace}heading;
+
+    @include typ-font-size($typ-h2-size);
+  }
+
+  h3,
+  .#{$typ-namespace}gamma {
+    @extend %#{$typ-namespace}heading;
+
+    @include typ-font-size($typ-h3-size);
+  }
+
+  h4,
+  .#{$typ-namespace}delta {
+    @extend %#{$typ-namespace}heading;
+
+    @include typ-font-size($typ-h4-size);
+  }
+
+  h5,
+  .#{$typ-namespace}epsilon {
+    @extend %#{$typ-namespace}heading;
+
+    @include typ-font-size($typ-h5-size);
+  }
+
+  h6,
+  .#{$typ-namespace}zeta {
+    @extend %#{$typ-namespace}heading;
+
+    @include typ-font-size($typ-h6-size);
+  }
+
+}

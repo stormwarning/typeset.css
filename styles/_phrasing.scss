@@ -1,0 +1,43 @@
+//
+// Abbreviations & acronyms.
+//
+abbr {
+
+  &[title] {
+    cursor: help;
+    border-bottom: 1px dotted;
+  }
+}
+
+//
+// Small print.
+//
+small {
+  font-size: 1.5ex;
+  font-weight: normal;
+}
+
+//
+//
+//
+mark {
+  padding: 0.2em;
+}
+
+//
+// Codeblocks.
+//
+pre {
+  margin-top: 0;
+  margin-bottom: $typ-line-height;
+
+  code {
+    word-wrap: normal;
+    white-space: pre-wrap;
+  }
+}
+
+code {
+  font-family: monospace;
+  white-space: pre;
+}

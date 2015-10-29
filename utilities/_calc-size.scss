@@ -1,0 +1,41 @@
+//
+// Font-size with calc() & vw units.
+//
+// @param {str} $min-font    Minimum font-size
+// @param {str} $max-font    Maximum font-size
+// @param {str} $min-width   Minimum browser width
+// @param {str} $max-width   Maximum browser width
+// @param {int} $min-leading Minimum line-height
+// @param {int} $max-leading Maximum line-height
+// @since 0.1.0
+//
+@mixin typ-calc-size($min-font, $max-font, $min-width, $max-width, $min-leading: auto, $max-leading: auto) {
+
+  $_min-font:  _strip-units($min-font);
+  $_max-font:  _strip-units($max-font);
+  $_min-width: _strip-units($min-width);
+  $_max-width: _strip-units($max-width);
+
+  font-size: $min-font;
+
+  @if ($min-leading != auto and type-of($min-leading) == number) {
+    line-height: $min-leading;
+  }
+
+  @media (min-width: $min-width) {
+    font-size: calc(#{$min-font} + (#{$_max-font} - #{$_min-font}) * ((100vw - #{$min-width}) / (#{$_max-width} - #{$_min-width})));
+
+    @if ($min-leading != auto and type-of($min-leading) == number) {
+      line-height: calc(#{$min-leading} + (#{$max-leading} - #{$min-leading}) * ((100vw - #{$min-width}) / (#{$_max-width} - #{$_min-width})));
+    }
+  }
+
+  @media (min-width: $max-width) {
+    font-size: $max-font;
+
+    @if ($max-leading != auto and type-of($max-leading) == number) {
+      line-height: $max-leading;
+    }
+  }
+
+}

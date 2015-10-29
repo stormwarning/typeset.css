@@ -1,0 +1,36 @@
+//
+// Font-size & line-height.
+//
+// Generates a rem-based font-size with pixel value fallback, as well as a
+// unitless line-height, based on base font settings.
+//
+// @example
+//     .class {
+//       @include typ-font-size(12px);
+//     }
+// @since   0.1.0
+//
+@mixin typ-font-size($font-size, $line-height: auto) {
+
+  font-size: $font-size;
+  font-size: ($font-size / $typ-font-size) * 1rem;
+
+  @if $line-height == auto {
+
+    line-height: ceil($font-size / $typ-line-height) * ($typ-line-height / $font-size);
+
+  } @else {
+
+    @if (type-of($line-height) == number or $line-height == inherit or $line-height == normal) {
+
+      line-height: $line-height;
+
+    } @elseif ($line-height != none and $line-height != false) {
+
+      @warn "✘ ‘#{$line-height}’ is not a valid value for `line-height`.";
+
+    }
+
+  }
+
+}

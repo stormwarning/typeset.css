@@ -1,0 +1,28 @@
+//
+// Lists.
+//
+// Remove extra vertical space of nested lists.
+//
+dl,
+ol,
+ul {
+  margin-top: 0;
+  margin-bottom: $typ-line-height;
+}
+
+li {
+
+  > ul,
+  > ol {
+    margin-bottom: 0;
+  }
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-bottom: ($typ-line-height / 2);
+  margin-left: 0;
+}

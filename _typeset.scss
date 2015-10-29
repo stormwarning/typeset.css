@@ -1,19 +1,26 @@
 /*! Typeset.css v0.3.1 -- @stormwarning */
 @import "settings";
-@import "mixins";
+@import "utilities/_functions";
+
+//
+// Typographic utilities.
+//
+@import "utilities/ampersand";
+@import "utilities/blockquote";
+@import "utilities/calc-size";
+@import "utilities/dropcap";
+@import "utilities/font-size";
+@import "utilities/measure";
+@import "utilities/opentype";
+@import "utilities/tracking";
 
 //
 // Basic typographic styles.
 //
-@import "partials/base.global";
-@import "partials/base.headings";
-@import "partials/base.opentype";
-@import "partials/base.paragraphs";
-@import "partials/base.quotations";
-
-//
-// Fancy typographic elements.
-//
-@import "partials/object.ampersand";
-@import "partials/object.blockquote";
-@import "partials/object.dropcap";
+@import "styles/base";
+@import "styles/opentype";
+@import "styles/headings";
+@import "styles/lists";
+@import "styles/paragraphs";
+@import "styles/phrasing";
+@import "styles/quotations";
