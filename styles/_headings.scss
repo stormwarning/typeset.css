@@ -29,6 +29,7 @@
   %#{$typ-namespace}heading {
     margin-top: 0;
     margin-bottom: ($typ-line-height / 2);
+    line-height: 1.1;
     text-rendering: auto;
 
     a {
@@ -41,42 +42,42 @@
   .#{$typ-namespace}alpha {
     @extend %#{$typ-namespace}heading;
 
-    @include typ-font-size($typ-h1-size);
+    @include typ-font-size($typ-h1-size, false);
   }
 
   h2,
   .#{$typ-namespace}beta {
     @extend %#{$typ-namespace}heading;
 
-    @include typ-font-size($typ-h2-size);
+    @include typ-font-size($typ-h2-size, false);
   }
 
   h3,
   .#{$typ-namespace}gamma {
     @extend %#{$typ-namespace}heading;
 
-    @include typ-font-size($typ-h3-size);
+    @include typ-font-size($typ-h3-size, false);
   }
 
   h4,
   .#{$typ-namespace}delta {
     @extend %#{$typ-namespace}heading;
 
-    @include typ-font-size($typ-h4-size);
+    @include typ-font-size($typ-h4-size, false);
   }
 
   h5,
   .#{$typ-namespace}epsilon {
     @extend %#{$typ-namespace}heading;
 
-    @include typ-font-size($typ-h5-size);
+    @include typ-font-size($typ-h5-size, false);
   }
 
   h6,
   .#{$typ-namespace}zeta {
     @extend %#{$typ-namespace}heading;
 
-    @include typ-font-size($typ-h6-size);
+    @include typ-font-size($typ-h6-size, false);
   }
 
 }
