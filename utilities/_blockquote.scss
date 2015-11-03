@@ -18,6 +18,7 @@
 //     }
 //
 @mixin typ-blockquote($cite-flourish: "\2014") {
+  margin: 0 0 $typ-line-height;
 
   > p {
 
