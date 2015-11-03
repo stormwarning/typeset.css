@@ -4,7 +4,8 @@
 // @package Typeset.css
 //
 p {
-  margin: auto 0 $typ-line-height;
+  margin-top: 0;
+  margin-bottom: $typ-line-height;
 
   &.lede,
   &.lead {
