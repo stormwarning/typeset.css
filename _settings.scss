@@ -28,12 +28,15 @@ $typ-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $typ-open-quote:  \201C  !default;
 $typ-close-quote: \201D  !default;
 
+$typ-body-color:  #333;
+$typ-bg-color:    #fff;
+
 //
 // Option flags.
 //
-// @see _base.headings.scss
-// @see _base.opentype.scss
-// @see _object.ampersand.scss
+// @see _headings.scss
+// @see _opentype.scss
+// @see _ampersand.scss
 //
 $typ-use-headings:  false !default;
 $typ-use-opentype:  false !default;

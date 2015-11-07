@@ -1,4 +1,6 @@
 //
+// High-, page-level text styles.
+//
 // @package Typeset.css
 //
 
@@ -41,7 +43,7 @@
 }
 
 //
-// 
+// Page-level text settings.
 //
 html {
   @include typ-font-size($typ-font-size);
@@ -49,4 +51,16 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-size-adjust: 100%;
+}
+
+//
+// Set standard text colour.
+//
+// For better contrast, use a colour lighter than `#000` for text on a white
+// background. By default, `<body>` has no `background-color` so let's
+// define one.
+//
+body {
+  color: $typ-body-color;
+  background-color: $typ-bg-color;
 }
