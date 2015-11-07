@@ -1,7 +1,10 @@
 //
-// Lists.
+// List style resets.
 //
-// Remove extra vertical space of nested lists.
+// Reset vertical margins of list blocks. Remove extra vertical space of 
+// nested lists.
+//
+// @package Typeset.css
 //
 dl,
 ol,
@@ -18,6 +21,11 @@ li {
   }
 }
 
+//
+// Definition lists.
+//
+// Reset margins & increase weight of `<dt>` elements.
+//
 dt {
   font-weight: bold;
 }

@@ -1,5 +1,13 @@
 //
+// Phrasing-level elements.
+//
+// @package Typeset.css
+//
+
+//
 // Abbreviations & acronyms.
+//
+// Visual indication of an available title attribute.
 //
 abbr {
 
@@ -10,34 +18,27 @@ abbr {
 }
 
 //
-// Small print.
+// Codeblocks.
 //
-small {
-  font-size: 1.5ex;
-  font-weight: normal;
+code {
+  font-family: monospace;
+  white-space: pre;
 }
 
 //
+// Highlighted text.
 //
+// Add a small amount of padding to give the text some room within
+// the background colour.
 //
 mark {
   padding: 0.2em;
 }
 
 //
-// Codeblocks.
+// Small print.
 //
-pre {
-  margin-top: 0;
-  margin-bottom: $typ-line-height;
-
-  code {
-    word-wrap: normal;
-    white-space: pre-wrap;
-  }
-}
-
-code {
-  font-family: monospace;
-  white-space: pre;
+small {
+  font-size: 1.5ex;
+  font-weight: normal;
 }
