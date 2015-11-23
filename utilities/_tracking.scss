@@ -4,18 +4,26 @@
 // Enter tracking values from Photoshop mockups and convert to something CSS
 // understands as a `letter-spacing` value.
 //
-// @param   {int} $val Value (negative or positive) to adjust tracking
+// @param   {int}  $val         Value (negative or positive) to adjust tracking
+// @param   {bool} $is-centered Centered text flag
 // @example
 //     .class {
 //       @include typ-tracking(-50);
 //     }
 // @since   0.3.0
 //
-@mixin typ-tracking($val) {
+@mixin typ-tracking($val, $is-centered: false) {
 
   @if type-of($val) == number {
 
-    letter-spacing: ($val / 1000) * 1em;
+    $space: ($val / 1000) * 1em;
+    letter-spacing: $space;
+
+    @if $is-centered == true {
+
+      margin-left: $space;
+
+    }
 
   } @else {
 
