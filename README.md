@@ -3,11 +3,13 @@
 ![Bower version](https://img.shields.io/bower/v/typeset.css.svg?style=flat-square)
 [![GitHub Issues](https://img.shields.io/github/issues/stormwarning/typeset.css.svg?style=flat-square)](https://github.com/stormwarning/typeset.css/issues)
 
-`Typeset.css` helps inform your typographic choices, without dictating—as much as possible—your visual design.
+`Typeset.css` is a Sass library to help inform good typographic choices, without dictating—as much as possible—your visual design.
 
 ## Installation
+Install using either `npm` or `bower`, or download the latest release from GitHub and include in your project manually.
+
 ```shell
-bower install --save-dev typeset.css
+npm install --save-dev typeset.css
 ```
 
 Remember to add `@import "[INSTALLATION_PATH]/typeset.css/typeset"` to your primary Sass file.
