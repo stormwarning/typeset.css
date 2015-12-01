@@ -28,8 +28,8 @@ $typ-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $typ-open-quote:  \201C  !default;
 $typ-close-quote: \201D  !default;
 
-$typ-body-color:  #333;
-$typ-bg-color:    #fff;
+$typ-body-color:  #333   !default;
+$typ-bg-color:    #fff   !default;
 
 //
 // Option flags.
