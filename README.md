@@ -1,6 +1,9 @@
 # Typeset.css
 
+[![npm](https://img.shields.io/npm/v/typeset.css.svg?style=flat-square)](https://www.npmjs.com/package/typeset.css)
 ![Bower version](https://img.shields.io/bower/v/typeset.css.svg?style=flat-square)
+[![npm](https://img.shields.io/npm/dt/typeset.css.svg?style=flat-square)](https://www.npmjs.com/package/typeset.css)
+![David](https://img.shields.io/david/stormwarning/typeset.css.svg?style=flat-square)
 [![GitHub Issues](https://img.shields.io/github/issues/stormwarning/typeset.css.svg?style=flat-square)](https://github.com/stormwarning/typeset.css/issues)
 
 `Typeset.css` is a Sass library to help inform good typographic choices, without dictating—as much as possible—your visual design.
