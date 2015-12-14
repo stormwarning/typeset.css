@@ -4,7 +4,7 @@
 // @link  http://tympanus.net/codrops/css_reference/hyphens/
 // @since 0.4.0
 //
-@mixin typ-measure($max: 70, $min: null, $center: false) {
+@mixin typ-measure($max: 70, $min: null, $center: null) {
 
   max-width: $max * 1ch;
   hyphenate-limit-chars: 6 3 2;
@@ -22,10 +22,15 @@
 
   }
 
-  @if $center != false {
+  @if $center == true {
 
     margin-right: auto;
     margin-left: auto;
+
+  } @elseif $center == false {
+
+    margin-right: 0;
+    margin-left: 0;
 
   }
 
