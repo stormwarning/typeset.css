@@ -20,14 +20,17 @@ q {
     content: close-quote;
   }
 
-  q::before {
-    content: "\201C";
-    content: open-quote;
-  }
+  q {
 
-  q::after {
-    content: "\201D";
-    content: close-quote;
+    &::before {
+      content: "\201c";
+      content: open-quote;
+    }
+
+    &::after {
+      content: "\201d";
+      content: close-quote;
+    }
   }
 }
 
@@ -37,13 +40,34 @@ q {
 blockquote {
   quotes: "#{$typ-open-quote}" "#{$typ-close-quote}";
 
-  q::before {
-    content: "\2018";
-    content: open-quote;
+  p {
+
+    &::before {
+      content: "#{$typ-open-quote}";
+      content: open-quote;
+    }
+
+    &::after {
+      content: "";
+      content: no-close-quote;
+    }
+
+    &:last-of-type::after {
+      content: "#{$typ-close-quote}";
+      content: close-quote;
+    }
   }
 
-  q::after {
-    content: "\2019";
-    content: close-quote;
+  q {
+
+    &::before {
+      content: "\2018";
+      content: open-quote;
+    }
+
+    q::after {
+      content: "\2019";
+      content: close-quote;
+    }
   }
 }
