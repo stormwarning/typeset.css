@@ -10,6 +10,7 @@
 // Visual indication of an available title attribute.
 //
 abbr {
+  @include typ-tracking(50);
 
   &[title] {
     cursor: help;
