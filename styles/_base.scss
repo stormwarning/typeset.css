@@ -51,6 +51,13 @@ html {
   font-size: 100%;
   line-height: $typ-line-height;
   text-size-adjust: 100%;
+
+  // Fonts on OS X will look more consistent with other systems that do not
+  // render text using sub-pixel anti-aliasing.
+  @if $typ-set-antialias == true {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  }
 }
 
 //

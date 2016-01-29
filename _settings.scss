@@ -37,10 +37,12 @@ $typ-select-bg:    #772392 !default;
 //
 // Option flags.
 //
+// @see _base.scss
 // @see _ampersand.scss
 // @see _headings.scss
 // @see _opentype.scss
 //
+$typ-set-antialias: false !default;
 $typ-use-ampersand: false !default;
 $typ-use-headings:  false !default;
 $typ-use-opentype:  false !default;
