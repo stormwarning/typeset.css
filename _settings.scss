@@ -29,16 +29,18 @@ $typ-open-quote:  “      !default;
 $typ-close-quote: ”      !default;
 $typ-quote-width: 0.41em !default;
 
-$typ-body-color:  #333   !default;
-$typ-bg-color:    #fff   !default;
+$typ-body-color:   #333    !default;
+$typ-bg-color:     #fff    !default;
+$typ-select-color: #fff    !default;
+$typ-select-bg:    #772392 !default;
 
 //
 // Option flags.
 //
+// @see _ampersand.scss
 // @see _headings.scss
 // @see _opentype.scss
-// @see _ampersand.scss
 //
+$typ-use-ampersand: false !default;
 $typ-use-headings:  false !default;
 $typ-use-opentype:  false !default;
-$typ-use-ampersand: false !default;

@@ -5,18 +5,20 @@
 //
 
 //
-// Text-selection.
+// Set root font-size.
 //
-::-moz-selection {
-  color: inherit;
-  text-shadow: inherit;
-  background-color: #accef7;
+:root {
+  font-size: $typ-font-size;
 }
 
-::selection {
-  color: inherit;
-  text-shadow: inherit;
-  background-color: #accef7;
+//
+// Custom text-selection style.
+//
+@each $prefix in "::-moz-selection", "::selection" {
+  #{$prefix} {
+    color: $typ-select-color;
+    background-color: $typ-select-bg;
+  }
 }
 
 //
@@ -46,10 +48,8 @@
 // Page-level text settings.
 //
 html {
-  @include typ-font-size($typ-font-size);
-
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
+  font-size: 100%;
+  line-height: $typ-line-height;
   text-size-adjust: 100%;
 }
 
