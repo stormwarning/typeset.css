@@ -1,16 +1,25 @@
-@if $typ-use-opentype == true {
+//
+// Custom ampersand font-face.
+//
+// Set ampersands in a different typeface using `unicode-range`.
+//
+// @link 24ways.org/2011/creating-custom-font-stacks-with-unicode-range
+// @package Typeset.css
+//
+$typ-ampersand-face:     Ampersand !default;
+$typ-ampersand-source:   local("Georgia"),
+                         local("Garamond"),
+                         local("Palatino"),
+                         local("Book Antiqua") !default;
+$typ-ampersand-fallback: local("Georgia") !default;
 
-  //
-  // Custom ampersand font-face.
-  //
-  // Set ampersands in a different typeface using `unicode-range`.
-  //
-  // @link 24ways.org/2011/creating-custom-font-stacks-with-unicode-range
-  // @package Typeset.css
-  //
-  $typ-ampersand-face:     Ampersand !default;
-  $typ-ampersand-source:   local("Georgia"), local("Garamond"), local("Palatino"), local("Book Antiqua") !default;
-  $typ-ampersand-fallback: local("Georgia") !default;
+
+@mixin typ-ampersand($font-family...) {
+  font-family: $font-family;
+}
+
+
+@if $typ-use-opentype == true {
 
   //
   // Ampersand `@font-face` setup.
@@ -25,12 +34,6 @@
     font-family: "#{$typ-ampersand-face}";
     src: $typ-ampersand-fallback;
     unicode-range: U+270C;
-  }
-
-  @mixin typ-ampersand($font-family...) {
-
-    font-family: $font-family;
-
   }
 
   //
