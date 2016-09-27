@@ -5,7 +5,7 @@
 //
 p {
   margin-top: 0;
-  margin-bottom: $typ-line-height;
+  margin-bottom: $typ-leading;
 
   &.lede,
   &.lead {
@@ -24,8 +24,8 @@ p {
   p {
 
     + p {
-      margin-top: -#{$typ-line-height};
-      text-indent: $typ-line-height;
+      margin-top: -#{$typ-leading};
+      text-indent: $typ-leading;
     }
   }
 }

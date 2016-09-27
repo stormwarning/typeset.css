@@ -1,7 +1,7 @@
 //
 // List style resets.
 //
-// Reset vertical margins of list blocks. Remove extra vertical space of 
+// Reset vertical margins of list blocks. Remove extra vertical space of
 // nested lists.
 //
 // @package Typeset.css
@@ -10,7 +10,7 @@ dl,
 ol,
 ul {
   margin-top: 0;
-  margin-bottom: $typ-line-height;
+  margin-bottom: $typ-leading;
 }
 
 li {
@@ -31,6 +31,6 @@ dt {
 }
 
 dd {
-  margin-bottom: ($typ-line-height / 2);
+  margin-bottom: ($typ-leading / 2);
   margin-left: 0;
 }

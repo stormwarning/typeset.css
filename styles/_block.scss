@@ -11,7 +11,7 @@
 // Address blocks.
 //
 address {
-  margin-bottom: $typ-line-height;
+  margin-bottom: $typ-leading;
   font-style: normal;
   line-height: inherit;
 }
@@ -20,7 +20,7 @@ address {
 // Figure blocks.
 //
 figure {
-  margin: 0 0 $typ-line-height;
+  margin: 0 0 $typ-leading;
 }
 
 //
@@ -28,7 +28,7 @@ figure {
 //
 pre {
   margin-top: 0;
-  margin-bottom: $typ-line-height;
+  margin-bottom: $typ-leading;
 
   code {
     word-wrap: normal;
