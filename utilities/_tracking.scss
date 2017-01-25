@@ -17,21 +17,20 @@
 @mixin typ-tracking($val, $is-centered: false) {
 
   @if type-of($val) == number {
-
-    $space: ($val / 1000) * 1em;
-    letter-spacing: $space;
-    font-kerning: normal;
-
-    @if $is-centered == true {
-
-      margin-left: $space;
-
+    @if unitless($val) {
+      $space: ($val / 1000) * 1em;
+    } @else {
+      $space: $val;
     }
 
+    @if $is-centered == true {
+      margin-left: $space;
+    }
+
+    font-kerning: normal;
+    letter-spacing: $space;
   } @else {
-
     @warn "✘ ‘#{$val}’ is not a number value.";
-
   }
 
 }
