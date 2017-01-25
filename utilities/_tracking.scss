@@ -17,10 +17,10 @@
 @mixin typ-tracking($val, $is-centered: false) {
 
   @if type-of($val) == number {
+    $space: $val;
+
     @if unitless($val) {
       $space: ($val / 1000) * 1em;
-    } @else {
-      $space: $val;
     }
 
     @if $is-centered == true {
