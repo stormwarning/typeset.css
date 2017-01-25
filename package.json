@@ -1,6 +1,6 @@
 {
   "name": "typeset.css",
-  "version": "0.5.19",
+  "version": "0.6.0",
   "homepage": "http://stormwarning.github.io/typeset.css/",
   "description": "A Sass library to help inform good typographic choices, without dictating—as much as possible—your visual design.",
   "keywords": [
