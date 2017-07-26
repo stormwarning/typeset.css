@@ -1,5 +1,7 @@
 # Typeset.css
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/stormwarning/typeset.css.svg)](https://greenkeeper.io/)
+
 [![npm](https://img.shields.io/npm/v/typeset.css.svg?style=flat-square)](https://www.npmjs.com/package/typeset.css)
 ![Bower version](https://img.shields.io/bower/v/typeset.css.svg?style=flat-square)
 [![npm](https://img.shields.io/npm/dt/typeset.css.svg?style=flat-square)](https://www.npmjs.com/package/typeset.css)
