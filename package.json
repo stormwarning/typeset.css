@@ -1,31 +1,30 @@
 {
   "name": "typeset.css",
-  "version": "0.6.1",
-  "homepage": "http://stormwarning.github.io/typeset.css/",
   "description": "A Sass library to help inform good typographic choices, without dictating—as much as possible—your visual design.",
+  "license": "ISC",
+  "author": "Jeff Nelson <rustyangel@gmail.com> (http://tidaltheory.co)",
+  "homepage": "https://stormwarning.github.io/typeset.css/",
+  "repository": "stormwarning/typeset.css",
+  "bugs": "https://github.com/stormwarning/typeset.css/issues",
+  "version": "0.6.1",
+  "main": "_typeset.scss",
+  "scripts": {
+    "docs:build": "vuepress build docs",
+    "docs:dev": "vuepress dev docs"
+  },
+  "devDependencies": {
+    "@zazen/eslint-config": "^0.1.1",
+    "@zazen/stylelint-config": "^0.1.1",
+    "vuepress": "^0.5.1"
+  },
   "keywords": [
+    "baseline",
     "css",
+    "opentype",
+    "responsive",
     "sass",
     "scss",
-    "responsive",
-    "typography",
-    "baseline",
     "style",
-    "opentype"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/stormwarning/typeset.css.git"
-  },
-  "bugs": {
-    "url": "https://github.com/stormwarning/typeset.css/issues"
-  },
-  "author": {
-    "name": "Jeff Nelson",
-    "email": "rustyangel@gmail.com",
-    "url": "http://tidaltheory.co/"
-  },
-  "contributors": {},
-  "license": "MIT",
-  "main": "_typeset.scss"
+    "typography"
+  ]
 }
