@@ -13,7 +13,7 @@
     "docs:dev": "vuepress dev docs"
   },
   "devDependencies": {
-    "@zazen/eslint-config": "^0.1.1",
+    "@zazen/eslint-config": "^0.2.0",
     "@zazen/stylelint-config": "^0.1.1",
     "vuepress": "^0.5.1"
   },
