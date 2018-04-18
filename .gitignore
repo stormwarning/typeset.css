@@ -1,25 +1,5 @@
-# OS FILES ============================================================
-.DS_Store
-.DS_Store?
-.AppleDouble
-.LSOverride
-Icon?
-
-## THUMBNAILS
-._*
-ehthumbs.db
-Thumbs.db
-
-## EXTERNAL DISKS
-.Spotlight-V100
-.Trashes
-
-
-# DEPENDENCIES ========================================================
 node_modules/
-bower_components/
-
-
-# BUILD FILES =========================================================
 .sass-cache
-npm-debug.log
+*.log
+.temp
+dist

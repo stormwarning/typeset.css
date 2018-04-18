@@ -1,31 +1,77 @@
 {
   "name": "typeset.css",
-  "version": "0.6.1",
-  "homepage": "http://stormwarning.github.io/typeset.css/",
   "description": "A Sass library to help inform good typographic choices, without dictating—as much as possible—your visual design.",
+  "license": "ISC",
+  "author": "Jeff Nelson <rustyangel@gmail.com> (https://tidaltheory.co)",
+  "homepage": "https://stormwarning.github.io/typeset.css/",
+  "repository": "stormwarning/typeset.css",
+  "bugs": "https://github.com/stormwarning/typeset.css/issues",
+  "version": "0.6.1",
+  "main": "_typeset.scss",
+  "scripts": {
+    "docs:build": "vuepress build docs",
+    "docs:dev": "vuepress dev docs"
+  },
+  "devDependencies": {
+    "@zazen/eslint-config": "^0.2.0",
+    "@zazen/stylelint-config": "^0.1.1",
+    "lint-staged": "^7.0.4",
+    "prettier-eslint-cli": "^4.7.1",
+    "remark-cli": "^5.0.0",
+    "remark-contributors": "^3.1.0",
+    "remark-github": "^7.0.3",
+    "remark-preset-lint-markdown-style-guide": "^2.1.1",
+    "remark-toc": "^5.0.0",
+    "stylelint": "^9.2.0",
+    "vuepress": "^0.6.0",
+    "yorkie": "^1.0.3"
+  },
   "keywords": [
+    "baseline",
     "css",
+    "opentype",
+    "responsive",
     "sass",
     "scss",
-    "responsive",
-    "typography",
-    "baseline",
     "style",
-    "opentype"
+    "typography"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/stormwarning/typeset.css.git"
+  "gitHooks": {
+    "pre-commit": "lint-staged"
   },
-  "bugs": {
-    "url": "https://github.com/stormwarning/typeset.css/issues"
+  "lint-staged": {
+    "**/*.js": [
+      "prettier-eslint --write",
+      "git add"
+    ],
+    "**/*.scss": [
+      "stylelint --fix",
+      "git add"
+    ]
   },
-  "author": {
-    "name": "Jeff Nelson",
-    "email": "rustyangel@gmail.com",
-    "url": "http://tidaltheory.co/"
-  },
-  "contributors": {},
-  "license": "MIT",
-  "main": "_typeset.scss"
+  "remarkConfig": {
+    "plugins": [
+      "preset-lint-markdown-style-guide",
+      [
+        "lint-maximum-line-length",
+        false
+      ],
+      [
+        "lint-list-item-spacing",
+        false
+      ],
+      "contributors",
+      "github",
+      "toc"
+    ],
+    "settings": {
+      "commonmark": true,
+      "bullet": "-",
+      "listItemIndent": 1,
+      "rule": "-",
+      "ruleSpaces": false,
+      "strong": "*",
+      "emphasis": "*"
+    }
+  }
 }
