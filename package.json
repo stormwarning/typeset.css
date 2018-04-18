@@ -2,7 +2,7 @@
   "name": "typeset.css",
   "description": "A Sass library to help inform good typographic choices, without dictating—as much as possible—your visual design.",
   "license": "ISC",
-  "author": "Jeff Nelson <rustyangel@gmail.com> (http://tidaltheory.co)",
+  "author": "Jeff Nelson <rustyangel@gmail.com> (https://tidaltheory.co)",
   "homepage": "https://stormwarning.github.io/typeset.css/",
   "repository": "stormwarning/typeset.css",
   "bugs": "https://github.com/stormwarning/typeset.css/issues",
@@ -17,10 +17,25 @@
     "@zazen/stylelint-config": "^0.1.1",
     "lint-staged": "^7.0.4",
     "prettier-eslint-cli": "^4.7.1",
+    "remark-cli": "^5.0.0",
+    "remark-contributors": "^3.1.0",
+    "remark-github": "^7.0.3",
+    "remark-preset-lint-markdown-style-guide": "^2.1.1",
+    "remark-toc": "^5.0.0",
     "stylelint": "^9.2.0",
     "vuepress": "^0.6.0",
     "yorkie": "^1.0.3"
   },
+  "keywords": [
+    "baseline",
+    "css",
+    "opentype",
+    "responsive",
+    "sass",
+    "scss",
+    "style",
+    "typography"
+  ],
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
@@ -34,14 +49,29 @@
       "git add"
     ]
   },
-  "keywords": [
-    "baseline",
-    "css",
-    "opentype",
-    "responsive",
-    "sass",
-    "scss",
-    "style",
-    "typography"
-  ]
+  "remarkConfig": {
+    "plugins": [
+      "preset-lint-markdown-style-guide",
+      [
+        "lint-maximum-line-length",
+        false
+      ],
+      [
+        "lint-list-item-spacing",
+        false
+      ],
+      "contributors",
+      "github",
+      "toc"
+    ],
+    "settings": {
+      "commonmark": true,
+      "bullet": "-",
+      "listItemIndent": 1,
+      "rule": "-",
+      "ruleSpaces": false,
+      "strong": "*",
+      "emphasis": "*"
+    }
+  }
 }
