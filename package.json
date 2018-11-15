@@ -13,18 +13,18 @@
     "docs:dev": "vuepress dev docs"
   },
   "devDependencies": {
-    "@zazen/eslint-config": "^0.2.0",
-    "@zazen/stylelint-config": "^0.1.1",
-    "lint-staged": "^7.0.4",
+    "@zazen/eslint-config": "^0.3.0",
+    "@zazen/stylelint-config": "^0.2.0",
+    "lint-staged": "^8.0.4",
     "prettier-eslint-cli": "^4.7.1",
-    "remark-cli": "^5.0.0",
+    "remark-cli": "^6.0.1",
     "remark-contributors": "^3.1.0",
-    "remark-github": "^7.0.3",
-    "remark-preset-lint-markdown-style-guide": "^2.1.1",
-    "remark-toc": "^5.0.0",
-    "stylelint": "^9.2.0",
-    "vuepress": "^0.6.0",
-    "yorkie": "^1.0.3"
+    "remark-github": "^7.0.4",
+    "remark-preset-lint-markdown-style-guide": "^2.1.2",
+    "remark-toc": "^5.1.0",
+    "stylelint": "^9.8.0",
+    "vuepress": "^0.14.5",
+    "yorkie": "^2.0.0"
   },
   "keywords": [
     "baseline",
