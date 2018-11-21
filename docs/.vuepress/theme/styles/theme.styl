@@ -1,18 +1,22 @@
-@require './config'
+@require '~@app/style/config'
 @require './nprogress'
 @require './code'
 @require './custom-blocks'
 @require './arrow'
+@require './wrapper'
+@require './toc'
+
+:root
+  font-size 18px
 
 html, body
   padding 0
   margin 0
 
 body
-  font-family -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
+  font-family "adelle-sans", sans-serif
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
-  font-size 16px
   color $textColor
 
 .page
@@ -53,9 +57,7 @@ body
   overflow-y auto
 
 .content:not(.custom)
-  max-width $contentWidth
-  margin 0 auto
-  padding 2rem 2.5rem
+//   @extend $wrapper
   > *:first-child
     margin-top $navbarHeight
   a:hover
@@ -70,6 +72,8 @@ body
 .content.custom
   padding 0
   margin 0
+  img
+    max-width 100%
 
 a
   font-weight 500
@@ -101,17 +105,17 @@ strong
   font-weight 600
 
 h1, h2, h3, h4, h5, h6
-  font-weight 600
-  line-height 1.25
+  font-weight 300
+  line-height 1.185
   .content:not(.custom) > &
-    margin-top (0.5rem - $navbarHeight)
-    padding-top ($navbarHeight + 1rem)
+    // margin-top (0.5rem - $navbarHeight)
+    // padding-top ($navbarHeight + 1rem)
     margin-bottom 0
-    &:first-child
-      margin-top -1.5rem
-      margin-bottom 1rem
-      + p, + pre, + .custom-block
-        margin-top 2rem
+    // &:first-child
+    //   margin-top -1.5rem
+    //   margin-bottom 1rem
+    //   + p, + pre, + .custom-block
+    //     margin-top 2rem
   &:hover .header-anchor
     opacity: 1
 
@@ -119,12 +123,27 @@ h1
   font-size 2.2rem
 
 h2
-  font-size 1.65rem
-  padding-bottom .3rem
-  border-bottom 1px solid $borderColor
+  margin-top 5rem
+  font-family "adelle", serif
+  font-size 4em
+  clear both
 
 h3
-  font-size 1.35rem
+  font-size 2em
+  position relative
+  overflow hidden
+  line-height 1.3 // Prevent descenders from being cut-off by `overflow`.
+  clear both
+  &::after {
+    position relative
+    right -1rem
+    display inline-block
+    width 100%
+    margin-right -100%
+    vertical-align middle
+    border-top 1px solid rgba(#212529, 0.1)
+    content ""
+  }
 
 a.header-anchor
   font-size 0.85em
@@ -136,11 +155,21 @@ a.header-anchor
   &:hover
     text-decoration none
 
-code, kbd
+code, kbd, .line-number
   font-family source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace
 
 p, ul, ol
   line-height 1.7
+
+p
+    margin 0
+    max-width: 66ch;
+    hyphenate-limit-chars: 6 3 2;
+    hyphenate-limit-lines: 3;
+    hyphens: auto;
+    word-break: break-word;
+    * + &
+        margin-top: 1rem
 
 hr
   border 0
@@ -149,6 +178,8 @@ hr
 table
   border-collapse collapse
   margin 1rem 0
+  display: block
+  overflow-x: auto
 
 tr
   border-top 1px solid #dfe2e5
@@ -167,10 +198,13 @@ th, td
     .sidebar-mask
       display: block
   &.no-navbar
-    .content:not(.custom)
-      h1, h2, h3, h4, h5, h6
+    .content:not(.custom) > h1, h2, h3, h4, h5, h6
         margin-top 1.5rem
         padding-top 0
+    .sidebar
+      top 0
+    .custom-layout
+      padding-top 0
 
 
 @media (min-width: ($MQMobile + 1px))
@@ -180,4 +214,4 @@ th, td
     .page
       padding-left 0
 
-@require './mobile.styl'
+@require 'mobile.styl'
