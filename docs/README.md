@@ -51,7 +51,7 @@ Notable default settings; overwrite any of these in your own Sass code.
 Use these mixins & functions for simple, fine-grained control over advanced
 typography settings.
 
-#### Opentype control
+### Opentype control
 
 Opentype settings provide a lot of control over typefaces that support them.
 Browsers don't currently provide fine-grained control over the different
@@ -85,7 +85,7 @@ Default Opentype settings and an example of using the Typeset function to
 change a single option while maintaining the rest of the defaults.
 !!!
 
-#### Tracking
+### Tracking
 
 The `typ-tracking()` mixin provides an easy way to adjust `letter-spacing`.
 Using the same tracking value from Photoshop as a parameter, the mixin converts
@@ -133,7 +133,7 @@ visual center alignment.
 Using the tracking mixin on centered text.
 !!!
 
-#### Measure
+### Measure
 
 ::: tip Note
 The measure is the number of characters in a single line of a column of text.
@@ -171,13 +171,13 @@ Basic measure setting and output.
 Manually modifying the DOM with a JS library like [Hypher](https://github.com/bramstein/hypher).
 :::
 
-#### Ampersands
+### Ampersands
 
 Occasionally, you may want to set ampersands in a different typeface for a
 little extra flair. Set the `font-family` using the variables, and apply the
 class or extend it onto the element you like.
 
-#### Dropcaps
+### Dropcaps
 
 The `typ-dropcap()` mixin gives a starting point for styling the initial letter
 of a paragraph. Include it with your own styles in a class and apply the class
@@ -214,7 +214,7 @@ Basic usage of dropcap mixin.
 
 ## Defaults
 
-#### Paragraphs
+### Paragraphs
 
 Base paragraph elements don't have much extra styling applied, besides a
 single-direction margin, but there are a couple of related classes useful for
@@ -227,18 +227,15 @@ particular cases:
     <dd>Apply this on an element containing paragraphs to change the paragraph separation style.</dd>
 </dl>
 
-::: tip
 <p class="lede">A lead, or lede, paragraph in literature is the opening paragraph of an article, essay, news story or book chapter. It precedes the main body of the article, and it gives the reader the main idea of the story. In both spellings, the word rhymes with the word need.</p>
-
-The function of a paragraph is to mark a pause, setting the paragraph apart from what precedes it. If a paragraph is preceded by a title or subhead, the indent is superfluous and can therefore be omitted. On the web, the most common method of separating paragraphs is using an extra leading or a blank line. Chunks of paragraphs make skimming online content easier.
-:::
 
 ```html
 <p class="lede">...</p>
 <p>...</p>
 ```
 
-::: tip
+The function of a paragraph is to mark a pause, setting the paragraph apart from what precedes it. If a paragraph is preceded by a title or subhead, the indent is superfluous and can therefore be omitted. On the web, the most common method of separating paragraphs is using an extra leading or a blank line. Chunks of paragraphs make skimming online content easier.
+
 <section class="indented">
 
 In print, first-line indent is often used to denote a new paragraph without interrupting the flow of reading. First-line indent is appearing more online for long-form reading. Whichever method you prefer, stick with one but not both.
@@ -246,7 +243,6 @@ In print, first-line indent is often used to denote a new paragraph without inte
 <cite>The Elements of Typographic Style</cite> states that <q>at least one en [space]</q> should be used to indent paragraphs after the first, noting that that is the <q>practical minimum</q>. An em space is the most commonly used paragraph indent.
 
 </section>
-:::
 
 ```html
 <section class="indented">
@@ -255,7 +251,7 @@ In print, first-line indent is often used to denote a new paragraph without inte
 </section>
 ```
 
-#### Blockquotes
+### Blockquotes
 
 Default block quotation styles assume a particular semantic, accessible markup
 style.
@@ -271,7 +267,7 @@ style.
 </figure>
 ```
 
-#### Lists
+### Lists
 
 All lists — `<ul>`, `<ol>`, and `<dl>` — have a single-direction margin
 declaration. Nested lists have no `margin-bottom`.
@@ -281,6 +277,6 @@ clear hierarchy, and better spacing, `<dt>`s have an increased `font-weight`
 and `<dd>`s change `margin-left` to zero and a `margin-bottom` of half the base
 line-height.
 
-#### Address
+### Address
 
 `<address>` elements are for presenting contact information for the nearest ancestor (or an entire body of work). The element is updated to match regular body copy; `font-style` from italic to normal, inherited `line-height`, and `margin-bottom` matching the base line-height.
