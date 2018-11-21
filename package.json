@@ -23,7 +23,7 @@
     "remark-preset-lint-markdown-style-guide": "^2.1.2",
     "remark-toc": "^5.1.0",
     "stylelint": "^9.8.0",
-    "vuepress": "^0.14.5",
+    "vuepress": "^1.0.0-alpha.23",
     "yorkie": "^2.0.0"
   },
   "keywords": [

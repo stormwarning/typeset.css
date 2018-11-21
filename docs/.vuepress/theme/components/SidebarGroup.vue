@@ -1,40 +1,43 @@
 <template>
-  <div class="sidebar-group" :class="{ first, collapsable }">
-    <p class="sidebar-heading" :class="{ open }" @click="$emit('toggle')">
+  <div
+    class="sidebar-group"
+    :class="{ first, collapsable }"
+  >
+    <p
+      class="sidebar-heading"
+      :class="{ open }"
+      @click="$emit('toggle')"
+    >
       <span>{{ item.title }}</span>
-      <span class="arrow"
+      <span
+        class="arrow"
         v-if="collapsable"
-        :class="open ? 'up' : 'down'"></span>
+        :class="open ? 'down' : 'right'">
+      </span>
     </p>
-    <transition name="sidebar-group"
-      @enter="setHeight"
-      @after-enter="unsetHeight"
-      @before-leave="setHeight">
-      <ul class="sidebar-group-items" ref="items" v-if="open || !collapsable">
+
+    <DropdownTransition>
+      <ul
+        ref="items"
+        class="sidebar-group-items"
+        v-if="open || !collapsable"
+      >
         <li v-for="child in item.children">
           <SidebarLink :item="child"/>
         </li>
       </ul>
-    </transition>
+    </DropdownTransition>
   </div>
 </template>
 
 <script>
 import SidebarLink from './SidebarLink.vue'
+import DropdownTransition from './DropdownTransition.vue'
 
 export default {
   name: 'SidebarGroup',
   props: ['item', 'first', 'open', 'collapsable'],
-  components: { SidebarLink },
-  methods: {
-    setHeight (items) {
-      // explicitly set height so that it can be transitioned
-      items.style.height = items.scrollHeight + 'px'
-    },
-    unsetHeight (items) {
-      items.style.height = ''
-    }
-  }
+  components: { SidebarLink, DropdownTransition }
 }
 </script>
 
@@ -56,7 +59,7 @@ export default {
   font-size 1.1em
   font-weight bold
   // text-transform uppercase
-  padding-left 1.5rem
+  padding 0 1.5rem
   margin-top 0
   margin-bottom 0.5rem
   &.open, &:hover
@@ -71,7 +74,4 @@ export default {
 .sidebar-group-items
   transition height .1s ease-out
   overflow hidden
-
-.sidebar-group-enter, .sidebar-group-leave-to
-  height 0 !important
 </style>
