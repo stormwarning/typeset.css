@@ -4,15 +4,19 @@ tagline: <dfn title="transitive verb">tr.v</dfn> &nbsp;type&thinsp;·&thinsp;set
 
 ---
 
-Typeset.css is a Sass library that provides some sensible default styles,
-optional classes to use & extend as needed, and some utility functions & mixins
-to make elevating your typography simpler.
+<p class="lede ampersand">Typeset.css is a Sass library that provides some
+sensible default styles, optional classes to use & extend as needed, and some
+utility functions & mixins to make elevating your typography simpler.</p>
 
 ## Installation
 
 Install using either `npm` or `bower`, or download the
 [latest release from GitHub](https://github.com/stormwarning/typeset.css)
 and include it in your project manually.
+
+```sh
+npm install --save typeset.css
+```
 
 ::: tip Note
 Typeset.css includes no vendor-prefixed properties — use Autoprefixer or a
