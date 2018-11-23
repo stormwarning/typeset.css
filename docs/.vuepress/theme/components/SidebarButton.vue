@@ -6,23 +6,28 @@
   </div>
 </template>
 
-<style lang="stylus">
-@import '~@app/style/config'
+<style lang="scss">
+@import '../styles/abstracts/variables';
 
-.sidebar-button
-  display none
-  width 1.25rem
-  height 1.25rem
-  position absolute
-  padding 0.6rem
-  top 0.6rem
-  left 1rem
-  .icon
-    display block
-    width 1.25rem
-    height 1.25rem
+.sidebar-button {
+  position: absolute;
+  top: 0.6rem;
+  left: 1rem;
+  display: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  padding: 0.6rem;
 
-@media (max-width: $MQMobile)
-  .sidebar-button
-    display block
+  .icon {
+    display: block;
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+@media (max-width: $width-small) {
+  .sidebar-button {
+    display: block;
+  }
+}
 </style>

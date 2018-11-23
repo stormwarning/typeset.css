@@ -1,0 +1,71 @@
+@import 'node_modules/open-color/open-color.scss';
+
+
+$colormap: (
+    grey-0: $oc-gray-0,
+    grey-1: $oc-gray-1,
+    grey-3: $oc-gray-3,
+    grey-7: $oc-gray-7,
+    grey-9: $oc-gray-9,
+    blue-6: $oc-blue-6,
+    cyan-4: $oc-cyan-4,
+    cyan-7: $oc-cyan-7,
+);
+
+$font-sans: 'adelle-sans', sans-serif;
+$font-serif: 'adelle', serif;
+$font-mono: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', 'Courier', monospace;
+$default-font-size: 16px;
+$base-line-height:  1.5;
+
+$typ-use-headings:  true;
+$typ-use-opentype:  true;
+$typ-use-ampersand: true;
+$typ-set-antialias: true;
+
+$typ-font-family:        "adelle-sans", sans-serif;
+$typ-ampersand-source:   local("adelle"), url('/ampersand.woff') format("woff"), url('/ampersand.otf') format("otf");
+$typ-ampersand-fallback: $typ-font-family;
+
+$typ-h1-size: 36px !default;
+$typ-h2-size: 30px !default;
+$typ-h3-size: 24px !default;
+$typ-h4-size: 20px !default;
+$typ-h5-size: 24px;
+$typ-h6-size: 14px !default;
+
+$typ-line-height:   1.5;
+
+$typ-ot-base: (
+    "kern" 1,
+    "liga" 1,
+    "calt" 1,
+    "pnum" 1,
+    "tnum" 0,
+    "onum" 1,
+    "lnum" 0,
+    "dlig" 0
+);
+
+$color-headings: $oc-gray-8;
+$color-text:   $oc-gray-7;
+$color-arrow:  $oc-gray-6;
+$color-border: $oc-gray-3;
+$color-accent: $oc-blue-7;
+$color-bg-code: $oc-gray-8;
+
+
+$width-small:  480px;
+$width-medium: 960px;
+$width-large:  1440px;
+
+$width-sidebar: 20rem;
+$width-content: 740px;
+$height-navbar: 3.6rem;
+$width-linenumbers: 4rem;
+
+$MQNarrow: 959px;
+$MQMobile: 719px;
+$MQMobileNarrow: 419px;
+
+$codeLang: (js ts html md vue css sass scss less stylus go java c sh yaml py);

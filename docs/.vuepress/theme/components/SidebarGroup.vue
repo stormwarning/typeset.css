@@ -35,43 +35,59 @@ import SidebarLink from './SidebarLink.vue'
 import DropdownTransition from './DropdownTransition.vue'
 
 export default {
-  name: 'SidebarGroup',
-  props: ['item', 'first', 'open', 'collapsable'],
-  components: { SidebarLink, DropdownTransition }
+    name: 'SidebarGroup',
+    props: ['item', 'first', 'open', 'collapsable'],
+    components: { SidebarLink, DropdownTransition },
 }
 </script>
 
-<style lang="stylus">
-.sidebar-group
-  &:not(.first)
-    margin-top 1em
-  .sidebar-group
-    padding-left 0.5em
-  &:not(.collapsable)
-    .sidebar-heading
-      cursor auto
-      color inherit
+<style lang="scss">
+.sidebar-group {
+  &:not(.first) {
+    margin-top: 1em;
+  }
 
-.sidebar-heading
-  color #999
-  transition color .15s ease
-  cursor pointer
-  font-size 1.1em
-  font-weight bold
+  .sidebar-group {
+    padding-left: 0.5em;
+  }
+
+  &:not(.collapsable) {
+    .sidebar-heading {
+      color: inherit;
+      cursor: auto;
+    }
+  }
+}
+
+.sidebar-heading {
   // text-transform uppercase
-  padding 0 1.5rem
-  margin-top 0
-  margin-bottom 0.5rem
-  &.open, &:hover
-    color inherit
-  .arrow
-    position relative
-    top -0.12em
-    left 0.5em
-  &:.open .arrow
-    top -0.18em
+  padding: 0 1.5rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.15s ease;
 
-.sidebar-group-items
-  transition height .1s ease-out
-  overflow hidden
+  &.open,
+  &:hover {
+    color: inherit;
+  }
+
+  .arrow {
+    position: relative;
+    top: -0.12em;
+    left: 0.5em;
+  }
+
+  &.open .arrow {
+    top: -0.18em;
+  }
+}
+
+.sidebar-group-items {
+  overflow: hidden;
+  transition: height 0.1s ease-out;
+}
 </style>

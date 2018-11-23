@@ -17,10 +17,10 @@ body
   font-family "adelle-sans", sans-serif
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
-  color $textColor
+  color $color-text
 
 .page
-  padding-left $sidebarWidth
+  padding-left $width-sidebar
 
 .navbar
   position fixed
@@ -28,10 +28,10 @@ body
   top 0
   left 0
   right 0
-  height $navbarHeight
+  height $height-navbar
   background-color #fff
   box-sizing border-box
-  border-bottom 1px solid $borderColor
+  border-bottom 1px solid $color-border
 
 .sidebar-mask
   position fixed
@@ -45,21 +45,21 @@ body
 .sidebar
   font-size 15px
   background-color #fff
-  width $sidebarWidth
+  width $width-sidebar
   position fixed
   z-index 10
   margin 0
-  top $navbarHeight
+  top $height-navbar
   left 0
   bottom 0
   box-sizing border-box
-  border-right 1px solid $borderColor
+  border-right 1px solid $color-border
   overflow-y auto
 
 .content:not(.custom)
 //   @extend $wrapper
   > *:first-child
-    margin-top $navbarHeight
+    margin-top $height-navbar
   a:hover
     text-decoration underline
   p.demo
@@ -77,12 +77,12 @@ body
 
 a
   font-weight 500
-  color $accentColor
+  color $color-accent
   text-decoration none
 
 p a code
   font-weight 400
-  color $accentColor
+  color $color-accent
 
 kbd
   background #eee
@@ -108,8 +108,8 @@ h1, h2, h3, h4, h5, h6
   font-weight 300
   line-height 1.185
   .content:not(.custom) > &
-    // margin-top (0.5rem - $navbarHeight)
-    // padding-top ($navbarHeight + 1rem)
+    // margin-top (0.5rem - $height-navbar)
+    // padding-top ($height-navbar + 1rem)
     margin-bottom 0
     // &:first-child
     //   margin-top -1.5rem
@@ -173,7 +173,7 @@ p
 
 hr
   border 0
-  border-top 1px solid $borderColor
+  border-top 1px solid $color-border
 
 table
   border-collapse collapse
@@ -191,7 +191,7 @@ th, td
   padding .6em 1em
 
 .custom-layout
-  padding-top $navbarHeight
+  padding-top $height-navbar
 
 .theme-container
   &.sidebar-open

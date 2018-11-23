@@ -147,128 +147,128 @@ export default {
 }
 </script>
 
-<style lang="stylus">
-@import '~@app/style/config';
+<style lang="scss">
+@import '../styles/abstracts/variables';
 
 .search-box {
+  position: relative;
+  display: inline-block;
+  margin-right: 1rem;
+
+  input {
     display: inline-block;
-    position: relative;
-    margin-right: 1rem;
+    width: 10rem;
+    padding: 0 0.5rem 0 2rem;
+    font-size: 0.9rem;
+    line-height: 2rem;
+    color: lighten($color-text, 25%);
+    cursor: text;
+    background: #fff url('./search.svg') 0.6rem 0.5rem no-repeat;
+    background-size: 1rem;
+    border: 1px solid darken($color-border, 10%);
+    border-radius: 2rem;
+    outline: none;
+    transition: all 0.2s ease;
 
-    input {
-        cursor: text;
-        width: 10rem;
-        color: lighten($textColor, 25%);
-        display: inline-block;
-        border: 1px solid darken($borderColor, 10%);
-        border-radius: 2rem;
-        font-size: 0.9rem;
-        line-height: 2rem;
-        padding: 0 0.5rem 0 2rem;
-        outline: none;
-        transition: all 0.2s ease;
-        background: #fff url('./search.svg') 0.6rem 0.5rem no-repeat;
-        background-size: 1rem;
+    &:focus {
+      cursor: auto;
+      border-color: $color-accent;
+    }
+  }
 
-        &:focus {
-            cursor: auto;
-            border-color: $accentColor;
-        }
+  .suggestions {
+    position: absolute;
+    top: 1.5rem;
+    width: 20rem;
+    padding: 0.4rem;
+    list-style-type: none;
+    background: #fff;
+    border: 1px solid darken($color-border, 10%);
+    border-radius: 6px;
+
+    &.align-right {
+      right: 0;
+    }
+  }
+
+  .suggestion {
+    padding: 0.4rem 0.6rem;
+    line-height: 1.4;
+    cursor: pointer;
+    border-radius: 4px;
+
+    a {
+      color: lighten($color-text, 35%);
+      white-space: normal;
+
+      .page-title {
+        font-weight: 600;
+      }
+
+      .header {
+        margin-left: 0.25em;
+        font-size: 0.9em;
+      }
     }
 
-    .suggestions {
-        background: #fff;
-        width: 20rem;
-        position: absolute;
-        top: 1.5rem;
-        border: 1px solid darken($borderColor, 10%);
-        border-radius: 6px;
-        padding: 0.4rem;
-        list-style-type: none;
+    &.focused {
+      background-color: #f3f4f5;
 
-        &.align-right {
-            right: 0;
-        }
+      a {
+        color: $color-accent;
+      }
     }
-
-    .suggestion {
-        line-height: 1.4;
-        padding: 0.4rem 0.6rem;
-        border-radius: 4px;
-        cursor: pointer;
-
-        a {
-            white-space: normal;
-            color: lighten($textColor, 35%);
-
-            .page-title {
-                font-weight: 600;
-            }
-
-            .header {
-                font-size: 0.9em;
-                margin-left: 0.25em;
-            }
-        }
-
-        &.focused {
-            background-color: #f3f4f5;
-
-            a {
-                color: $accentColor;
-            }
-        }
-    }
+  }
 }
 
 @media (max-width: $MQNarrow) {
-    .search-box {
-        input {
-            cursor: pointer;
-            width: 0;
-            border-color: transparent;
-            position: relative;
+  .search-box {
+    input {
+      position: relative;
+      width: 0;
+      cursor: pointer;
+      border-color: transparent;
 
-            &:focus {
-                cursor: text;
-                left: 0;
-                width: 10rem;
-            }
-        }
+      &:focus {
+        left: 0;
+        width: 10rem;
+        cursor: text;
+      }
     }
+  }
 }
 
 @media (max-width: $MQNarrow) and (min-width: $MQMobile) {
-    .search-box {
-        .suggestions {
-            left: 0;
-        }
+  .search-box {
+    .suggestions {
+      left: 0;
     }
+  }
 }
 
 @media (max-width: $MQMobile) {
-    .search-box {
-        margin-right: 0;
+  .search-box {
+    margin-right: 0;
 
-        input {
-            left: 1rem;
-        }
-
-        .suggestions {
-            right: 0;
-        }
+    input {
+      left: 1rem;
     }
+
+    .suggestions {
+      right: 0;
+    }
+  }
 }
 
 @media (max-width: $MQMobileNarrow) {
-    .search-box {
-        .suggestions {
-            width: calc(100vw - 4rem);
-        }
-
-        input:focus {
-            width: 8rem;
-        }
+  .search-box {
+    .suggestions {
+      width: calc(100vw - 4rem);
     }
+
+    input:focus {
+      width: 8rem;
+    }
+  }
 }
 </style>

@@ -1,0 +1,174 @@
+// stylelint-disable selector-no-qualifying-type
+code {
+    padding: 0.2em;
+    margin: 0;
+    font-family: $font-mono;
+    font-size: 0.85em;
+    color: $oc-gray-6; // lighten($color-text, 20%);
+    background-color: $oc-gray-2; // rgba(27, 31, 35, 0.05);
+    border-radius: 3px;
+}
+
+.content {
+    pre, pre[class*='language-'] {
+        padding: 1.25rem 1.5rem;
+        margin: 0.85rem 0;
+        overflow: auto;
+        line-height: 1.4;
+        background-color: $color-bg-code;
+        border-radius: 6px;
+
+        code {
+            padding: 0;
+            color: #fff;
+            background-color: transparent;
+            border-radius: 0;
+        }
+    }
+}
+
+div[class*='language-'] {
+    position: relative;
+    background-color: $color-bg-code;
+    border-radius: 6px;
+
+    .highlight-lines {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding-top: 1.3rem;
+        line-height: 1.4;
+        user-select: none;
+
+        .highlighted {
+            background-color: rgba(0, 0, 0, 66%);
+        }
+    }
+
+    pre, pre[class*='language-'] {
+        position: relative;
+        z-index: 1;
+        background: transparent;
+    }
+
+    &::before {
+        position: absolute;
+        top: 0.8em;
+        right: 1em;
+        z-index: 3;
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.4);
+    }
+
+    &:not(.line-numbers-mode) {
+        .line-numbers-wrapper {
+            display: none;
+        }
+    }
+
+    &.line-numbers-mode {
+        .highlight-lines .highlighted {
+            position: relative;
+
+            &:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 3;
+                display: block;
+                width: $width-linenumbers;
+                height: 100%;
+                content: ' ';
+                background-color: rgba(0, 0, 0, 66%);
+            }
+        }
+
+        pre {
+            padding-left: ($width-linenumbers + 1)rem;
+            vertical-align: middle;
+        }
+
+        .line-numbers-wrapper {
+            position: absolute;
+            top: 0;
+            width: $width-linenumbers;
+            padding: 1.25rem 0;
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.3);
+            text-align: center;
+
+            br {
+                user-select: none;
+            }
+
+            .line-number {
+                position: relative;
+                z-index: 4;
+                font-size: 0.85em;
+                user-select: none;
+            }
+        }
+
+        &::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            width: $width-linenumbers;
+            height: 100%;
+            content: '';
+            background-color: $color-bg-code;
+            border-right: 1px solid rgba(0, 0, 0, 66%);
+            border-radius: 6px 0 0 6px;
+        }
+    }
+}
+
+@each $lang in $codeLang {
+    div[class~='language-#{$lang}'] {
+        &:before {
+            content: '#{$lang}';
+        }
+    }
+}
+
+div[class~='language-javascript'] {
+    &:before {
+        content: 'js';
+    }
+}
+
+div[class~='language-typescript'] {
+    &:before {
+        content: 'ts';
+    }
+}
+
+div[class~='language-markup'] {
+    &:before {
+        content: 'html';
+    }
+}
+
+div[class~='language-markdown'] {
+    &:before {
+        content: 'md';
+    }
+}
+
+div[class~='language-json']:before {
+    content: 'json';
+}
+
+div[class~='language-ruby']:before {
+    content: 'rb';
+}
+
+div[class~='language-python']:before {
+    content: 'py';
+}
+
+div[class~='language-bash']:before {
+    content: 'sh';
+}

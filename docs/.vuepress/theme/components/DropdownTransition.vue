@@ -11,23 +11,24 @@
 
 <script>
 export default {
-  name: 'DropdownTransition',
+    name: 'DropdownTransition',
 
-  methods: {
-    setHeight (items) {
-      // explicitly set height so that it can be transitioned
-      items.style.height = items.scrollHeight + 'px'
+    methods: {
+        setHeight(items) {
+            // explicitly set height so that it can be transitioned
+            items.style.height = items.scrollHeight + 'px'
+        },
+
+        unsetHeight(items) {
+            items.style.height = ''
+        },
     },
-
-    unsetHeight (items) {
-      items.style.height = ''
-    }
-  }
 }
 </script>
 
-<style lang="stylus">
-.dropdown-enter, .dropdown-leave-to
-  height 0 !important
-
+<style lang="scss">
+.dropdown-enter,
+.dropdown-leave-to {
+  height: 0 !important;
+}
 </style>

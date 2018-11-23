@@ -21,29 +21,31 @@
 import { isExternal, isMailto, isTel, ensureExt } from '../layouts/util'
 
 export default {
-  props: {
-    item: {
-      required: true
-    }
-  },
-
-  computed: {
-    link () {
-      return ensureExt(this.item.link)
+    props: {
+        item: {
+            required: true,
+        },
     },
 
-    exact () {
-      if (this.$site.locales) {
-        return Object.keys(this.$site.locales).some(rootLink => rootLink === this.link)
-      }
-      return this.link === '/'
-    }
-  },
+    computed: {
+        link() {
+            return ensureExt(this.item.link)
+        },
 
-  methods: {
-    isExternal,
-    isMailto,
-    isTel
-  }
+        exact() {
+            if (this.$site.locales) {
+                return Object.keys(this.$site.locales).some(
+                    (rootLink) => rootLink === this.link,
+                )
+            }
+            return this.link === '/'
+        },
+    },
+
+    methods: {
+        isExternal,
+        isMailto,
+        isTel,
+    },
 }
 </script>

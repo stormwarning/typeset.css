@@ -54,128 +54,175 @@ import NavLink from './NavLink.vue'
 import DropdownTransition from './DropdownTransition.vue'
 
 export default {
-  components: { NavLink, DropdownTransition },
+    components: { NavLink, DropdownTransition },
 
-  data () {
-    return {
-      open: false
-    }
-  },
+    data() {
+        return {
+            open: false,
+        }
+    },
 
-  props: {
-    item: {
-      required: true
-    }
-  },
+    props: {
+        item: {
+            required: true,
+        },
+    },
 
-  methods: {
-    toggle () {
-      this.open = !this.open
-    }
-  }
+    methods: {
+        toggle() {
+            this.open = !this.open
+        },
+    },
 }
 </script>
 
-<style lang="stylus">
-  @import '~@app/style/config'
+<style lang="scss">
+@import '../styles/abstracts/variables';
 
-.dropdown-wrapper
-  cursor pointer
-  .dropdown-title
-    display block
-    &:hover
-      border-color transparent
-    .arrow
-      vertical-align middle
-      margin-top -1px
-      margin-left 0.4rem
-  .nav-dropdown
-    .dropdown-item
-      color inherit
-      line-height 1.7rem
-      h4
-        margin 0.45rem 0 0
-        border-top 1px solid #eee
-        padding 0.45rem 1.5rem 0 1.25rem
-      .dropdown-subitem-wrapper
-        padding 0
-        list-style none
-        .dropdown-subitem
-          font-size 0.9em
-      a
-        display block
-        line-height 1.7rem
-        position relative
-        border-bottom none
-        font-weight 400
-        margin-bottom 0
-        padding 0 1.5rem 0 1.25rem
-        &:hover
-          color $accentColor
-        &.router-link-active
-          color $accentColor
-          &::after
-            content ""
-            width 0
-            height 0
-            border-left 5px solid $accentColor
-            border-top 3px solid transparent
-            border-bottom 3px solid transparent
-            position absolute
-            top calc(50% - 2px)
-            left 9px
-      &:first-child h4
-        margin-top 0
-        padding-top 0
-        border-top 0
+.dropdown-wrapper {
+  cursor: pointer;
 
-@media (max-width: $MQMobile)
-  .dropdown-wrapper
-    &.open .dropdown-title
-      margin-bottom 0.5rem
-    .nav-dropdown
-      transition height .1s ease-out
-      overflow hidden
-      .dropdown-item
-        h4
-          border-top 0
-          margin-top 0
-          padding-top 0
-        h4, & > a
-          font-size 15px
-          line-height 2rem
-        .dropdown-subitem
-          font-size 14px
-          padding-left 1rem
+  .dropdown-title {
+    display: block;
 
-@media (min-width: $MQMobile)
-  .dropdown-wrapper
-    height 1.8rem
-    &:hover .nav-dropdown
+    &:hover {
+      border-color: transparent;
+    }
+
+    .arrow {
+      margin-top: -1px;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+    }
+  }
+
+  .nav-dropdown {
+    .dropdown-item {
+      line-height: 1.7rem;
+      color: inherit;
+
+      h4 {
+        padding: 0.45rem 1.5rem 0 1.25rem;
+        margin: 0.45rem 0 0;
+        border-top: 1px solid #eee;
+      }
+
+      .dropdown-subitem-wrapper {
+        padding: 0;
+        list-style: none;
+
+        .dropdown-subitem {
+          font-size: 0.9em;
+        }
+      }
+
+      a {
+        position: relative;
+        display: block;
+        padding: 0 1.5rem 0 1.25rem;
+        margin-bottom: 0;
+        font-weight: 400;
+        line-height: 1.7rem;
+        border-bottom: none;
+
+        &:hover {
+          color: $color-accent;
+        }
+
+        &.router-link-active {
+          color: $color-accent;
+
+          &::after {
+            position: absolute;
+            top: calc(50% - 2px);
+            left: 9px;
+            width: 0;
+            height: 0;
+            content: '';
+            border-top: 3px solid transparent;
+            border-bottom: 3px solid transparent;
+            border-left: 5px solid $color-accent;
+          }
+        }
+      }
+
+      &:first-child h4 {
+        padding-top: 0;
+        margin-top: 0;
+        border-top: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: $width-small) {
+  .dropdown-wrapper {
+    &.open .dropdown-title {
+      margin-bottom: 0.5rem;
+    }
+
+    .nav-dropdown {
+      overflow: hidden;
+      transition: height 0.1s ease-out;
+
+      .dropdown-item {
+        h4 {
+          padding-top: 0;
+          margin-top: 0;
+          border-top: 0;
+        }
+
+        h4,
+        & > a {
+          font-size: 15px;
+          line-height: 2rem;
+        }
+
+        .dropdown-subitem {
+          padding-left: 1rem;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $width-small) {
+  .dropdown-wrapper {
+    height: 1.8rem;
+
+    &:hover .nav-dropdown {
       // override the inline style.
-      display block !important
-    .dropdown-title .arrow
+      display: block !important;
+    }
+
+    .dropdown-title .arrow {
+      border-top: 6px solid $color-arrow;
+      border-right: 4px solid transparent;
+      border-bottom: 0;
       // make the arrow always down at desktop
-      border-left 4px solid transparent
-      border-right 4px solid transparent
-      border-top 6px solid $arrowBgColor
-      border-bottom 0
-    .nav-dropdown
-      display none
+      border-left: 4px solid transparent;
+    }
+
+    .nav-dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      box-sizing: border-box;
+      display: none;
       // Avoid height shaked by clicking
-      height auto !important
-      box-sizing border-box;
-      max-height calc(100vh - 2.7rem)
-      overflow-y auto
-      position absolute
-      top 100%
-      right 0
-      background-color #fff
-      padding 0.6rem 0
-      border 1px solid #ddd
-      border-bottom-color #ccc
-      text-align left
-      border-radius 0.25rem
-      white-space nowrap
-      margin 0
+      height: auto !important;
+      max-height: calc(100vh - 2.7rem);
+      padding: 0.6rem 0;
+      margin: 0;
+      overflow-y: auto;
+      text-align: left;
+      white-space: nowrap;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-bottom-color: #ccc;
+      border-radius: 0.25rem;
+    }
+  }
+}
 </style>

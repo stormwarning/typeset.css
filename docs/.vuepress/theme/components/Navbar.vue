@@ -96,68 +96,70 @@ function css(el, property) {
 }
 </script>
 
-<style lang="stylus">
-@import '~@app/style/config';
+<style lang="scss">
+@import '../styles/abstracts/variables';
 
-$navbar-vertical-padding = 0.7rem;
-$navbar-horizontal-padding = 1.5rem;
+$navbar-vertical-padding: 0.7rem;
+$navbar-horizontal-padding: 1.5rem;
 
 .navbar {
-    padding: $navbar-vertical-padding $navbar-horizontal-padding;
-    line-height: $navbarHeight - 1.4rem;
+  position: relative;
+  padding: $navbar-vertical-padding $navbar-horizontal-padding;
+  line-height: $height-navbar - 1.4rem;
+
+  a,
+  span,
+  img {
+    display: inline-block;
+  }
+
+  .logo {
+    min-width: $height-navbar - 1.4rem;
+    height: $height-navbar - 1.4rem;
+    margin-right: 0.8rem;
+    vertical-align: top;
+  }
+
+  .site-name {
     position: relative;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: $color-text;
+  }
 
-    a, span, img {
-        display: inline-block;
+  .links {
+    position: absolute;
+    top: $navbar-vertical-padding;
+    right: $navbar-horizontal-padding;
+    box-sizing: border-box;
+    display: flex;
+    padding-left: 1.5rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    background-color: white;
+
+    .search-box {
+      flex: 0 0 auto;
+      vertical-align: top;
     }
 
-    .logo {
-        height: $navbarHeight - 1.4rem;
-        min-width: $navbarHeight - 1.4rem;
-        margin-right: 0.8rem;
-        vertical-align: top;
+    .nav-links {
+      flex: 1;
     }
+  }
+}
 
-    .site-name {
-        font-size: 1.3rem;
-        font-weight: 600;
-        color: $textColor;
-        position: relative;
+@media (max-width: $width-small) {
+  .navbar {
+    padding-left: 4rem;
+
+    .can-hide {
+      display: none;
     }
 
     .links {
-        padding-left: 1.5rem;
-        box-sizing: border-box;
-        background-color: white;
-        white-space: nowrap;
-        font-size: 0.9rem;
-        position: absolute;
-        right: $navbar-horizontal-padding;
-        top: $navbar-vertical-padding;
-        display: flex;
-
-        .search-box {
-            flex: 0 0 auto;
-            vertical-align: top;
-        }
-
-        .nav-links {
-            flex: 1;
-        }
+      padding-left: 1.5rem;
     }
-}
-
-@media (max-width: $MQMobile) {
-    .navbar {
-        padding-left: 4rem;
-
-        .can-hide {
-            display: none;
-        }
-
-        .links {
-            padding-left: 1.5rem;
-        }
-    }
+  }
 }
 </style>
