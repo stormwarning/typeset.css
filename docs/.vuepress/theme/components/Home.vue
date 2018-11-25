@@ -54,9 +54,9 @@
             </div>
         </div>
 
-        <div class="mw8 center ph3 pv4 ph6-ns">
+        <main class="mw8 center ph3 pv4 ph6-ns">
             <Content custom class=""/>
-        </div>
+        </main>
 
         <div
             class="footer"
@@ -89,6 +89,10 @@ export default {
 </script>
 
 <style lang="scss">
+main {
+  counter-reset: fignum;
+}
+
 .header {
   font-family: 'adelle', serif;
 }
