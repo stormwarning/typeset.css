@@ -9,17 +9,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 {
-  margin-top: 5rem;
+  margin-top: 4rem;
   clear: both;
   font-family: "adelle", serif;
-  font-size: 4em;
+  font-size: 3rem;
 }
 
 h3 {
   position: relative;
   overflow: hidden;
   clear: both;
-  font-size: 2em;
+  font-size: 2.25rem;
   line-height: 1.3; // Prevent descenders from being cut-off by `overflow`.
 
   &::after {
@@ -45,7 +45,7 @@ a {
 p.lede {
     @include typ-measure(55);
 
-    font-size: $typ-h5-size;
+    font-size: $typ-h3-size;
     line-height: 1.5;
 }
 

@@ -18,6 +18,9 @@ $font-mono: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', 'Courier',
 $default-font-size: 16px;
 $base-line-height:  1.5;
 
+$size-headline:    6rem; // 96px;
+$size-subheadline: 5rem; // 80px;
+
 $typ-use-headings:  true;
 $typ-use-opentype:  true;
 $typ-use-ampersand: true;
@@ -27,12 +30,12 @@ $typ-font-family:        "adelle-sans", sans-serif;
 $typ-ampersand-source:   local("adelle"), url('/ampersand.woff') format("woff"), url('/ampersand.otf') format("otf");
 $typ-ampersand-fallback: $typ-font-family;
 
-$typ-h1-size: 36px !default;
-$typ-h2-size: 30px !default;
-$typ-h3-size: 24px !default;
-$typ-h4-size: 20px !default;
-$typ-h5-size: 24px;
-$typ-h6-size: 14px !default;
+$typ-h1-size: 48px;
+$typ-h2-size: 36px;
+$typ-h3-size: 24px;
+$typ-h4-size: 20px;
+$typ-h5-size: 16px;
+$typ-h6-size: 14px;
 
 $typ-line-height:   1.5;
 
