@@ -20,13 +20,16 @@ export default {
 @import '../theme/styles/abstracts/variables';
 
 .figure {
+  display: flex;
+  flex-direction: column;
+
   &.has-caption {
     counter-increment: fignum;
   }
 }
 
 .caption {
-  padding: 0.5em 1rem;
+  padding: 1rem 1rem 0;
   font-size: 0.875rem;
 
   // @include media-query(large) {

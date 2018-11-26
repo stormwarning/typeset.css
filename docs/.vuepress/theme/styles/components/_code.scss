@@ -30,7 +30,18 @@ code {
 div[class*='language-'] {
     position: relative;
     background-color: $color-bg-code;
-    border-radius: 6px;
+    border-radius: $br2 $br2 0 0;
+
+    &:last-of-type {
+        border-bottom-right-radius: $br2;
+        border-bottom-left-radius: $br2;
+    }
+
+    & + & {
+        border-top: 1px solid $oc-gray-9;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
 
     .highlight-lines {
         position: absolute;
