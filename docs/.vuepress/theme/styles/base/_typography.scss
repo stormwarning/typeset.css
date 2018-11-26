@@ -41,6 +41,10 @@ a {
     }
 }
 
+p {
+    @include typ-measure(66);
+}
+
 // stylelint-disable-next-line selector-no-qualifying-type
 p.lede {
     @include typ-measure(55);

@@ -54,7 +54,7 @@
             </div>
         </div>
 
-        <main class="mw8 center ph3 pv4 ph6-ns">
+        <main class="mw7 center ph3 pv4 ph5-ns">
             <Content custom class=""/>
         </main>
 
