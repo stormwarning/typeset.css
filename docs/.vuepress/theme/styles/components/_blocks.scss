@@ -26,12 +26,15 @@
 }
 
 .custom-block.tip {
-    float: left;
-    width: 32rem;
-    max-width: calc(50% + -4rem);
-    margin: 0 2rem 0 -6rem;
     font-size: 0.875em;
-    text-align: justify;
+
+    @media (min-width: $width-medium) {
+        float: left;
+        width: 32rem;
+        max-width: calc(50% + -4rem);
+        margin: 0 2rem 0 -8rem;
+        text-align: justify;
+    }
 
     .custom-block-title { background-color: #ffe75f; }
 }

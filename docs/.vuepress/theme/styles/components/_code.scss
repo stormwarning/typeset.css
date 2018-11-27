@@ -16,7 +16,10 @@ code {
         overflow: auto;
         line-height: 1.4;
         background-color: $color-bg-code;
-        border-radius: $br2;
+
+        @media (min-width: $width-small) {
+            border-radius: $br2;
+        }
 
         code {
             padding: 0;
@@ -30,11 +33,16 @@ code {
 div[class*='language-'] {
     position: relative;
     background-color: $color-bg-code;
-    border-radius: $br2 $br2 0 0;
+
+    @media (min-width: $width-small) {
+        border-radius: $br2 $br2 0 0;
+    }
 
     &:last-of-type {
-        border-bottom-right-radius: $br2;
-        border-bottom-left-radius: $br2;
+        @media (min-width: $width-small) {
+            border-bottom-right-radius: $br2;
+            border-bottom-left-radius: $br2;
+        }
     }
 
     & + & {
@@ -131,7 +139,10 @@ div[class*='language-'] {
             content: '';
             background-color: $color-bg-code;
             border-right: 1px solid rgba(0, 0, 0, 66%);
-            border-radius: $br2 0 0 $br2;
+
+            @media (min-width: $width-small) {
+                border-radius: $br2 0 0 $br2;
+            }
         }
     }
 }

@@ -24,6 +24,11 @@ export default {
   display: flex;
   flex-direction: column;
 
+  @media (max-width: $width-small) {
+    margin-right: -1rem;
+    margin-left: -1rem;
+  }
+
   &.has-caption {
     counter-increment: fignum;
   }

@@ -117,7 +117,7 @@ that to an em value.
 ```
 
 ::: slot caption
-Tracking mixin and <abbr>CSS</abbr> output. The font-kerning property is
+Tracking mixin and <abbr>CSS</abbr> output. The `font-kerning` property is
 included to prevent a bug in Chrome & Opera from disabling any Opentype
 settings.
 :::
