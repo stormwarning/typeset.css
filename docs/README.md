@@ -1,5 +1,6 @@
 ---
 home: true
+navbar: false
 tagline: <dfn title="transitive verb">tr.v</dfn> &nbsp;type&thinsp;·&thinsp;set&nbsp; To set (written material) into type; compose.
 
 ---
@@ -183,9 +184,8 @@ Basic measure setting and output.
 :::
 </Figure>
 
-::: tip Hyphenation expert-level
-Manually modifying the DOM with a JS library like [Hypher](https://github.com/bramstein/hypher).
-:::
+Take hyphenation to the next level by manually modifying the DOM with a JS
+library like [Hypher](https://github.com/bramstein/hypher).
 
 ### Ampersands
 
