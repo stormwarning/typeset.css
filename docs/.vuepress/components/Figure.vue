@@ -1,23 +1,24 @@
 <script>
 export default {
-    functional: true,
-    render(h, { props, slots }) {
-        return h(
-            'figure',
-            { class: ['figure', 'mv5', slots().caption ? 'has-caption' : ''] },
-            [
-                slots().default,
-                slots().caption
-                    ? h('figcaption', { class: 'caption' }, slots().caption)
-                    : null,
-            ],
-        )
-    },
-}
+  functional: true,
+  render(h, { props, slots }) {
+    return h(
+      "figure",
+      { class: ["figure", "mv5", slots().caption ? "has-caption" : ""] },
+      [
+        slots().default,
+        slots().caption
+          ? h("figcaption", { class: "caption" }, slots().caption)
+          : null
+      ]
+    );
+  }
+};
 </script>
 
 <style lang="scss">
-@import '../theme/styles/abstracts/variables';
+@import "../theme/styles/abstracts/variables";
+@import "../../../utilities/tracking";
 
 .figure {
   display: flex;
@@ -29,7 +30,7 @@ export default {
 }
 
 .caption {
-  padding: 1rem 1rem 0;
+  padding: $s3 $s3 0;
   font-size: 0.875rem;
 
   // @include media-query(large) {
@@ -42,25 +43,29 @@ export default {
   // }
 
   &::before {
-    //   @include typ-tracking(50);
+    @include typ-tracking(50);
 
     float: left;
-    padding: 0.125rem 0.5rem 0.25rem;
-    margin-right: 0.5rem;
+    padding: 0.125rem $s2 $s1;
+    margin-right: $s2;
     font-weight: 600;
     line-height: 1rem;
     color: $oc-white;
     white-space: nowrap;
     vertical-align: middle;
-    content: 'Fig.' counter(fignum);
+    content: "Fig." counter(fignum);
     background-color: $oc-blue-9;
-    border-radius: 0.125rem; // .br1
+    border-radius: $br1;
   }
 
   &::after {
     display: table;
     clear: both;
-    content: '';
+    content: "";
+  }
+
+  > :last-child {
+    margin-bottom: 0;
   }
 
   > p {

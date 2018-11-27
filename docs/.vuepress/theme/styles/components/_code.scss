@@ -6,7 +6,7 @@ code {
     font-size: 0.85em;
     color: $oc-gray-6; // lighten($color-text, 20%);
     background-color: $oc-gray-2; // rgba(27, 31, 35, 0.05);
-    border-radius: 3px;
+    border-radius: $br1;
 }
 
 .content {
@@ -16,7 +16,7 @@ code {
         overflow: auto;
         line-height: 1.4;
         background-color: $color-bg-code;
-        border-radius: 6px;
+        border-radius: $br2;
 
         code {
             padding: 0;
@@ -131,7 +131,7 @@ div[class*='language-'] {
             content: '';
             background-color: $color-bg-code;
             border-right: 1px solid rgba(0, 0, 0, 66%);
-            border-radius: 6px 0 0 6px;
+            border-radius: $br2 0 0 $br2;
         }
     }
 }

@@ -1,4 +1,5 @@
 @import 'node_modules/open-color/open-color.scss';
+@import 'node_modules/tachyons-sass/scss/_variables.scss';
 
 
 $colormap: (
@@ -11,6 +12,30 @@ $colormap: (
     cyan-4: $oc-cyan-4,
     cyan-7: $oc-cyan-7,
 );
+
+
+// Spacing scale.
+$s1: $spacing-extra-small;
+$s2: $spacing-small;
+$s3: $spacing-medium;
+$s4: $spacing-large;
+$s5: $spacing-extra-large;
+$s6: $spacing-extra-extra-large;
+$s7: $spacing-extra-extra-extra-large;
+
+// Width scale.
+$w1: $width-1;
+$w2: $width-2;
+$w3: $width-3;
+$w4: $width-4;
+$w5: $width-5;
+
+// Border radius scale.
+$br1: $border-radius-1;
+$br2: $border-radius-2;
+$br3: $border-radius-3;
+$br4: $border-radius-4;
+
 
 $font-sans: 'adelle-sans', sans-serif;
 $font-serif: 'adelle', serif;
@@ -65,15 +90,10 @@ $width-large:  1440px;
 $width-sidebar: 20rem;
 $width-content: 740px;
 $height-navbar: 3.6rem;
-$width-linenumbers: 4rem;
+$width-linenumbers: $w3;
 
 $MQNarrow: 959px;
 $MQMobile: 719px;
 $MQMobileNarrow: 419px;
 
 $codeLang: (js ts html md vue css sass scss less stylus go java c sh yaml py);
-
-$br1: 0.125rem;
-$br2: 0.25rem;
-$br3: 0.5rem;
-$br4: 1rem;
