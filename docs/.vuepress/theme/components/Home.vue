@@ -13,7 +13,7 @@
             {{ data.heroText || $title || 'Hello' }}
           </h1>
           <h4
-            class="cyan-7 f3 fw3 o-70 ma0 mt3 pl6-l"
+            class="cyan-7 f3 fw3 o-70 ma0 mt3 pl6-l measure-narrow"
             v-html="data.tagline || $description || 'Welcome to your VuePress site'"
           ></h4>
         </div>
@@ -55,7 +55,7 @@
       </div>
     </div>
 
-    <main class="mw7 center ph3 pv4 ph5-ns">
+    <main class="mw7 center ph3 pv5 pv6-ns ph5-ns">
       <Content custom class/>
     </main>
 
