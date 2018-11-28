@@ -12,14 +12,16 @@ h2 {
   margin-top: $s6;
   clear: both;
   font-family: "adelle", serif;
-  font-size: 3rem;
+  font-size: $f1;
+
+  .lede + & { margin-top: $s5; }
 }
 
 h3 {
   position: relative;
   overflow: hidden;
   clear: both;
-  font-size: 2.25rem;
+  font-size: $f2;
   line-height: 1.3; // Prevent descenders from being cut-off by `overflow`.
 
   &::after {
@@ -51,9 +53,7 @@ p {
 
 // stylelint-disable-next-line selector-no-qualifying-type
 p.lede {
-    @include typ-measure(55);
-
-    font-size: $typ-h3-size;
+    font-size: $f3;
     line-height: 1.5;
 }
 
