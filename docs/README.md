@@ -304,3 +304,30 @@ line-height.
 ### Address
 
 `<address>` elements are for presenting contact information for the nearest ancestor (or an entire body of work). The element is updated to match regular body copy; `font-style` from italic to normal, inherited `line-height`, and `margin-bottom` matching the base line-height.
+
+### Phrasing elements
+
+<dl>
+    <dt>a</dt>
+    <dd>Anchors de­fine <a href="#destination">a hy­per­link</a>, <a id="destination">a des­ti­na­tion of a hy­per­link</a>, or both.</dd>
+    <dt>abbr</dt>
+    <dd>Used for ab­bre­vi­a­tions <abbr title="Doctor">Dr</abbr>. or ini­tialisms like <dfn><abbr title="HyperText Markup Language"><span class="small-caps">HTML</span></abbr></dfn>. Combine with a <code>title</code> at­tribute or con­tain­ing <code>dfn</code> el­e­ment on the first in­stance to pro­vide de­f­i­n­i­tion.</dd>
+    <dt>cite</dt>
+    <dd>According to the <cite><abbr><span class="small-caps">HTML</span></abbr> 5 Specification</cite>, the <code>cite</code> el­e­ment rep­re­sents a ref­er­ence to a cre­ative work.</dd>
+    <dt>code</dt>
+    <dd>When rep­re­sent­ing <abbr><span class="small-caps">HTML</span></abbr> code, re­mem­ber to en­code the re­served char­ac­ters &lt; and &gt; with their <abbr><span class="small-caps">HTML</span></abbr> en­tity equiv­a­lents (<code>&#38;lt;</code> and <code>&#38;gt;</code>, re­spec­tively).</dd>
+    <dt>del</dt>
+    <dd>While <code>s</code> and <code>del</code> ap­pear to per­form the same func­tion <del>mark­ing ob­so­lete con­tent</del> they dif­fer in <s>pen­dantry</s>se­man­tics.</dd>
+    <dt>dfn</dt>
+    <dd>The <dfn title="Definition">dfn</dfn> el­e­ment in­di­cates the defin­ing in­stance of a term.</dd>
+    <dt>em</dt>
+    <dd>Use the <code>em</code> el­e­ment to <em>em­pha­size</em> text.</dd>
+    <dt>i</dt>
+    <dd>For­eign words used in Eng­lish are some­times ital­i­cized, some­times not, de­pend­ing on how com­mon they are. For in­stance, you would ital­i­cize your <i lang="fr">bête noire</i> and your <i lang="de">Weltan­schau­ung</i>, but not your crois­sant or your ré­sumé.</dd>
+    <dt>ins</dt>
+    <dd>The <code>ins</code> el­e­ment rep­re­sents a range of text that has been <del>added</del><ins>in­serted</ins> into a doc­u­ment.</dd>
+    <dt>kbd</dt>
+    <dd>Denotes user in­put, typ­i­cally key­board in­put, such as <kbd><kbd>⌘</kbd> + <kbd>S</kbd></kbd>.</dd>
+    <dt>mark</dt>
+    <dd>Denotes the rel­e­vance of a span of text, <mark>as op­posed to its im­por­tance</mark>, such as text that has been marked or high­lighted.</dd>
+</dl>
