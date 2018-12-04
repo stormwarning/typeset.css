@@ -13,4 +13,9 @@ module.exports = {
             },
         ],
     ],
+    plugins: {
+        '@vuepress/google-analytics': {
+            ga: 'UA-58836125-2',
+        },
+    },
 }
