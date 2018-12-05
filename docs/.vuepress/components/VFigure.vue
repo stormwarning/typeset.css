@@ -1,20 +1,22 @@
+<template>
+  <figure class="figure mv5" :class="{ 'has-caption': hasCaption }">
+    <slot></slot>
+    <figcaption class="caption" v-if="hasCaption">
+      <slot name="caption"></slot>
+    </figcaption>
+  </figure>
+</template>
+
 <script>
 export default {
-  functional: true,
-  render(h, { props, slots }) {
-    return h(
-      "figure",
-      { class: ["figure", "mv5", slots().caption ? "has-caption" : ""] },
-      [
-        slots().default,
-        slots().caption
-          ? h("figcaption", { class: "caption" }, slots().caption)
-          : null
-      ]
-    );
+  computed: {
+    hasCaption() {
+      return !!this.$slots.caption;
+    }
   }
 };
 </script>
+
 
 <style lang="scss">
 @import "../theme/styles/abstracts/variables";

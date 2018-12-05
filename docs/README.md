@@ -15,11 +15,11 @@ Install using either `npm` or `bower`, or download the
 [latest release from GitHub](https://github.com/stormwarning/typeset.css)
 and include it in your project manually.
 
-<Figure>
+<VFigure>
 ```sh
 npm install --save typeset.css
 ```
-</Figure>
+</VFigure>
 
 ::: tip Note
 Typeset.css includes no vendor-prefixed properties — use Autoprefixer or a
@@ -38,7 +38,7 @@ including `_typeset`.
 Some of Typeset's variable and mixin names can be prefixed with an optional
 namespace string, in cases where the names cause a conflict.
 
-<Figure>
+<VFigure>
 ```scss
 $typ-namespace: null !default;
 
@@ -53,7 +53,7 @@ $typ-use-ampersand: false !default;
 ::: slot caption
 Notable default settings; overwrite any of these in your own Sass code.
 :::
-</Figure>
+</VFigure>
 
 ## Utilities
 
@@ -70,7 +70,7 @@ for inheriting settings.
 Use the `opentype` function, in conjunction with a baseline array of Opentype
 settings to cleanly adjust the settings you need on different elements.
 
-<Figure>
+<VFigure>
 ```scss
 $typ-ot-base: (
     "kern" 1,
@@ -94,7 +94,7 @@ h1, h2, h3 {
 Default Opentype settings and an example of using the Typeset function to
 change a single option while maintaining the rest of the defaults.
 :::
-</Figure>
+</VFigure>
 
 ### Tracking
 
@@ -102,7 +102,7 @@ The `typ-tracking()` mixin provides an easy way to adjust `letter-spacing`.
 Using the same tracking value from Photoshop as a parameter, the mixin converts
 that to an em value.
 
-<Figure>
+<VFigure>
 ```scss
 .selector {
     @include typ-tracking(-10);
@@ -121,14 +121,14 @@ Tracking mixin and <abbr>CSS</abbr> output. The `font-kerning` property is
 included to prevent a bug in Chrome & Opera from disabling any Opentype
 settings.
 :::
-</Figure>
+</VFigure>
 
 There is also an optional parameter for text that will be centered. The
 `letter-spacing` property will add space even after the last letter. The mixin
 adds the same amount of space to the opposite side of the text, maintaining the
 visual center alignment.
 
-<Figure>
+<VFigure>
 ```scss
 .selector {
     @include typ-tracking(50, center);
@@ -146,7 +146,7 @@ visual center alignment.
 ::: slot caption        
 Using the tracking mixin on centered text.
 :::
-</Figure>
+</VFigure>
 
 ### Measure
 
@@ -162,7 +162,7 @@ in ch units. It also applies some hyphenation properties, although these aren't
 widely supported. The mixin accepts optional parameters for a `min-width`
 property, as well as centering with auto left and right margins.
 
-<Figure>
+<VFigure>
 ```scss
 .selector {
     @include typ-measure(66);
@@ -182,7 +182,7 @@ property, as well as centering with auto left and right margins.
 ::: slot caption
 Basic measure setting and output.
 :::
-</Figure>
+</VFigure>
 
 Take hyphenation to the next level by manually modifying the DOM with a JS
 library like [Hypher](https://github.com/bramstein/hypher).
@@ -199,7 +199,7 @@ The `typ-dropcap()` mixin gives a starting point for styling the initial letter
 of a paragraph. Include it with your own styles in a class and apply the class
 to a paragraph to see the effect.
 
-<Figure>
+<VFigure>
 ```scss
 .dropcap {
     @include typ-dropcap() {
@@ -228,7 +228,7 @@ to a paragraph to see the effect.
 ::: slot caption
 Basic usage of dropcap mixin.
 :::
-</Figure>
+</VFigure>
 
 ## Defaults
 
@@ -247,12 +247,12 @@ particular cases:
 
 <p class="lede">A lead, or lede, paragraph in literature is the opening paragraph of an article, essay, news story or book chapter. It precedes the main body of the article, and it gives the reader the main idea of the story. In both spellings, the word rhymes with the word need.</p>
 
-<Figure>
+<VFigure>
 ```html
 <p class="lede">...</p>
 <p>...</p>
 ```
-</Figure>
+</VFigure>
 
 The function of a paragraph is to mark a pause, setting the paragraph apart from what precedes it. If a paragraph is preceded by a title or subhead, the indent is superfluous and can therefore be omitted. On the web, the most common method of separating paragraphs is using an extra leading or a blank line. Chunks of paragraphs make skimming online content easier.
 
@@ -264,32 +264,32 @@ In print, first-line indent is often used to denote a new paragraph without inte
 
 </section>
 
-<Figure>
+<VFigure>
 ```html
 <section class="indented">
     <p>...</p>
     <p>...</p>
 </section>
 ```
-</Figure>
+</VFigure>
 
 ### Blockquotes
 
 Default block quotation styles assume a particular semantic, accessible markup
 style.
 
-<Figure>
+<VFigure>
 ```html
-<figure>
+<VFigure>
     <blockquote>
         <p>The future is already here — it's just not very evenly distributed.</p>
     </blockquote>
     <figcaption>
         <small>William Gibson, from an interview in <cite>Fresh Air</cite>, NPR (31 August 1993)</small>
     </figcaption>
-</figure>
+</VFigure>
 ```
-</Figure>
+</VFigure>
 
 ### Lists
 
