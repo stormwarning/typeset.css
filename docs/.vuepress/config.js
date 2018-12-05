@@ -1,3 +1,6 @@
+const webpack = require('webpack')
+const versionNum = JSON.stringify(require('../../package.json').version)
+
 module.exports = {
     title: 'Typeset.css',
     description:
@@ -17,5 +20,12 @@ module.exports = {
         '@vuepress/google-analytics': {
             ga: 'UA-58836125-2',
         },
+    },
+    configureWebpack: {
+        plugins: [
+            new webpack.DefinePlugin({
+                'process.env.VERSION': versionNum,
+            }),
+        ],
     },
 }
