@@ -16,11 +16,13 @@ module.exports = {
             },
         ],
     ],
-    plugins: {
-        '@vuepress/google-analytics': {
-            ga: 'UA-58836125-2',
-        },
-    },
+    ga: 'UA-58836125-2',
+    plugins: [
+        require('./plugins/downloads.js'),
+        // '@vuepress/google-analytics': {
+        //     ga: 'UA-58836125-2',
+        // },
+    ],
     configureWebpack: {
         plugins: [
             new webpack.DefinePlugin({

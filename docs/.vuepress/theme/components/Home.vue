@@ -42,7 +42,7 @@
         <span class="ml3 pl3 bl b--black-20">
           <a class="f6" href="#">
             Downloads:
-            <var class="f5 fw6 fs-normal">2k</var>
+            <var class="f5 fw6 fs-normal">{{ downloads }}</var>
           </a>
         </span>
       </div>
@@ -81,7 +81,12 @@ export default {
       };
     },
 
-    version: () => process.env.VERSION
+    version: () => process.env.VERSION,
+
+    downloads() {
+      console.log("$page", this.$page);
+      return this.$page.downloadCount;
+    }
   }
 };
 </script>
