@@ -2,6 +2,7 @@ const webpack = require('webpack')
 const versionNum = JSON.stringify(require('../../package.json').version)
 
 module.exports = {
+    base: '/typeset.css/',
     title: 'Typeset.css',
     description:
         'Typeset.css is a Sass library that provides some sensible default \

@@ -33,13 +33,16 @@
           width="51px"
           height="20px"
         ></iframe>
-        <span class="ml3">
-          <a class="f6" href="#">
+        <span class="flex items-center h2 ml3 pl3 bl b--black-20">
+          <a
+            class="f6 lh-solid"
+            href="https://github.com/stormwarning/typeset.css/blob/master/CHANGELOG.md"
+          >
             Version:
             <var class="f5 fw6 fs-normal">{{ version }}</var>
           </a>
         </span>
-        <span class="ml3 pl3 bl b--black-20">
+        <span class="flex items-center h2 ml3 pl3 bl b--black-20" v-if="downloads > 1">
           <a class="f6" href="#">
             Downloads:
             <var class="f5 fw6 fs-normal">{{ downloads }}</var>
