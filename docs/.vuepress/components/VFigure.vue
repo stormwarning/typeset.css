@@ -55,6 +55,7 @@ export default {
     float: left;
     padding: 0.125rem $s2 $s1;
     margin-right: $s2;
+    font-size: 0.875em;
     font-weight: 600;
     line-height: 1rem;
     color: $oc-white;
