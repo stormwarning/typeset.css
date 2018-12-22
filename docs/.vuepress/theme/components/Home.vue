@@ -27,7 +27,7 @@
     <aside class="project-meta bb b--grey-3 bg-grey-1 pv3">
       <div class="mw8 center flex items-center justify-center">
         <iframe
-          src="http://ghbtns.com/github-btn.html?user=stormwarning&amp;amp;repo=typeset.css&amp;amp;type=star&amp;amp;count=false"
+          src="http://ghbtns.com/github-btn.html?user=stormwarning&repo=typeset.css&type=star&count=false"
           frameborder="0"
           scrolling="0"
           width="51px"
@@ -113,5 +113,12 @@ main {
 
 .logo {
   left: -8rem;
+}
+
+.project-meta {
+  // Equal height to GitHub button for better optical alignment.
+  a {
+    height: 20px;
+  }
 }
 </style>
