@@ -4,16 +4,16 @@
 //
 
 // 1. Config & helpers.
-@import "abstracts/variables";
+@import 'abstracts/variables';
 
 
 // 2. Vendor & plugin styles.
-@import "../../../../typeset";
+@import '../../../../typeset';
 
 
 // 3. Base stuff.
-@import "base/global";
-@import "base/typography";
+@import 'base/global';
+@import 'base/typography';
 @import 'base/tachyons';
 
 
@@ -21,15 +21,5 @@
 @import 'components/arrow';
 @import 'components/blocks';
 @import 'components/code';
-// @import 'components/mobile';
-// @import 'components/nprogress';
+@import 'components/nprogress';
 @import 'components/toc';
-
-
-// @import '~@app/style/config';
-// @import './nprogress';
-// @import './code';
-// @import './custom-blocks';
-// @import './arrow';
-// @import './wrapper';
-// @import './toc';

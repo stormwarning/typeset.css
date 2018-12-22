@@ -1,8 +1,6 @@
 module.exports = {
-    extends: ['@zazen/stylelint-config'],
+    extends: ['@zazen/stylelint-config', '@zazen/stylelint-config/sass'],
     rules: {
-        'selector-max-compound-selectors': 4,
-        'selector-no-qualifying-type': false,
-        'max-nesting-depth': 3,
+        indentation: 4,
     },
 }

@@ -18,6 +18,7 @@
     "@zazen/eslint-config": "^0.3.0",
     "@zazen/stylelint-config": "^1.0.0",
     "date-fns": "^1.30.1",
+    "eslint-loader": "^2.1.1",
     "lint-staged": "^8.1.0",
     "make-fetch-happen": "^4.0.1",
     "node-sass": "^4.11.0",
@@ -29,6 +30,7 @@
     "remark-toc": "^5.1.1",
     "sass-loader": "^7.1.0",
     "stylelint": "^9.8.0",
+    "stylelint-scss": "^3.4.3",
     "tachyons-sass": "^4.9.5",
     "vuepress": "^1.0.0-alpha.30",
     "yorkie": "^2.0.0"
@@ -55,6 +57,10 @@
       "stylelint --fix",
       "git add"
     ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "tabWidth": 4
   },
   "remarkConfig": {
     "plugins": [

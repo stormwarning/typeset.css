@@ -124,7 +124,7 @@ $typ-use-ampersand: true;
 $typ-set-antialias: true;
 
 $typ-font-family:        $font-sans;
-$typ-ampersand-source:   local("adelle"), url('/ampersand.woff') format("woff"), url('/ampersand.otf') format("otf");
+$typ-ampersand-source:   local('adelle'), url('/ampersand.woff') format('woff'), url('/ampersand.otf') format('otf');
 $typ-ampersand-fallback: $typ-font-family;
 
 $typ-h1-size: 48px;
@@ -137,14 +137,14 @@ $typ-h6-size: 14px;
 $typ-line-height:   1.5;
 
 $typ-ot-base: (
-    "kern" 1,
-    "liga" 1,
-    "calt" 1,
-    "pnum" 1,
-    "tnum" 0,
-    "onum" 1,
-    "lnum" 0,
-    "dlig" 0
+    'kern' 1,
+    'liga' 1,
+    'calt' 1,
+    'pnum' 1,
+    'tnum' 0,
+    'onum' 1,
+    'lnum' 0,
+    'dlig' 0
 );
 
 $color-headings: $oc-gray-8;
