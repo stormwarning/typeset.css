@@ -11,6 +11,9 @@
   "scripts": {
     "docs:build": "vuepress build docs",
     "docs:dev": "vuepress dev docs",
+    "docs:format": "npm run docs:eslint && npm run docs:stylelint",
+    "docs:eslint": "prettier-eslint 'docs/.vuepress/**/*.{js,vue}' --write --ignore 'docs/.vuepress/dist/**'",
+    "docs:stylelint": "stylelint 'docs/.vuepress/**/*.{scss,vue}' --fix",
     "lint:styles": "stylelint docs/**/*.scss --fix"
   },
   "devDependencies": {
@@ -18,6 +21,7 @@
     "@zazen/eslint-config": "^0.3.0",
     "@zazen/stylelint-config": "^1.0.0",
     "date-fns": "^1.30.1",
+    "eslint": "^5.11.0",
     "eslint-loader": "^2.1.1",
     "lint-staged": "^8.1.0",
     "make-fetch-happen": "^4.0.1",
@@ -29,7 +33,7 @@
     "remark-preset-lint-markdown-style-guide": "^2.1.2",
     "remark-toc": "^5.1.1",
     "sass-loader": "^7.1.0",
-    "stylelint": "^9.8.0",
+    "stylelint": "^9.9.0",
     "stylelint-scss": "^3.4.3",
     "tachyons-sass": "^4.9.5",
     "vuepress": "^1.0.0-alpha.30",
@@ -59,6 +63,8 @@
     ]
   },
   "prettier": {
+    "arrowParens": "always",
+    "semi": false,
     "singleQuote": true,
     "tabWidth": 4
   },

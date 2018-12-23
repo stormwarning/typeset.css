@@ -1,57 +1,30 @@
 <template>
-  <div
-    class="theme-container grey-7 bg-grey-0"
-    :class="pageClasses"
-    @touchstart="onTouchStart"
-    @touchend="onTouchEnd"
-  >
-    <Navbar
-      v-if="shouldShowNavbar"
-      @toggle-sidebar="toggleSidebar"
-    />
-
     <div
-      class="sidebar-mask"
-      @click="toggleSidebar(false)"
-    ></div>
-
-    <Sidebar
-      :items="sidebarItems"
-      @toggle-sidebar="toggleSidebar"
+        class="theme-container grey-7 bg-grey-0"
+        :class="pageClasses"
+        @touchstart="onTouchStart"
+        @touchend="onTouchEnd"
     >
-      <slot
-        name="sidebar-top"
-        slot="top"
-      />
-      <slot
-        name="sidebar-bottom"
-        slot="bottom"
-      />
-    </Sidebar>
+        <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar"/>
 
-    <div
-      class="custom-layout"
-      v-if="$page.frontmatter.layout"
-    >
-      <component :is="$page.frontmatter.layout"/>
+        <div class="sidebar-mask" @click="toggleSidebar(false)"></div>
+
+        <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
+            <slot name="sidebar-top" slot="top"/>
+            <slot name="sidebar-bottom" slot="bottom"/>
+        </Sidebar>
+
+        <div class="custom-layout" v-if="$page.frontmatter.layout">
+            <component :is="$page.frontmatter.layout"/>
+        </div>
+
+        <Home v-else-if="$page.frontmatter.home"/>
+
+        <Page v-else :sidebar-items="sidebarItems">
+            <slot name="page-top" slot="top"/>
+            <slot name="page-bottom" slot="bottom"/>
+        </Page>
     </div>
-
-    <Home v-else-if="$page.frontmatter.home"/>
-
-    <Page
-      v-else
-      :sidebar-items="sidebarItems"
-    >
-      <slot
-        name="page-top"
-        slot="top"
-      />
-      <slot
-        name="page-bottom"
-        slot="bottom"
-      />
-    </Page>
-  </div>
 </template>
 
 <script>
@@ -168,5 +141,7 @@ export default {
 }
 </script>
 
-<style src="prismjs/themes/prism-tomorrow.css"></style>
-<style src="../styles/theme.scss" lang="scss"></style>
+<style src="prismjs/themes/prism-tomorrow.css">
+</style>
+<style src="../styles/theme.scss" lang="scss">
+</style>

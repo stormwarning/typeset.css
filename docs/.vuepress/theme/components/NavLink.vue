@@ -1,20 +1,15 @@
 <template>
-  <router-link
-    class="nav-link"
-    :to="link"
-    v-if="!isExternal(link)"
-    :exact="exact"
-  >{{ item.text }}</router-link>
-  <a
-    v-else
-    :href="link"
-    class="nav-link external"
-    :target="isMailto(link) || isTel(link) ? null : '_blank'"
-    :rel="isMailto(link) || isTel(link) ? null : 'noopener noreferrer'"
-  >
-    {{ item.text }}
-    <OutboundLink/>
-  </a>
+    <router-link class="nav-link" :to="link" v-if="!isExternal(link)" :exact="exact">{{ item.text }}</router-link>
+    <a
+        v-else
+        :href="link"
+        class="nav-link external"
+        :target="isMailto(link) || isTel(link) ? null : '_blank'"
+        :rel="isMailto(link) || isTel(link) ? null : 'noopener noreferrer'"
+    >
+        {{ item.text }}
+        <OutboundLink/>
+    </a>
 </template>
 
 <script>
@@ -35,7 +30,7 @@ export default {
         exact() {
             if (this.$site.locales) {
                 return Object.keys(this.$site.locales).some(
-                    (rootLink) => rootLink === this.link,
+                    (rootLink) => rootLink === this.link
                 )
             }
             return this.link === '/'

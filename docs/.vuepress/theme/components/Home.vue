@@ -67,31 +67,31 @@
 </template>
 
 <script>
-import NavLink from './NavLink.vue';
+import NavLink from './NavLink.vue'
 
 export default {
     components: { NavLink },
 
     computed: {
         data() {
-            return this.$page.frontmatter;
+            return this.$page.frontmatter
         },
 
         actionLink() {
             return {
                 link: this.data.actionLink,
-                text: this.data.actionText
-            };
+                text: this.data.actionText,
+            }
         },
 
         version: () => process.env.VERSION,
 
         downloads() {
-            console.log('$page', this.$page);
-            return this.$page.downloadCount;
-        }
-    }
-};
+            console.log('$page', this.$page)
+            return this.$page.downloadCount
+        },
+    },
+}
 </script>
 
 <style lang="scss">

@@ -1,64 +1,39 @@
 <template>
-  <div class="page">
-    <slot name="top"/>
+    <div class="page">
+        <slot name="top"/>
 
-    <Content :custom="false"/>
+        <Content :custom="false"/>
 
-    <div class="page-edit">
-      <div
-        class="edit-link"
-        v-if="editLink"
-      >
-        <a
-          :href="editLink"
-          target="_blank"
-          rel="noopener noreferrer"
-        >{{ editLinkText }}</a>
-        <OutboundLink/>
-      </div>
+        <div class="page-edit">
+            <div class="edit-link" v-if="editLink">
+                <a :href="editLink" target="_blank" rel="noopener noreferrer">{{ editLinkText }}</a>
+                <OutboundLink/>
+            </div>
 
-      <div
-        class="last-updated"
-        v-if="lastUpdated"
-      >
-        <span class="prefix">{{ lastUpdatedText }}: </span>
-        <span class="time">{{ lastUpdated }}</span>
-      </div>
+            <div class="last-updated" v-if="lastUpdated">
+                <span class="prefix">{{ lastUpdatedText }}:</span>
+                <span class="time">{{ lastUpdated }}</span>
+            </div>
+        </div>
+
+        <div class="page-nav" v-if="prev || next">
+            <p class="inner">
+                <span v-if="prev" class="prev">←
+                    <router-link
+                        v-if="prev"
+                        class="prev"
+                        :to="prev.path"
+                    >{{ prev.title || prev.path }}</router-link>
+                </span>
+
+                <span v-if="next" class="next">
+                    <router-link v-if="next" :to="next.path">{{ next.title || next.path }}</router-link>→
+                </span>
+            </p>
+        </div>
+
+        <slot name="bottom"/>
     </div>
-
-    <div class="page-nav" v-if="prev || next">
-      <p class="inner">
-        <span
-          v-if="prev"
-          class="prev"
-        >
-          ←
-          <router-link
-            v-if="prev"
-            class="prev"
-            :to="prev.path"
-          >
-            {{ prev.title || prev.path }}
-          </router-link>
-        </span>
-
-        <span
-          v-if="next"
-          class="next"
-        >
-          <router-link
-            v-if="next"
-            :to="next.path"
-          >
-            {{ next.title || next.path }}
-          </router-link>
-          →
-        </span>
-      </p>
-    </div>
-
-    <slot name="bottom"/>
-  </div>
 </template>
 
 <script>
@@ -76,7 +51,7 @@ export default {
         lastUpdated() {
             if (this.$page.lastUpdated) {
                 return new Date(this.$page.lastUpdated).toLocaleString(
-                    this.$lang,
+                    this.$lang
                 )
             }
         },
@@ -137,7 +112,7 @@ export default {
                     docsRepo,
                     docsDir,
                     docsBranch,
-                    path,
+                    path
                 )
             }
         },
@@ -209,68 +184,68 @@ function find(page, items, offset) {
 @import '../styles/abstracts/variables';
 
 .page {
-  padding-bottom: 2rem;
+    padding-bottom: 2rem;
 }
 
 .page-edit {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  overflow: auto;
-
-  .edit-link {
-    display: inline-block;
-
-    a {
-      margin-right: 0.25rem;
-      color: lighten($color-text, 25%);
-    }
-  }
-
-  .last-updated {
-    float: right;
-    font-size: 0.9em;
-
-    .prefix {
-      font-weight: 500;
-      color: lighten($color-text, 25%);
-    }
-
-    .time {
-      font-weight: 400;
-      color: #aaa;
-    }
-  }
-}
-
-.page-nav {
-  // @extend $wrapper;
-  padding-top: 1rem;
-  padding-bottom: 0;
-
-  .inner {
-    min-height: 2rem;
     padding-top: 1rem;
-    margin-top: 0;
-    overflow: auto; // clear float
-    border-top: 1px solid $color-border;
-  }
+    padding-bottom: 1rem;
+    overflow: auto;
 
-  .next {
-    float: right;
-  }
-}
-
-@media (max-width: $width-small) {
-  .page-edit {
     .edit-link {
-      margin-bottom: 0.5rem;
+        display: inline-block;
+
+        a {
+            margin-right: 0.25rem;
+            color: lighten($color-text, 25%);
+        }
     }
 
     .last-updated {
-      float: none;
-      font-size: 0.8em;
-      text-align: left;
+        float: right;
+        font-size: 0.9em;
+
+        .prefix {
+            font-weight: 500;
+            color: lighten($color-text, 25%);
+        }
+
+        .time {
+            font-weight: 400;
+            color: #aaa;
+        }
     }
-  }
+}
+
+.page-nav {
+    // @extend $wrapper;
+    padding-top: 1rem;
+    padding-bottom: 0;
+
+    .inner {
+        min-height: 2rem;
+        padding-top: 1rem;
+        margin-top: 0;
+        overflow: auto; // clear float
+        border-top: 1px solid $color-border;
+    }
+
+    .next {
+        float: right;
+    }
+}
+
+@media (max-width: $width-small) {
+    .page-edit {
+        .edit-link {
+            margin-bottom: 0.5rem;
+        }
+
+        .last-updated {
+            float: none;
+            font-size: 0.8em;
+            text-align: left;
+        }
+    }
 }
 </style>

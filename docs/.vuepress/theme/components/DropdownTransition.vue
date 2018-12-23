@@ -1,12 +1,12 @@
 <template>
-  <transition
-    name="dropdown"
-    @enter="setHeight"
-    @after-enter="unsetHeight"
-    @before-leave="setHeight"
-  >
-    <slot/>
-  </transition>
+    <transition
+        name="dropdown"
+        @enter="setHeight"
+        @after-enter="unsetHeight"
+        @before-leave="setHeight"
+    >
+        <slot/>
+    </transition>
 </template>
 
 <script>
@@ -29,6 +29,6 @@ export default {
 <style lang="scss">
 .dropdown-enter,
 .dropdown-leave-to {
-  height: 0 !important;
+    height: 0 !important;
 }
 </style>

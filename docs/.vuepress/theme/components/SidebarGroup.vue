@@ -1,33 +1,18 @@
 <template>
-  <div
-    class="sidebar-group"
-    :class="{ first, collapsable }"
-  >
-    <p
-      class="sidebar-heading"
-      :class="{ open }"
-      @click="$emit('toggle')"
-    >
-      <span>{{ item.title }}</span>
-      <span
-        class="arrow"
-        v-if="collapsable"
-        :class="open ? 'down' : 'right'">
-      </span>
-    </p>
+    <div class="sidebar-group" :class="{ first, collapsable }">
+        <p class="sidebar-heading" :class="{ open }" @click="$emit('toggle')">
+            <span>{{ item.title }}</span>
+            <span class="arrow" v-if="collapsable" :class="open ? 'down' : 'right'"></span>
+        </p>
 
-    <DropdownTransition>
-      <ul
-        ref="items"
-        class="sidebar-group-items"
-        v-if="open || !collapsable"
-      >
-        <li v-for="child in item.children">
-          <SidebarLink :item="child"/>
-        </li>
-      </ul>
-    </DropdownTransition>
-  </div>
+        <DropdownTransition>
+            <ul ref="items" class="sidebar-group-items" v-if="open || !collapsable">
+                <li v-for="child in item.children">
+                    <SidebarLink :item="child"/>
+                </li>
+            </ul>
+        </DropdownTransition>
+    </div>
 </template>
 
 <script>
@@ -43,51 +28,51 @@ export default {
 
 <style lang="scss">
 .sidebar-group {
-  &:not(.first) {
-    margin-top: 1em;
-  }
-
-  .sidebar-group {
-    padding-left: 0.5em;
-  }
-
-  &:not(.collapsable) {
-    .sidebar-heading {
-      color: inherit;
-      cursor: auto;
+    &:not(.first) {
+        margin-top: 1em;
     }
-  }
+
+    .sidebar-group {
+        padding-left: 0.5em;
+    }
+
+    &:not(.collapsable) {
+        .sidebar-heading {
+            color: inherit;
+            cursor: auto;
+        }
+    }
 }
 
 .sidebar-heading {
-  // text-transform uppercase
-  padding: 0 1.5rem;
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-size: 1.1em;
-  font-weight: bold;
-  color: #999;
-  cursor: pointer;
-  transition: color 0.15s ease;
+    // text-transform uppercase
+    padding: 0 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.15s ease;
 
-  &.open,
-  &:hover {
-    color: inherit;
-  }
+    &.open,
+    &:hover {
+        color: inherit;
+    }
 
-  .arrow {
-    position: relative;
-    top: -0.12em;
-    left: 0.5em;
-  }
+    .arrow {
+        position: relative;
+        top: -0.12em;
+        left: 0.5em;
+    }
 
-  &.open .arrow {
-    top: -0.18em;
-  }
+    &.open .arrow {
+        top: -0.18em;
+    }
 }
 
 .sidebar-group-items {
-  overflow: hidden;
-  transition: height 0.1s ease-out;
+    overflow: hidden;
+    transition: height 0.1s ease-out;
 }
 </style>

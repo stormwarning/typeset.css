@@ -1,22 +1,22 @@
 <template>
-  <div class="sidebar">
-    <NavLinks/>
-    <slot name="top"/>
-    <ul class="sidebar-links" v-if="items.length">
-      <li v-for="(item, i) in items" :key="i">
-        <SidebarGroup
-          v-if="item.type === 'group'"
-          :item="item"
-          :first="i === 0"
-          :open="i === openGroupIndex"
-          :collapsable="item.collapsable || item.collapsible"
-          @toggle="toggleGroup(i)"
-        />
-        <SidebarLink v-else :item="item"/>
-      </li>
-    </ul>
-    <slot name="bottom"/>
-  </div>
+    <div class="sidebar">
+        <NavLinks/>
+        <slot name="top"/>
+        <ul class="sidebar-links" v-if="items.length">
+            <li v-for="(item, i) in items" :key="i">
+                <SidebarGroup
+                    v-if="item.type === 'group'"
+                    :item="item"
+                    :first="i === 0"
+                    :open="i === openGroupIndex"
+                    :collapsable="item.collapsable || item.collapsible"
+                    @toggle="toggleGroup(i)"
+                />
+                <SidebarLink v-else :item="item"/>
+            </li>
+        </ul>
+        <slot name="bottom"/>
+    </div>
 </template>
 
 <script>
@@ -79,55 +79,63 @@ function resolveOpenGroupIndex(route, items) {
 </script>
 
 <style lang="scss">
+// stylelint-disable max-nesting-depth
 @import '../styles/abstracts/variables';
 
 .sidebar {
-  ul {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-  }
-
-  a {
-    display: inline-block;
-  }
-
-  .nav-links {
-    display: none;
-    padding: 0.5rem 0 0.75rem 0;
-    border-bottom: 1px solid $color-border;
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+    }
 
     a {
-      font-weight: 600;
+        display: inline-block;
     }
 
-    .nav-item,
-    .repo-link {
-      display: block;
-      padding: 0.5rem 0 0.5rem 1.5rem;
-      font-size: 1.1em;
-      line-height: 1.25rem;
-    }
-  }
-
-  .sidebar-links {
-    padding: 1.5rem 0;
-  }
-}
-
-@media (max-width: $width-small) {
-  .sidebar {
     .nav-links {
-      display: block;
+        display: none;
+        padding: 0.5rem 0 0.75rem;
+        border-bottom: 1px solid $color-border;
 
-      .dropdown-wrapper .nav-dropdown .dropdown-item a.router-link-active::after {
-        top: calc(1rem - 2px);
-      }
+        a {
+            font-weight: 600;
+        }
+
+        .nav-item,
+        .repo-link {
+            display: block;
+            padding: 0.5rem 0 0.5rem 1.5rem;
+            font-size: 1.1em;
+            line-height: 1.25rem;
+        }
     }
 
     .sidebar-links {
-      padding: 1rem 0;
+        padding: 1.5rem 0;
     }
-  }
+}
+
+@media (max-width: $width-small) {
+    .sidebar {
+        .nav-links {
+            display: block;
+
+            .dropdown-wrapper {
+                .nav-dropdown {
+                    .dropdown-item {
+                        // stylelint-disable-next-line selector-max-compound-selectors
+                        a.router-link-active::after {
+                            top: calc(1rem - 2px);
+                        }
+                    }
+                }
+            }
+        }
+
+        .sidebar-links {
+            padding: 1rem 0;
+        }
+    }
 }
 </style>

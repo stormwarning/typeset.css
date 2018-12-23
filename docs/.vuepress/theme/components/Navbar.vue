@@ -1,39 +1,30 @@
 <template>
-  <header class="navbar">
-    <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')"/>
+    <header class="navbar">
+        <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')"/>
 
-    <router-link
-      :to="$localePath"
-      class="home-link"
-    >
-      <img
-        class="logo"
-        v-if="$site.themeConfig.logo"
-        :src="$withBase($site.themeConfig.logo)"
-        :alt="$siteTitle"
-      >
-      <span
-        ref="siteName"
-        class="site-name"
-        v-if="$siteTitle"
-        :class="{ 'can-hide': $site.themeConfig.logo }"
-      >{{ $siteTitle }}</span>
-    </router-link>
+        <router-link :to="$localePath" class="home-link">
+            <img
+                class="logo"
+                v-if="$site.themeConfig.logo"
+                :src="$withBase($site.themeConfig.logo)"
+                :alt="$siteTitle"
+            >
+            <span
+                ref="siteName"
+                class="site-name"
+                v-if="$siteTitle"
+                :class="{ 'can-hide': $site.themeConfig.logo }"
+            >{{ $siteTitle }}</span>
+        </router-link>
 
-    <div
-      class="links"
-      :style="{
+        <div class="links" :style="{
         'max-width': linksWrapMaxWidth + 'px'
-      }"
-    >
-      <AlgoliaSearchBox
-        v-if="isAlgoliaSearch"
-        :options="algolia"
-      />
-      <SearchBox v-else-if="$site.themeConfig.search !== false"/>
-      <NavLinks class="can-hide"/>
-    </div>
-  </header>
+      }">
+            <AlgoliaSearchBox v-if="isAlgoliaSearch" :options="algolia"/>
+            <SearchBox v-else-if="$site.themeConfig.search !== false"/>
+            <NavLinks class="can-hide"/>
+        </div>
+    </header>
 </template>
 
 <script>
@@ -103,63 +94,63 @@ $navbar-vertical-padding: 0.7rem;
 $navbar-horizontal-padding: 1.5rem;
 
 .navbar {
-  position: relative;
-  padding: $navbar-vertical-padding $navbar-horizontal-padding;
-  line-height: $height-navbar - 1.4rem;
-
-  a,
-  span,
-  img {
-    display: inline-block;
-  }
-
-  .logo {
-    min-width: $height-navbar - 1.4rem;
-    height: $height-navbar - 1.4rem;
-    margin-right: 0.8rem;
-    vertical-align: top;
-  }
-
-  .site-name {
     position: relative;
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: $color-text;
-  }
+    padding: $navbar-vertical-padding $navbar-horizontal-padding;
+    line-height: $height-navbar - 1.4rem;
 
-  .links {
-    position: absolute;
-    top: $navbar-vertical-padding;
-    right: $navbar-horizontal-padding;
-    box-sizing: border-box;
-    display: flex;
-    padding-left: 1.5rem;
-    font-size: 0.9rem;
-    white-space: nowrap;
-    background-color: white;
-
-    .search-box {
-      flex: 0 0 auto;
-      vertical-align: top;
+    a,
+    span,
+    img {
+        display: inline-block;
     }
 
-    .nav-links {
-      flex: 1;
+    .logo {
+        min-width: $height-navbar - 1.4rem;
+        height: $height-navbar - 1.4rem;
+        margin-right: 0.8rem;
+        vertical-align: top;
     }
-  }
-}
 
-@media (max-width: $width-small) {
-  .navbar {
-    padding-left: 4rem;
-
-    .can-hide {
-      display: none;
+    .site-name {
+        position: relative;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: $color-text;
     }
 
     .links {
-      padding-left: 1.5rem;
+        position: absolute;
+        top: $navbar-vertical-padding;
+        right: $navbar-horizontal-padding;
+        box-sizing: border-box;
+        display: flex;
+        padding-left: 1.5rem;
+        font-size: 0.9rem;
+        white-space: nowrap;
+        background-color: #fff;
+
+        .search-box {
+            flex: 0 0 auto;
+            vertical-align: top;
+        }
+
+        .nav-links {
+            flex: 1;
+        }
     }
-  }
+}
+
+@media (max-width: $width-small) {
+    .navbar {
+        padding-left: 4rem;
+
+        .can-hide {
+            display: none;
+        }
+
+        .links {
+            padding-left: 1.5rem;
+        }
+    }
 }
 </style>

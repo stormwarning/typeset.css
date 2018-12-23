@@ -97,42 +97,42 @@ function renderChildren(h, children, path, route, maxDepth, depth = 1) {
 @import '../styles/abstracts/variables';
 
 .sidebar .sidebar-sub-headers {
-  padding-left: 1rem;
-  font-size: 0.95em;
+    padding-left: 1rem;
+    font-size: 0.95em;
 }
 
 a.sidebar-link {
-  box-sizing: border-box;
-  display: inline-block;
-  width: 100%;
-  padding: 0.35rem 1rem 0.35rem 1.25rem;
-  font-weight: 400;
-  line-height: 1.4;
-  color: $color-text;
-  border-left: 0.25rem solid transparent;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    padding: 0.35rem 1rem 0.35rem 1.25rem;
+    font-weight: 400;
+    line-height: 1.4;
+    color: $color-text;
+    border-left: 0.25rem solid transparent;
 
-  &:hover {
-    color: $color-accent;
-  }
-
-  &.active {
-    font-weight: 600;
-    color: $color-accent;
-    border-left-color: $color-accent;
-  }
-
-  .sidebar-group & {
-    padding-left: 2rem;
-  }
-
-  .sidebar-sub-headers & {
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
-    border-left: none;
+    &:hover {
+        color: $color-accent;
+    }
 
     &.active {
-      font-weight: 500;
+        font-weight: 600;
+        color: $color-accent;
+        border-left-color: $color-accent;
     }
-  }
+
+    .sidebar-group & {
+        padding-left: 2rem;
+    }
+
+    .sidebar-sub-headers & {
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+        border-left: none;
+
+        &.active {
+            font-weight: 500;
+        }
+    }
 }
 </style>

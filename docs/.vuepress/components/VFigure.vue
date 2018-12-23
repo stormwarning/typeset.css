@@ -11,10 +11,10 @@
 export default {
     computed: {
         hasCaption() {
-            return !!this.$slots.caption;
-        }
-    }
-};
+            return !!this.$slots.caption
+        },
+    },
+}
 </script>
 
 

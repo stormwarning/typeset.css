@@ -1,36 +1,23 @@
 <template>
-  <nav
-    class="nav-links"
-    v-if="userLinks.length || repoLink"
-  >
-    <!-- user links -->
-    <div
-      class="nav-item"
-      v-for="item in userLinks"
-      :key="item.link"
-    >
-      <DropdownLink
-        v-if="item.type === 'links'"
-        :item="item"
-      />
-      <NavLink
-        v-else
-        :item="item"
-      />
-    </div>
+    <nav class="nav-links" v-if="userLinks.length || repoLink">
+        <!-- user links -->
+        <div class="nav-item" v-for="item in userLinks" :key="item.link">
+            <DropdownLink v-if="item.type === 'links'" :item="item"/>
+            <NavLink v-else :item="item"/>
+        </div>
 
-    <!-- repo link -->
-    <a
-      v-if="repoLink"
-      :href="repoLink"
-      class="repo-link"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      {{ repoLabel }}
-      <OutboundLink/>
-    </a>
-  </nav>
+        <!-- repo link -->
+        <a
+            v-if="repoLink"
+            :href="repoLink"
+            class="repo-link"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            {{ repoLabel }}
+            <OutboundLink/>
+        </a>
+    </nav>
 </template>
 
 <script>
@@ -69,7 +56,7 @@ export default {
                             // Try to stay on the same page
                             link = currentLink.replace(
                                 this.$localeConfig.path,
-                                path,
+                                path
                             )
                             // fallback to homepage
                             if (!routes.some((route) => route.path === link)) {
@@ -126,57 +113,57 @@ export default {
 @import '../styles/abstracts/variables';
 
 .nav-links {
-  display: inline-block;
-
-  a {
-    line-height: 1.4rem;
-    color: inherit;
-
-    &:hover,
-    &.router-link-active {
-      color: $color-accent;
-    }
-  }
-
-  .nav-item {
-    position: relative;
     display: inline-block;
-    margin-left: 1.5rem;
-    line-height: 2rem;
 
-    &:first-child {
-      margin-left: 0;
+    a {
+        line-height: 1.4rem;
+        color: inherit;
+
+        &:hover,
+        &.router-link-active {
+            color: $color-accent;
+        }
     }
-  }
 
-  .repo-link {
-    margin-left: 1.5rem;
-  }
+    .nav-item {
+        position: relative;
+        display: inline-block;
+        margin-left: 1.5rem;
+        line-height: 2rem;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+
+    .repo-link {
+        margin-left: 1.5rem;
+    }
 }
 
 @media (max-width: $width-small) {
-  .nav-links {
-    .nav-item,
-    .repo-link {
-      margin-left: 0;
+    .nav-links {
+        .nav-item,
+        .repo-link {
+            margin-left: 0;
+        }
     }
-  }
 }
 
 @media (min-width: $width-small) {
-  .nav-links a {
-    &:hover,
-    &.router-link-active {
-      color: $color-text;
+    .nav-links a {
+        &:hover,
+        &.router-link-active {
+            color: $color-text;
+        }
     }
-  }
 
-  .nav-item > a:not(.external) {
-    &:hover,
-    &.router-link-active {
-      margin-bottom: -2px;
-      border-bottom: 2px solid lighten($color-accent, 8%);
+    .nav-item > a:not(.external) {
+        &:hover,
+        &.router-link-active {
+            margin-bottom: -2px;
+            border-bottom: 2px solid lighten($color-accent, 8%);
+        }
     }
-  }
 }
 </style>

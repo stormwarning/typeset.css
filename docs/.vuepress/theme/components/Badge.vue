@@ -28,37 +28,37 @@ export default {
 // @import '~@app/style/config';
 
 .badge {
-  display: inline-block;
-  height: 18px;
-  padding: 0 6px;
-  margin-right: 5px;
-  font-size: 14px;
-  line-height: 18px;
-  color: white;
-  background-color: #42b983;
-  border-radius: 3px;
-
-  &.middle {
-    vertical-align: middle;
-  }
-
-  &.top {
-    vertical-align: top;
-  }
-
-  &.tip,
-  &.green {
+    display: inline-block;
+    height: 18px;
+    padding: 0 6px;
+    margin-right: 5px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #fff;
     background-color: #42b983;
-  }
+    border-radius: 3px;
 
-  &.error {
-    background-color: #da5961; // #f66
-  }
+    &.middle {
+        vertical-align: middle;
+    }
 
-  &.warning,
-  &.warn,
-  &.yellow {
-    background-color: darken(#ffe564, 35%);
-  }
+    &.top {
+        vertical-align: top;
+    }
+
+    &.tip,
+    &.green {
+        background-color: #42b983;
+    }
+
+    &.error {
+        background-color: #da5961; // #f66
+    }
+
+    &.warning,
+    &.warn,
+    &.yellow {
+        background-color: darken(#ffe564, 35%);
+    }
 }
 </style>
