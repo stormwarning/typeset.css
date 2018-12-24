@@ -80,17 +80,17 @@ export default {
         actionLink() {
             return {
                 link: this.data.actionLink,
-                text: this.data.actionText,
+                text: this.data.actionText
             }
         },
 
         version: () => process.env.VERSION,
 
         downloads() {
-            console.log('$page', this.$page)
+            // console.log('$page', this.$page)
             return this.$page.downloadCount
-        },
-    },
+        }
+    }
 }
 </script>
 

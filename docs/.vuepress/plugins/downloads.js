@@ -5,12 +5,12 @@ module.exports = (options = {}, context) => ({
     extendPageData($page) {
         if ($page.frontmatter.home) {
             $page.downloadCount = totalDownloads().then((dls) => {
-                console.log(dls)
+                // console.log(dls)
                 return dls
             })
             $page.lastUpdated = getGitLastUpdatedTimeStamp($page._filePath)
         }
-    },
+    }
 })
 
 function getTotalDownloads() {
@@ -18,7 +18,7 @@ function getTotalDownloads() {
 
     try {
         downloadCount = totalDownloads().then((dls) => {
-            console.log(dls)
+            // console.log(dls)
             return dls
         })
     } catch (error) {
@@ -36,7 +36,7 @@ function getGitLastUpdatedTimeStamp(filePath) {
             parseInt(
                 spawn
                     .sync('git', ['log', '-1', '--format=%ct', filePath])
-                    .stdout.toString('utf-8'),
+                    .stdout.toString('utf-8')
             ) * 1000
     } catch (e) {
         /* do not handle for now */
