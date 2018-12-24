@@ -13,22 +13,39 @@ module.exports = {
             'link',
             {
                 rel: 'stylesheet',
-                href: 'https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css',
-            },
+                href: 'https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css'
+            }
         ],
+        [
+            'link',
+            {
+                rel: 'apple-touch-icon',
+                sizes: '180x180',
+                href: '/apple-touch-icon.png'
+            }
+        ],
+        [
+            'meta',
+            {
+                name: 'apple-mobile-web-app-title',
+                content: 'Typeset.css'
+            }
+        ]
     ],
-    ga: 'UA-58836125-2',
     plugins: [
-        require('./plugins/downloads.js'),
-        // '@vuepress/google-analytics': {
-        //     ga: 'UA-58836125-2',
-        // },
+        // require('./plugins/downloads.js'),
+        [
+            '@vuepress/google-analytics',
+            {
+                ga: 'UA-58836125-2'
+            }
+        ]
     ],
     configureWebpack: {
         plugins: [
             new webpack.DefinePlugin({
-                'process.env.VERSION': versionNum,
-            }),
-        ],
-    },
+                'process.env.VERSION': versionNum
+            })
+        ]
+    }
 }
