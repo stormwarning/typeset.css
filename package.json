@@ -23,7 +23,7 @@
     "lint:styles": "stylelint docs/**/*.scss --fix"
   },
   "devDependencies": {
-    "@vuepress/plugin-google-analytics": "^1.0.0-alpha.0",
+    "@vuepress/plugin-google-analytics": "^1.0.0-alpha.30",
     "@zazen/eslint-config": "^0.3.0",
     "@zazen/stylelint-config": "^1.0.0",
     "date-fns": "^1.30.1",
