@@ -10,9 +10,10 @@
   "main": "_typeset.scss",
   "scripts": {
     "docs:build": "vuepress build docs",
+    "docs:deploy": "./bin/docs.sh",
     "docs:dev": "vuepress dev docs",
-    "docs:format": "npm run docs:eslint && npm run docs:stylelint",
     "docs:eslint": "prettier-eslint 'docs/.vuepress/**/*.{js,vue}' --write --ignore 'docs/.vuepress/dist/**'",
+    "docs:format": "npm run docs:eslint && npm run docs:stylelint",
     "docs:stylelint": "stylelint 'docs/.vuepress/**/*.{scss,vue}' --fix",
     "lint:styles": "stylelint docs/**/*.scss --fix"
   },
@@ -53,11 +54,11 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "**/*.js": [
+    "**/*.{js|vue}": [
       "prettier-eslint --write",
       "git add"
     ],
-    "**/*.scss": [
+    "**/*.{scss|vue}": [
       "stylelint --fix",
       "git add"
     ]
