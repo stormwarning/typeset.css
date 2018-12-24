@@ -8,6 +8,11 @@
   "bugs": "https://github.com/stormwarning/typeset.css/issues",
   "version": "0.6.1",
   "main": "_typeset.scss",
+  "files": [
+    "_settings.scss",
+    "styles",
+    "utilities"
+  ],
   "scripts": {
     "docs:build": "vuepress build docs",
     "docs:deploy": "./bin/docs.sh",
