@@ -73,20 +73,20 @@ settings to cleanly adjust the settings you need on different elements.
 <VFigure>
 ```scss
 $typ-ot-base: (
-    "kern" 1,
-    "liga" 1,
-    "calt" 1,
-    "pnum" 1,
-    "tnum" 0,
-    "onum" 1,
-    "lnum" 0,
-    "dlig" 0
+    'kern' 1,
+    'liga' 1,
+    'calt' 1,
+    'pnum' 1,
+    'tnum' 0,
+    'onum' 1,
+    'lnum' 0,
+    'dlig' 0
 ) !default;
 ```
 
 ```scss
 h1, h2, h3 {
-    font-feature-settings: opentype("dlig" 1);
+    font-feature-settings: opentype('dlig' 1);
 }
 ```
 
@@ -214,7 +214,7 @@ to a paragraph to see the effect.
 .dropcap::after {
     display: table;
     clear: both;
-    content: "";
+    content: '';
 }
 
 .dropcap::first-letter {
@@ -280,14 +280,14 @@ style.
 
 <VFigure>
 ```html
-<VFigure>
+<figure>
     <blockquote>
         <p>The future is already here — it's just not very evenly distributed.</p>
     </blockquote>
     <figcaption>
         <small>William Gibson, from an interview in <cite>Fresh Air</cite>, NPR (31 August 1993)</small>
     </figcaption>
-</VFigure>
+</figure>
 ```
 </VFigure>
 
