@@ -1,0 +1,19 @@
+@viewport { width: device-width; }
+
+:root {
+    font-size: ($default-font-size - 2);
+
+    @media (min-width: $width-medium) {
+        font-size: $default-font-size;
+    }
+
+    @media (min-width: $width-large) {
+        font-size: ($default-font-size + 2);
+    }
+}
+
+body {
+    font-family: 'adelle-sans', sans-serif;
+    font-weight: 300;
+    counter-reset: fignum;
+}
