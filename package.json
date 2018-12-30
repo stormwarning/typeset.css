@@ -20,12 +20,14 @@
     "docs:eslint": "prettier-eslint 'docs/.vuepress/**/*.{js,vue}' --write --ignore 'docs/.vuepress/dist/**'",
     "docs:format": "npm run docs:eslint && npm run docs:stylelint",
     "docs:stylelint": "stylelint 'docs/.vuepress/**/*.{scss,vue}' --fix",
-    "lint:styles": "stylelint docs/**/*.scss --fix"
+    "lint:styles": "stylelint docs/**/*.scss --fix",
+    "test": "ava --verbose"
   },
   "devDependencies": {
     "@vuepress/plugin-google-analytics": "^1.0.0-alpha.30",
     "@zazen/eslint-config": "^0.3.0",
     "@zazen/stylelint-config": "^1.0.0",
+    "ava": "^1.0.1",
     "date-fns": "^1.30.1",
     "eslint": "^5.11.0",
     "eslint-loader": "^2.1.1",
