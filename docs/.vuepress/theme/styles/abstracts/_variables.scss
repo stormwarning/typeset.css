@@ -1,0 +1,171 @@
+////
+/// Documentation site variables
+///
+/// CONTENTS
+///
+/// LEGACY COLOURS ..... Colours from previous version of docs.
+/// OPEN COLOR ......... Map OpenColor values onto Tachyons classes.
+/// TACHYONS VALUES .... Maintain Tachyons scales in custom CSS.
+/// TYPOGRAPHY ......... General typography variables.
+/// TYPESET SETTINGS ... Configuration for Typeset.css.
+////
+
+@import 'node_modules/open-color/open-color.scss';
+@import 'node_modules/tachyons-sass/scss/_variables.scss';
+
+
+///
+/// Legacy colours
+/// Just for posterity's sake.
+///
+
+$blue:            #58b9ed;
+$blue-grey:       #549bcc;
+$blue-hover:      #1e87c0;
+$blue-grey-dark:  #3c5670;
+$blue-dark:       #164c70;
+$aqua:            #20bfa1;
+$green:           #79b95a;
+$yellow-dark:     #aa9000;
+$yellow:          #ffe75f;
+$orange:          #f7925a;
+$orange-dark:     #ff823c;
+// $red:             #c4524a;
+$red:             #eb5775;
+$red-med:         #cf4c66;
+$red-dark:        #663348;
+$purple-light:    #9f58cd;
+$purple:          #8c42a3;
+$purple-dark:     #772392;
+
+$grey-100:        #f4f4f4;
+$grey-200:        #efefef;
+$grey-300:        #dfdfdf;
+$grey-400:        #c7c7c7;
+$grey-500:        #9e9fa8;
+$grey-600:        #5e5e61;
+$grey-700:        #5c7275;
+$grey-800:        #3a585f;
+$grey-900:        #272d34;
+
+$old-header-bg:       #152839;
+$old-header-subtitle: #406078;
+
+$old-highlight-bg:      #1d262f;
+$old-highlight-lang-bg: rgba(#ebf4ff, 0.5);
+
+
+///
+/// A map of colours to build out Tachyons-like classes.
+/// @see _tachyons.scss
+///
+
+$colormap: (
+    grey-0: $oc-gray-0,
+    grey-1: $oc-gray-1,
+    grey-3: $oc-gray-3,
+    grey-7: $oc-gray-7,
+    grey-9: $oc-gray-9,
+    blue-6: $oc-blue-6,
+    cyan-4: $oc-cyan-4,
+    cyan-7: $oc-cyan-7,
+);
+
+
+///
+/// Tachyons values remapped to variables that are closer to the
+/// utility classnames.
+///
+
+// Type scale.
+$f1: $font-size-1;
+$f2: $font-size-2;
+$f3: $font-size-3;
+$f4: $font-size-4;
+$f5: $font-size-5;
+$f6: $font-size-6;
+$f7: $font-size-7;
+
+// Spacing scale.
+$s1: $spacing-extra-small;
+$s2: $spacing-small;
+$s3: $spacing-medium;
+$s4: $spacing-large;
+$s5: $spacing-extra-large;
+$s6: $spacing-extra-extra-large;
+$s7: $spacing-extra-extra-extra-large;
+
+// Width scale.
+$w1: $width-1;
+$w2: $width-2;
+$w3: $width-3;
+$w4: $width-4;
+$w5: $width-5;
+
+// Border radius scale.
+$br1: $border-radius-1;
+$br2: $border-radius-2;
+$br3: $border-radius-3;
+$br4: $border-radius-4;
+
+
+$font-sans: 'adelle-sans', sans-serif;
+$font-serif: 'adelle', serif;
+$font-mono: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', 'Courier', monospace;
+$default-font-size: 16px;
+$base-line-height:  1.5;
+
+$size-headline:    6rem; // 96px;
+$size-subheadline: 5rem; // 80px;
+
+$typ-use-headings:  true;
+$typ-use-opentype:  true;
+$typ-use-ampersand: true;
+$typ-set-antialias: true;
+
+$typ-font-family:        $font-sans;
+$typ-ampersand-source:   local('adelle'), url('/ampersand.woff') format('woff'), url('/ampersand.otf') format('otf');
+$typ-ampersand-fallback: $typ-font-family;
+
+$typ-h1-size: 48px;
+$typ-h2-size: 36px;
+$typ-h3-size: 24px;
+$typ-h4-size: 20px;
+$typ-h5-size: 16px;
+$typ-h6-size: 14px;
+
+$typ-line-height:   1.5;
+
+$typ-ot-base: (
+    'kern' 1,
+    'liga' 1,
+    'calt' 1,
+    'pnum' 1,
+    'tnum' 0,
+    'onum' 1,
+    'lnum' 0,
+    'dlig' 0
+);
+
+$color-headings: $oc-gray-8;
+$color-text:   $oc-gray-7;
+$color-arrow:  $oc-gray-6;
+$color-border: $oc-gray-3;
+$color-accent: $oc-blue-7;
+$color-bg-code: $oc-gray-8;
+
+
+$width-small:  480px;
+$width-medium: 960px;
+$width-large:  1440px;
+
+$width-sidebar: 20rem;
+$width-content: 740px;
+$height-navbar: 3.6rem;
+$width-linenumbers: $w3;
+
+$MQNarrow: 959px;
+$MQMobile: 719px;
+$MQMobileNarrow: 419px;
+
+$codeLang: (js ts html md vue css sass scss less stylus go java c sh yaml py);

@@ -1,0 +1,12 @@
+
+@each $name, $color in $colormap {
+    .#{$name} { color: #{$color}; }
+    .bg-#{$name} { background-color: #{$color}; }
+    .b--#{$name} { border-color: #{$color}; }
+
+    .hover-#{$name}:hover,
+    .hover-#{$name}:focus { color: #{$color}; }
+
+    .hover-bg-#{$name}:hover,
+    .hover-bg-#{$name}:focus { background-color: #{$color}; }
+}
