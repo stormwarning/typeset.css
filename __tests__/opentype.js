@@ -20,7 +20,7 @@ test('opentype() function', async (t) => {
         `,
         includePaths: ['../']
     })
-    // t.log(result.css.toString())
+
     t.regex(
         result.css.toString(),
         /font-feature-settings: "kern" 1, "liga" 1, "dlig" 0/,
@@ -34,7 +34,7 @@ test('opentype() function', async (t) => {
         `,
         includePaths: ['../']
     })
-    // t.log(result.css.toString())
+
     t.regex(
         result2.css.toString(),
         /font-feature-settings: "kern" 1, "liga" 1, "dlig" 1, "onum" 1/,

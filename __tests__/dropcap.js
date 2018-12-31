@@ -3,17 +3,25 @@ import test from 'ava'
 const path = require('path')
 const sass = require('node-sass')
 
-test('mixin generates basic dropcap styles', async (t) => {
+const preamble = `
+    @import 'settings';
+    @import 'utilities/dropcap';
+`
+
+test('typ-dropcap() mixin', async (t) => {
     let result = await sass.renderSync({
         data: `
-            @import 'settings';
-            @import 'utilities/dropcap';
+            ${preamble}
             .s { @include typ-dropcap(); }
         `,
         includePaths: ['../']
     })
-    // t.log(result.css.toString())
-    t.regex(result.css.toString(), /\.s::first-letter \{\s*float: left/)
+
+    t.regex(
+        result.css.toString(),
+        /\.s::first-letter \{\s*float: left/,
+        'generates basic dropcap styles'
+    )
     t.regex(
         result.css.toString(),
         /\.s::after \{(.|\s)*clear: both/,
@@ -24,12 +32,11 @@ test('mixin generates basic dropcap styles', async (t) => {
 test('mixin applies custom float direction', async (t) => {
     let result = await sass.renderSync({
         data: `
-            @import 'settings';
-            @import 'utilities/dropcap';
+            ${preamble}
             .s { @include typ-dropcap(right); }
         `,
         includePaths: ['../']
     })
-    // t.log(result.css.toString())
+
     t.regex(result.css.toString(), /\.s::first-letter \{\s*float: right/)
 })

@@ -21,7 +21,7 @@
     "docs:format": "npm run docs:eslint && npm run docs:stylelint",
     "docs:stylelint": "stylelint 'docs/.vuepress/**/*.{scss,vue}' --fix",
     "lint:styles": "stylelint docs/**/*.scss --fix",
-    "test": "ava --verbose"
+    "test": "ava"
   },
   "devDependencies": {
     "@vuepress/plugin-google-analytics": "^1.0.0-alpha.30",

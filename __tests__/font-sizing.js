@@ -18,7 +18,7 @@ test('font-size() mixin', async (t) => {
         `,
         includePaths: ['../']
     })
-    // t.log(result.css.toString())
+
     t.regex(
         result.css.toString(),
         /font-size: 12px/,
@@ -39,7 +39,7 @@ test('calc-size() mixin', async (t) => {
         `,
         includePaths: ['../']
     })
-    // t.log(result.css.toString())
+
     t.regex(
         result.css.toString(),
         /font-size: 14px/,
