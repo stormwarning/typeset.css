@@ -124,7 +124,7 @@ $typ-use-ampersand: true;
 $typ-set-antialias: true;
 
 $typ-font-family:        $font-sans;
-$typ-ampersand-source:   local('adelle'), url('/ampersand.woff') format('woff'), url('/ampersand.otf') format('otf');
+$typ-ampersand-source:   local('adelle'), url('/typeset.css/ampersand.woff') format('woff'), url('/typeset.css/ampersand.otf') format('otf');
 $typ-ampersand-fallback: $typ-font-family;
 
 $typ-h1-size: 48px;
