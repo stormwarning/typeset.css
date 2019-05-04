@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Typeset.css</title>
+        <meta name="description" content="Typeset.css is a Sass library that provides some sensible default         styles, optional classes to use &amp; extend as needed, and some utility         functions &amp; mixins to make elevating your typography simpler." />
+        <script src="https://use.typekit.net/vfk8hnk.js"></script>
+        <script>
+            try {
+                Typekit.load({ async: true })
+            } catch (e) {}
+        </script>
+        <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css">
+  <link rel="icon" type="image/x-icon" href="/typeset.css/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/typeset.css/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="Typeset.css">
+        
+        <link rel="preload" href="/typeset.css/assets/css/0.styles.9d3f7f58.css" as="style"><link rel="preload" href="/typeset.css/assets/js/app.ad859794.js" as="script"><link rel="preload" href="/typeset.css/assets/js/3.c56b54d7.js" as="script"><link rel="preload" href="/typeset.css/assets/js/6.b75cd085.js" as="script"><link rel="preload" href="/typeset.css/assets/js/4.bd797c58.js" as="script"><link rel="prefetch" href="/typeset.css/assets/js/5.402df11c.js"><link rel="prefetch" href="/typeset.css/assets/js/7.33003bcd.js"><link rel="prefetch" href="/typeset.css/assets/js/vendors~docsearch.f6681245.js">
+        <link rel="stylesheet" href="/typeset.css/assets/css/0.styles.9d3f7f58.css">
+    </head>
+    <body>
+        <div id="app" data-server-rendered="true"><div class="theme-container grey-7 bg-grey-0 no-navbar no-sidebar"><!----> <div class="sidebar-mask"></div> <div class="sidebar"><!---->  <!----> </div> <div class="home"><header class="header relative pv6 bg-grey-9"><div class="bg-blue-6 absolute absolute--fill o-05"></div> <div class="relative mw7 center ph5-ns"><!----> <div class="header-title ph3 ph0-ns"><h1 class="cyan-4 f-subheadline fw3 ma0 relative pl6-l"><span class="logo absolute dn db-l">——
+                        </span>
+                    Typeset.css
+                </h1> <h4 class="cyan-7 f3 fw3 o-70 ma0 mt3 pl6-l measure-narrow"><dfn title="transitive verb">tr.v</dfn> &nbsp;type&thinsp;·&thinsp;set&nbsp; To set (written material) into type; compose.</h4></div> <!----></div></header> <aside class="project-meta bb b--grey-3 bg-grey-1 pv3"><div class="mw8 center flex items-center justify-center"><iframe src="http://ghbtns.com/github-btn.html?user=stormwarning&repo=typeset.css&type=star&count=false" frameborder="0" scrolling="0" width="51px" height="20px"></iframe> <span class="flex items-center h2 ml3 pl3 bl b--black-20"><a href="https://github.com/stormwarning/typeset.css/blob/master/CHANGELOG.md" class="f6 lh-solid">
+                    Version:
+                    <var class="f5 fw6 fs-normal">0.6.1</var></a></span> <!----></div></aside> <!----> <main class="mw7 center ph3 pv5 pv6-ns ph5-ns"><div custom="" class="content default"><p class="lede ampersand">Typeset.css is a Sass library that provides some
+sensible default styles, optional classes to use &amp; extend as needed, and some
+utility functions &amp; mixins to make elevating your typography simpler.</p> <h2 id="installation"><a href="#installation" aria-hidden="true" class="header-anchor">#</a> Installation</h2> <p>Install using either <code>npm</code> or <code>bower</code>, or download the
+<a href="https://github.com/stormwarning/typeset.css" target="_blank" rel="noopener noreferrer">latest release from GitHub<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>
+and include it in your project manually.</p> <figure class="figure mv5"><div class="language-sh extra-class"><pre class="language-text"><code>npm install --save typeset.css
+</code></pre></div> <!----></figure> <div class="tip custom-block"><p class="custom-block-title">Note</p> <p>Typeset.css includes no vendor-prefixed properties — use Autoprefixer or a
+similar tool when compiling to ensure cross-browser support.</p></div> <p>After installing, <code>@import</code> the main Typeset file into your Sass as usual —
+ideally <em>after</em> any &quot;resets&quot;, but before your custom styles.</p> <h2 id="configuring"><a href="#configuring" aria-hidden="true" class="header-anchor">#</a> Configuring</h2> <p>Typeset's default variables are located in <code>_settings.scss</code>. Update and enable
+different styles and functionality by defining new values for these before
+including <code>_typeset</code>.</p> <p>Some of Typeset's variable and mixin names can be prefixed with an optional
+namespace string, in cases where the names cause a conflict.</p> <figure class="figure mv5 has-caption"><div class="language-scss extra-class"><pre class="language-scss"><code><span class="token property"><span class="token variable">$typ-namespace</span></span><span class="token punctuation">:</span> <span class="token null">null</span> <span class="token statement keyword">!default</span><span class="token punctuation">;</span>
+
+<span class="token property"><span class="token variable">$typ-font-size</span></span><span class="token punctuation">:</span>   16px <span class="token statement keyword">!default</span><span class="token punctuation">;</span>
+<span class="token property"><span class="token variable">$typ-line-height</span></span><span class="token punctuation">:</span> 28px <span class="token statement keyword">!default</span><span class="token punctuation">;</span>
+
+<span class="token property"><span class="token variable">$typ-use-headings</span></span><span class="token punctuation">:</span>  <span class="token boolean">false</span> <span class="token statement keyword">!default</span><span class="token punctuation">;</span>
+<span class="token property"><span class="token variable">$typ-use-opentype</span></span><span class="token punctuation">:</span>  <span class="token boolean">false</span> <span class="token statement keyword">!default</span><span class="token punctuation">;</span>
+<span class="token property"><span class="token variable">$typ-use-ampersand</span></span><span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token statement keyword">!default</span><span class="token punctuation">;</span>
+</code></pre></div> <figcaption class="caption"><p>Notable default settings; overwrite any of these in your own Sass code.</p></figcaption></figure> <h2 id="utilities"><a href="#utilities" aria-hidden="true" class="header-anchor">#</a> Utilities</h2> <p>Use these mixins &amp; functions for simple, fine-grained control over advanced
+typography settings.</p> <h3 id="opentype-control"><a href="#opentype-control" aria-hidden="true" class="header-anchor">#</a> Opentype control</h3> <p>Opentype settings provide a lot of control over typefaces that support them.
+Browsers don't currently provide fine-grained control over the different
+options; only <code>font-feature-settings</code> is widely-available, which doesn't allow
+for inheriting settings.</p> <p>Use the <code>opentype</code> function, in conjunction with a baseline array of Opentype
+settings to cleanly adjust the settings you need on different elements.</p> <figure class="figure mv5 has-caption"><div class="language-scss extra-class"><pre class="language-scss"><code><span class="token property"><span class="token variable">$typ-ot-base</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
+    <span class="token string">'kern'</span> 1,
+    <span class="token string">'liga'</span> 1,
+    <span class="token string">'calt'</span> 1,
+    <span class="token string">'pnum'</span> 1,
+    <span class="token string">'tnum'</span> 0,
+    <span class="token string">'onum'</span> 1,
+    <span class="token string">'lnum'</span> 0,
+    <span class="token string">'dlig'</span> 0
+<span class="token punctuation">)</span> <span class="token statement keyword">!default</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language-scss extra-class"><pre class="language-scss"><code><span class="token selector">h1, h2, h3 </span><span class="token punctuation">{</span>
+    <span class="token property">font-feature-settings</span><span class="token punctuation">:</span> <span class="token function">opentype</span><span class="token punctuation">(</span><span class="token string">'dlig'</span> 1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div> <figcaption class="caption"><p>Default Opentype settings and an example of using the Typeset function to
+change a single option while maintaining the rest of the defaults.</p></figcaption></figure> <h3 id="tracking"><a href="#tracking" aria-hidden="true" class="header-anchor">#</a> Tracking</h3> <p>The <code>typ-tracking()</code> mixin provides an easy way to adjust <code>letter-spacing</code>.
+Using the same tracking value from Photoshop as a parameter, the mixin converts
+that to an em value.</p> <figure class="figure mv5 has-caption"><div class="language-scss extra-class"><pre class="language-scss"><code><span class="token selector">.selector </span><span class="token punctuation">{</span>
+    <span class="token keyword">@include</span> <span class="token function">typ-tracking</span><span class="token punctuation">(</span>-10<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.selector</span> <span class="token punctuation">{</span>
+    <span class="token property">letter-spacing</span><span class="token punctuation">:</span> -0.01em<span class="token punctuation">;</span>
+    <span class="token property">font-kerning</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div> <figcaption class="caption"><p>Tracking mixin and <abbr>CSS</abbr> output. The <code>font-kerning</code> property is
+included to prevent a bug in Chrome &amp; Opera from disabling any Opentype
+settings.</p></figcaption></figure> <p>There is also an optional parameter for text that will be centered. The
+<code>letter-spacing</code> property will add space even after the last letter. The mixin
+adds the same amount of space to the opposite side of the text, maintaining the
+visual center alignment.</p> <figure class="figure mv5 has-caption"><div class="language-scss extra-class"><pre class="language-scss"><code><span class="token selector">.selector </span><span class="token punctuation">{</span>
+    <span class="token keyword">@include</span> <span class="token function">typ-tracking</span><span class="token punctuation">(</span>50, center<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.selector</span> <span class="token punctuation">{</span>
+    <span class="token property">margin-left</span><span class="token punctuation">:</span> 0.05em<span class="token punctuation">;</span>
+    <span class="token property">letter-spacing</span><span class="token punctuation">:</span> 0.05em<span class="token punctuation">;</span>
+    <span class="token property">font-kerning</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div> <figcaption class="caption"><p>Using the tracking mixin on centered text.</p></figcaption></figure> <h3 id="measure"><a href="#measure" aria-hidden="true" class="header-anchor">#</a> Measure</h3> <div class="tip custom-block"><p class="custom-block-title">Note</p> <p>The measure is the number of characters in a single line of a column of text.
+Anything from 45 to 75 characters is a satisfactory length of line. A
+66-character line (counting both letters and spaces) is widely regarded as
+ideal.</p></div> <p>The <code>typ-measure()</code> applies a <code>max-width</code> property of the number passed to it
+in ch units. It also applies some hyphenation properties, although these aren't
+widely supported. The mixin accepts optional parameters for a <code>min-width</code>
+property, as well as centering with auto left and right margins.</p> <figure class="figure mv5 has-caption"><div class="language-scss extra-class"><pre class="language-scss"><code><span class="token selector">.selector </span><span class="token punctuation">{</span>
+    <span class="token keyword">@include</span> <span class="token function">typ-measure</span><span class="token punctuation">(</span>66<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.selector</span> <span class="token punctuation">{</span>
+    <span class="token property">max-width</span><span class="token punctuation">:</span> 66ch<span class="token punctuation">;</span>
+    <span class="token property">hyphenate-limit-chars</span><span class="token punctuation">:</span> 6 3 2<span class="token punctuation">;</span>
+    <span class="token property">hyphenate-limit-lines</span><span class="token punctuation">:</span> 3<span class="token punctuation">;</span>
+    <span class="token property">hyphens</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+    <span class="token property">word-break</span><span class="token punctuation">:</span> break-word<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div> <figcaption class="caption"><p>Basic measure setting and output.</p></figcaption></figure> <p>Take hyphenation to the next level by manually modifying the DOM with a JS
+library like <a href="https://github.com/bramstein/hypher" target="_blank" rel="noopener noreferrer">Hypher<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>.</p> <h3 id="ampersands"><a href="#ampersands" aria-hidden="true" class="header-anchor">#</a> Ampersands</h3> <p>Occasionally, you may want to set ampersands in a different typeface for a
+little extra flair. Set the <code>font-family</code> using the variables, and apply the
+class or extend it onto the element you like.</p> <h3 id="dropcaps"><a href="#dropcaps" aria-hidden="true" class="header-anchor">#</a> Dropcaps</h3> <p>The <code>typ-dropcap()</code> mixin gives a starting point for styling the initial letter
+of a paragraph. Include it with your own styles in a class and apply the class
+to a paragraph to see the effect.</p> <figure class="figure mv5 has-caption"><div class="language-scss extra-class"><pre class="language-scss"><code><span class="token selector">.dropcap </span><span class="token punctuation">{</span>
+    <span class="token keyword">@include</span> <span class="token function">typ-dropcap</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token property">font-size</span><span class="token punctuation">:</span> 5.5em<span class="token punctuation">;</span>
+        <span class="token property">font-weight</span><span class="token punctuation">:</span> 800<span class="token punctuation">;</span>
+        <span class="token property">line-height</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.dropcap::after</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> table<span class="token punctuation">;</span>
+    <span class="token property">clear</span><span class="token punctuation">:</span> both<span class="token punctuation">;</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.dropcap::first-letter</span> <span class="token punctuation">{</span>
+    <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> 5.5em<span class="token punctuation">;</span>
+    <span class="token property">font-weight</span><span class="token punctuation">:</span> 800<span class="token punctuation">;</span>
+    <span class="token property">line-height</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div> <figcaption class="caption"><p>Basic usage of dropcap mixin.</p></figcaption></figure> <h2 id="defaults"><a href="#defaults" aria-hidden="true" class="header-anchor">#</a> Defaults</h2> <h3 id="paragraphs"><a href="#paragraphs" aria-hidden="true" class="header-anchor">#</a> Paragraphs</h3> <p>Base paragraph elements don't have much extra styling applied, besides a
+single-direction margin, but there are a couple of related classes useful for
+particular cases:</p> <dl><dt><code>.lede</code></dt> <dd>Apply this to a paragraph — usually the first in an article — to have it stand out.</dd> <dt><code>.indented</code></dt> <dd>Apply this on an element containing paragraphs to change the paragraph separation style.</dd></dl> <p class="lede">A lead, or lede, paragraph in literature is the opening paragraph of an article, essay, news story or book chapter. It precedes the main body of the article, and it gives the reader the main idea of the story. In both spellings, the word rhymes with the word need.</p> <figure class="figure mv5"><div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>lede<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div> <!----></figure> <p>The function of a paragraph is to mark a pause, setting the paragraph apart from what precedes it. If a paragraph is preceded by a title or subhead, the indent is superfluous and can therefore be omitted. On the web, the most common method of separating paragraphs is using an extra leading or a blank line. Chunks of paragraphs make skimming online content easier.</p> <section class="indented"><p>In print, first-line indent is often used to denote a new paragraph without interrupting the flow of reading. First-line indent is appearing more online for long-form reading. Whichever method you prefer, stick with one but not both.</p> <p><cite>The Elements of Typographic Style</cite> states that <q>at least one en [space]</q> should be used to indent paragraphs after the first, noting that that is the <q>practical minimum</q>. An em space is the most commonly used paragraph indent.</p></section> <figure class="figure mv5"><div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>indented<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div> <!----></figure> <h3 id="blockquotes"><a href="#blockquotes" aria-hidden="true" class="header-anchor">#</a> Blockquotes</h3> <p>Default block quotation styles assume a particular semantic, accessible markup
+style.</p> <figure class="figure mv5"><div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>blockquote</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>The future is already here — it's just not very evenly distributed.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>blockquote</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figcaption</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>small</span><span class="token punctuation">&gt;</span></span>William Gibson, from an interview in <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>cite</span><span class="token punctuation">&gt;</span></span>Fresh Air<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>cite</span><span class="token punctuation">&gt;</span></span>, NPR (31 August 1993)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>small</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figcaption</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div> <!----></figure> <h3 id="lists"><a href="#lists" aria-hidden="true" class="header-anchor">#</a> Lists</h3> <p>All lists — <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, and <code>&lt;dl&gt;</code> — have a single-direction margin
+declaration. Nested lists have no <code>margin-bottom</code>.</p> <p>Definition lists in particular, have updated styling. For simpler styling,
+clear hierarchy, and better spacing, <code>&lt;dt&gt;</code>s have an increased <code>font-weight</code>
+and <code>&lt;dd&gt;</code>s change <code>margin-left</code> to zero and a <code>margin-bottom</code> of half the base
+line-height.</p> <h3 id="address"><a href="#address" aria-hidden="true" class="header-anchor">#</a> Address</h3> <p><code>&lt;address&gt;</code> elements are for presenting contact information for the nearest ancestor (or an entire body of work). The element is updated to match regular body copy; <code>font-style</code> from italic to normal, inherited <code>line-height</code>, and <code>margin-bottom</code> matching the base line-height.</p> <h3 id="phrasing-elements"><a href="#phrasing-elements" aria-hidden="true" class="header-anchor">#</a> Phrasing elements</h3> <dl><dt>a</dt> <dd>Anchors de­fine <a href="#destination">a hy­per­link</a>, <a id="destination">a des­ti­na­tion of a hy­per­link</a>, or both.</dd> <dt>abbr</dt> <dd>Used for ab­bre­vi­a­tions <abbr title="Doctor">Dr</abbr>. or ini­tialisms like <dfn><abbr title="HyperText Markup Language"><span class="small-caps">HTML</span></abbr></dfn>. Combine with a <code>title</code> at­tribute or con­tain­ing <code>dfn</code> el­e­ment on the first in­stance to pro­vide de­f­i­n­i­tion.</dd> <dt>cite</dt> <dd>According to the <cite><abbr><span class="small-caps">HTML</span></abbr> 5 Specification</cite>, the <code>cite</code> el­e­ment rep­re­sents a ref­er­ence to a cre­ative work.</dd> <dt>code</dt> <dd>When rep­re­sent­ing <abbr><span class="small-caps">HTML</span></abbr> code, re­mem­ber to en­code the re­served char­ac­ters &lt; and &gt; with their <abbr><span class="small-caps">HTML</span></abbr> en­tity equiv­a­lents (<code>&amp;lt;</code> and <code>&amp;gt;</code>, re­spec­tively).</dd> <dt>del</dt> <dd>While <code>s</code> and <code>del</code> ap­pear to per­form the same func­tion <del>mark­ing ob­so­lete con­tent</del> they dif­fer in <s>pen­dantry</s>se­man­tics.</dd> <dt>dfn</dt> <dd>The <dfn title="Definition">dfn</dfn> el­e­ment in­di­cates the defin­ing in­stance of a term.</dd> <dt>em</dt> <dd>Use the <code>em</code> el­e­ment to <em>em­pha­size</em> text.</dd> <dt>i</dt> <dd>For­eign words used in Eng­lish are some­times ital­i­cized, some­times not, de­pend­ing on how com­mon they are. For in­stance, you would ital­i­cize your <i lang="fr">bête noire</i> and your <i lang="de">Weltan­schau­ung</i>, but not your crois­sant or your ré­sumé.</dd> <dt>ins</dt> <dd>The <code>ins</code> el­e­ment rep­re­sents a range of text that has been <del>added</del><ins>in­serted</ins> into a doc­u­ment.</dd> <dt>kbd</dt> <dd>Denotes user in­put, typ­i­cally key­board in­put, such as <kbd><kbd>⌘</kbd> + <kbd>S</kbd></kbd>.</dd> <dt>mark</dt> <dd>Denotes the rel­e­vance of a span of text, <mark>as op­posed to its im­por­tance</mark>, such as text that has been marked or high­lighted.</dd></dl></div></main> <!----></div></div><div class="global-ui"></div></div>
+        <script src="/typeset.css/assets/js/app.ad859794.js" defer></script><script src="/typeset.css/assets/js/3.c56b54d7.js" defer></script><script src="/typeset.css/assets/js/6.b75cd085.js" defer></script><script src="/typeset.css/assets/js/4.bd797c58.js" defer></script>
+    </body>
+</html>
