@@ -16,6 +16,7 @@ module.exports = {
                 href: 'https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css'
             }
         ],
+        ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
         [
             'link',
             {
