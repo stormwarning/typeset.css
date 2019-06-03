@@ -24,7 +24,7 @@
     "test": "ava"
   },
   "devDependencies": {
-    "@vuepress/plugin-google-analytics": "^1.0.0-alpha.30",
+    "@vuepress/plugin-google-analytics": "^1.0.0-alpha.49",
     "@zazen/eslint-config": "^0.3.0",
     "@zazen/stylelint-config": "^1.0.0",
     "ava": "^1.0.1",
