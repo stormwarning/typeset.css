@@ -37,7 +37,7 @@
     "open-color": "^1.6.3",
     "prettier-eslint-cli": "^4.7.1",
     "remark-cli": "^6.0.1",
-    "remark-github": "^7.0.5",
+    "remark-github": "^7.0.7",
     "remark-preset-lint-markdown-style-guide": "^2.1.2",
     "remark-toc": "^5.1.1",
     "sass-loader": "^7.1.0",
