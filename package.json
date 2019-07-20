@@ -41,7 +41,7 @@
     "remark-preset-lint-markdown-style-guide": "^2.1.2",
     "remark-toc": "^5.1.1",
     "sass-loader": "^7.1.0",
-    "stylelint": "^9.9.0",
+    "stylelint": "^9.10.1",
     "stylelint-scss": "^3.4.3",
     "tachyons-sass": "^4.9.5",
     "vuepress": "^1.0.0-alpha.30",
