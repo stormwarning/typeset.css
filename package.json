@@ -42,7 +42,7 @@
     "remark-toc": "^5.1.1",
     "sass-loader": "^7.1.0",
     "stylelint": "^9.10.1",
-    "stylelint-scss": "^3.4.3",
+    "stylelint-scss": "^3.9.2",
     "tachyons-sass": "^4.9.5",
     "vuepress": "^1.0.0-alpha.30",
     "yorkie": "^2.0.0"
