@@ -39,7 +39,7 @@
     "remark-cli": "^6.0.1",
     "remark-github": "^8.0.0",
     "remark-preset-lint-markdown-style-guide": "^2.1.2",
-    "remark-toc": "^5.1.1",
+    "remark-toc": "^7.0.0",
     "sass-loader": "^7.1.0",
     "stylelint": "^9.10.1",
     "stylelint-scss": "^3.9.2",
