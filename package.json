@@ -35,7 +35,7 @@
     "make-fetch-happen": "^4.0.1",
     "node-sass": "^4.11.0",
     "open-color": "^1.8.0",
-    "prettier-eslint-cli": "^4.7.1",
+    "prettier-eslint-cli": "^5.0.0",
     "remark-cli": "^6.0.1",
     "remark-github": "^8.0.0",
     "remark-preset-lint-markdown-style-guide": "^2.1.2",
