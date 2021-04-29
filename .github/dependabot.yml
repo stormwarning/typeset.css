@@ -1,0 +1,36 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: monthly
+    time: "12:00"
+  open-pull-requests-limit: 10
+  labels:
+  - upgrade
+  versioning-strategy: increase
+  ignore:
+  - dependency-name: vuepress
+    versions:
+    - 1.7.1
+    - 1.8.0
+  - dependency-name: "@vuepress/plugin-google-analytics"
+    versions:
+    - 1.7.1
+    - 1.8.0
+  - dependency-name: make-fetch-happen
+    versions:
+    - 8.0.12
+    - 8.0.13
+  - dependency-name: prismjs
+    versions:
+    - 1.22.0
+  - dependency-name: elliptic
+    versions:
+    - 6.5.3
+  - dependency-name: remark-toc
+    versions:
+    - 7.0.0
+  - dependency-name: open-color
+    versions:
+    - 1.7.0
